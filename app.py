@@ -21,8 +21,8 @@ st.markdown("""
         .block-container {
             padding: 2rem;
         }
-        .css-10trblm, .css-1d391kg {
-            color: #ffffff;
+        .css-10trblm, .css-1d391kg, .css-1v0mbdj p, .css-1v0mbdj h1, .css-1v0mbdj h2, .css-1v0mbdj h3 {
+            color: #ffffff !important;
         }
         .stButton>button {
             background-color: #00aaff;
@@ -72,10 +72,17 @@ if uploaded_file is not None:
             X_new = vectorizador.transform([descripcion])
             prediccion = modelo.predict(X_new)[0]
             st.success(f"Frame seleccionado: {frame_number}")
-            st.write(f"🤖 Predicción automática: **{prediccion.upper()}**")
+            st.write(f"🤖 Resultado automático: **{prediccion.upper()}**")
             st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
             jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
-            st.dataframe(jugadas_similares.head(5))
+            st.markdown("### 📂 Jugadas similares en el historial")
+            for _, row in jugadas_similares.head(3).iterrows():
+                st.markdown(f"- **Partido:** {row['Team']} vs {row['Opponent Team']} ({row['Date']})")
+                st.markdown(f"  - 📍 Sitio: {'Local' if row['Site'] == 'H' else 'Visitante'}")
+                st.markdown(f"  - 🕒 Minuto: {row['Time']}")
+                st.markdown(f"  - ⚠️ Incidente: {row['Incident']}")
+                st.markdown(f"  - 📽️ [Ver jugada en video](https://example.com/video_placeholder) *(en desarrollo)*")
+                st.markdown("---")
             st.image("VAR_System_Logo.svg.png", caption="Pantalla VAR", use_container_width=True)
             st.caption("Árbitro responsable: Germán Delfino")
         elif not descripcion:
@@ -88,10 +95,17 @@ if uploaded_file is not None:
         if st.button("🔍 Analizar jugada de la imagen") and descripcion:
             X_new = vectorizador.transform([descripcion])
             prediccion = modelo.predict(X_new)[0]
-            st.write(f"🤖 Predicción automática: **{prediccion.upper()}**")
+            st.write(f"🤖 Resultado automático: **{prediccion.upper()}**")
             st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
             jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
-            st.dataframe(jugadas_similares.head(5))
+            st.markdown("### 📂 Jugadas similares en el historial")
+            for _, row in jugadas_similares.head(3).iterrows():
+                st.markdown(f"- **Partido:** {row['Team']} vs {row['Opponent Team']} ({row['Date']})")
+                st.markdown(f"  - 📍 Sitio: {'Local' if row['Site'] == 'H' else 'Visitante'}")
+                st.markdown(f"  - 🕒 Minuto: {row['Time']}")
+                st.markdown(f"  - ⚠️ Incidente: {row['Incident']}")
+                st.markdown(f"  - 📽️ [Ver jugada en video](https://example.com/video_placeholder) *(en desarrollo)*")
+                st.markdown("---")
             st.image("VAR_System_Logo.svg.png", caption="Pantalla VAR", use_container_width=True)
             st.caption("Árbitro responsable: Darío Herrera")
         elif not descripcion:
