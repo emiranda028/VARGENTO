@@ -1,4 +1,5 @@
-VARGENTO - Plataforma Inteligente de Análisis VAR
+# VARGENTO - Plataforma Inteligente de Análisis VAR
+
 
 import streamlit as st
 from PIL import Image
