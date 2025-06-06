@@ -9,30 +9,33 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 
-# Estilo de la app tipo pantalla VAR Argentina
+# Estilo de la app con estética VAR oficial
 st.set_page_config(layout="centered", page_title="VARGENTO", page_icon="⚽")
 st.markdown("""
     <style>
-        .main {
-            background-color: #0d1117;
+        .stApp {
+            background-color: #0a2c50;
             color: white;
             font-family: 'Segoe UI', sans-serif;
-        }
-        .css-1d391kg {
-            color: #00f0ff;
-            font-size: 40px;
-        }
-        .css-10trblm {
-            color: #f0f0f0;
-        }
-        .stApp {
-            background: linear-gradient(to right, #000000, #1f1f1f);
         }
         .block-container {
             padding: 2rem;
         }
+        .css-10trblm, .css-1d391kg {
+            color: #ffffff;
+        }
+        .stButton>button {
+            background-color: #00aaff;
+            color: white;
+            border-radius: 5px;
+        }
+        .stButton>button:hover {
+            background-color: #0077cc;
+        }
     </style>
 """, unsafe_allow_html=True)
+
+st.image("VAR_System_Logo.svg.png", width=200)
 
 st.title("📺 VARGENTO")
 st.subheader("Plataforma Inteligente de Análisis VAR")
@@ -44,7 +47,6 @@ uploaded_file = st.file_uploader("Subí tu jugada (video .mp4 o imagen .jpg/.png
 
 # Cargar y preparar el modelo predictivo
 @st.cache_data
-
 def cargar_modelo():
     df = pd.read_csv("var.csv")
     df['Liga'] = df['Team'].apply(lambda x: "Argentina" if x in ["River Plate", "Boca Juniors", "Racing", "Independiente", "San Lorenzo"] else "Inglaterra")
@@ -74,14 +76,14 @@ if uploaded_file is not None:
             st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
             jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
             st.dataframe(jugadas_similares.head(5))
-            st.image("var_argentina_ui.png", caption="Pantalla VAR - Argentina", use_column_width=True)
+            st.image("VAR_System_Logo.svg.png", caption="Pantalla VAR", use_container_width=True)
             st.caption("Árbitro responsable: Germán Delfino")
         elif not descripcion:
             st.warning("Por favor, describí la jugada para hacer la predicción.")
 
     elif uploaded_file.type.startswith("image"):
         image = Image.open(uploaded_file)
-        st.image(image, caption="Imagen cargada", use_column_width=True)
+        st.image(image, caption="Imagen cargada", use_container_width=True)
         descripcion = st.text_input("Describí brevemente la jugada para análisis predictivo")
         if st.button("🔍 Analizar jugada de la imagen") and descripcion:
             X_new = vectorizador.transform([descripcion])
@@ -90,7 +92,7 @@ if uploaded_file is not None:
             st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
             jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
             st.dataframe(jugadas_similares.head(5))
-            st.image("var_argentina_ui.png", caption="Pantalla VAR - Argentina", use_column_width=True)
+            st.image("VAR_System_Logo.svg.png", caption="Pantalla VAR", use_container_width=True)
             st.caption("Árbitro responsable: Darío Herrera")
         elif not descripcion:
             st.warning("Por favor, describí la jugada para hacer la predicción.")
