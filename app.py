@@ -2,7 +2,6 @@
 
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 from PIL import Image
 import io
 from sklearn.feature_extraction.text import CountVectorizer
@@ -15,16 +14,22 @@ st.set_page_config(layout="centered", page_title="VARGENTO", page_icon="⚽")
 st.markdown("""
     <style>
         .main {
-            background-color: #111;
+            background-color: #0d1117;
             color: white;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
         .css-1d391kg {
-            color: #03fcb1;
+            color: #00f0ff;
             font-size: 40px;
         }
         .css-10trblm {
-            color: #ffffff;
+            color: #f0f0f0;
+        }
+        .stApp {
+            background: linear-gradient(to right, #000000, #1f1f1f);
+        }
+        .block-container {
+            padding: 2rem;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -100,32 +105,27 @@ if st.checkbox("Mostrar estadísticas por equipo, árbitro y jugada"):
     with tab1:
         equipo_counts = df_data['Team'].value_counts().reset_index()
         equipo_counts.columns = ['Equipo', 'Cantidad']
-        fig1 = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas revisadas por equipo', text='Cantidad')
-        st.plotly_chart(fig1)
+        st.bar_chart(data=equipo_counts.set_index('Equipo'))
 
     with tab2:
         tipo_jugadas = df_data['Incident'].str.extract(r'([A-Za-z ]+)')[0].value_counts().reset_index().head(15)
         tipo_jugadas.columns = ['Tipo de jugada', 'Cantidad']
-        fig2 = px.bar(tipo_jugadas, x='Tipo de jugada', y='Cantidad', title='Tipos de jugadas más comunes', text='Cantidad')
-        st.plotly_chart(fig2)
+        st.bar_chart(data=tipo_jugadas.set_index('Tipo de jugada'))
 
     with tab3:
         decision_counts = df_data['VAR used'].value_counts().reset_index()
         decision_counts.columns = ['Decisión', 'Cantidad']
-        fig3 = px.pie(decision_counts, names='Decisión', values='Cantidad', title='Decisiones del VAR')
-        st.plotly_chart(fig3)
+        st.bar_chart(data=decision_counts.set_index('Decisión'))
 
     with tab4:
         arbitros = df_data['Incident'].str.extract(r'by ([A-Za-z ]+)')[0].dropna()
         arbitro_counts = arbitros.value_counts().reset_index().head(10)
         arbitro_counts.columns = ['Árbitro', 'Cantidad']
-        fig4 = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Árbitros mencionados en jugadas', text='Cantidad')
-        st.plotly_chart(fig4)
+        st.bar_chart(data=arbitro_counts.set_index('Árbitro'))
 
     with tab5:
         pais_counts = df_data['Liga'].value_counts().reset_index()
         pais_counts.columns = ['País', 'Cantidad']
-        fig5 = px.bar(pais_counts, x='País', y='Cantidad', title='Jugadas revisadas por país/liga', text='Cantidad')
-        st.plotly_chart(fig5)
+        st.bar_chart(data=pais_counts.set_index('País'))
 
 
