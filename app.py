@@ -36,7 +36,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.image("VAR_System_Logo.svg.png", width=200)
-st.image("afa_logo.png", width=100)
 
 st.title("📺 VARGENTO")
 st.subheader("Plataforma Inteligente de Análisis VAR")
@@ -53,7 +52,6 @@ uploaded_file = st.file_uploader("Subí tu jugada (video .mp4 o imagen .jpg/.png
 def generar_pdf(jugada, decision, precision, articulo, resumen, imagen_bytes=None):
     pdf = FPDF()
     pdf.add_page()
-    pdf.image("afa_logo.png", x=160, y=8, w=30)
     pdf.set_font("Arial", size=12)
     pdf.cell(200, 10, txt="Informe de Análisis VAR", ln=True, align='C')
     pdf.ln(10)
@@ -80,3 +78,4 @@ def generar_pdf(jugada, decision, precision, articulo, resumen, imagen_bytes=Non
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
         href = f'<a href="data:application/pdf;base64,{base64_pdf}" download="informe_var.pdf">📄 Descargar informe en PDF</a>'
         st.markdown(href, unsafe_allow_html=True)
+
