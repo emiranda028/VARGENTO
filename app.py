@@ -107,6 +107,16 @@ texto_input = st.text_area("Describí brevemente la jugada (por ejemplo: 'mano e
 if texto_input:
     X_nuevo = vectorizador.transform([texto_input])
     prediccion = modelo.predict(X_nuevo)[0]
+    if prediccion.upper() == "AGAINST":
+        prediccion = "Cobrar en contra del equipo"
+    elif prediccion.upper() == "FAVOR":
+        prediccion = "Cobrar a favor del equipo"
+    elif prediccion.upper() == "PENAL":
+        prediccion = "Cobrar penal"
+    elif prediccion.upper() == "NO ACTION":
+        prediccion = "No tomar ninguna acción"
+    elif prediccion.upper() == "EXPULSIÓN":
+        prediccion = "Expulsar al jugador involucrado"
     st.markdown(f"✅ Decisión sugerida por VARGENTO: **{prediccion}**")
     st.markdown(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
 
@@ -114,6 +124,40 @@ if texto_input:
     st.markdown(texto_articulo)
 
     if st.button("📄 Generar informe en PDF"):
+        def generar_pdf(jugada, decision, precision, articulo, resumen, imagen_bytes=None):
+            pdf = FPDF()
+            pdf.add_page()
+            pdf.set_font("Arial", size=12)
+            pdf.cell(200, 10, txt="Informe de Análisis VAR", ln=True, align='C')
+            pdf.ln(10)
+            pdf.multi_cell(0, 10, txt=f"Jugada descripta: {jugada}")
+            pdf.multi_cell(0, 10, txt=f"Decisión automática: {decision}")
+            pdf.multi_cell(0, 10, txt=f"Precisión del modelo: {precision*100:.2f}%")
+            pdf.multi_cell(0, 10, txt=f"Reglamento aplicable: {articulo}")
+            pdf.multi_cell(0, 10, txt=f"Descripción de la regla: {resumen}")
+
+            if imagen_bytes is not None and hasattr(imagen_bytes, 'read'):
+                try:
+                    temp_img_path = "temp_jugada.jpg"
+                    with open(temp_img_path, "wb") as f:
+                        f.write(imagen_bytes.read())
+                    pdf.image(temp_img_path, x=10, y=None, w=100)
+                    os.remove(temp_img_path)
+                except Exception as e:
+                    print("Error al procesar imagen:", e)
+
+            pdf.ln(10)
+            pdf.set_font("Arial", style="I", size=10)
+            pdf.cell(200, 10, txt="Dictamen generado por el sistema VARGENTO - Desarrollado por LTELC", ln=True, align='C')
+
+            pdf_output = f"informe_var.pdf"
+            pdf.output(pdf_output)
+            with open(pdf_output, "rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+                href = f'<a href="data:application/pdf;base64,{base64_pdf}" download="informe_var.pdf">📄 Descargar informe en PDF</a>'
+                st.markdown(href, unsafe_allow_html=True)
+
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
+
 
 
