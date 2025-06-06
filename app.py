@@ -69,6 +69,7 @@ if uploaded_file is not None:
             st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
             jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
             st.dataframe(jugadas_similares.head(5))
+            st.image("var_argentina_ui.png", caption="Pantalla VAR - Argentina", use_column_width=True)
             st.caption("Árbitro responsable: Germán Delfino")
         elif not descripcion:
             st.warning("Por favor, describí la jugada para hacer la predicción.")
@@ -84,6 +85,7 @@ if uploaded_file is not None:
             st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
             jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
             st.dataframe(jugadas_similares.head(5))
+            st.image("var_argentina_ui.png", caption="Pantalla VAR - Argentina", use_column_width=True)
             st.caption("Árbitro responsable: Darío Herrera")
         elif not descripcion:
             st.warning("Por favor, describí la jugada para hacer la predicción.")
@@ -125,4 +127,5 @@ if st.checkbox("Mostrar estadísticas por equipo, árbitro y jugada"):
         pais_counts.columns = ['País', 'Cantidad']
         fig5 = px.bar(pais_counts, x='País', y='Cantidad', title='Jugadas revisadas por país/liga', text='Cantidad')
         st.plotly_chart(fig5)
+
 
