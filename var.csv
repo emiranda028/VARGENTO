@@ -1,11 +1,1001 @@
 Team,Opponent Team,Date,Site,Incident,Time,VAR used
-Boca Juniors,River Plate,2023-03-15,H,Penalty awarded for handball,56th minute,FAVOR
-Racing Club,Independiente,2023-04-02,A,Goal disallowed for offside,34th minute,AGAINST
-River Plate,San Lorenzo,2023-05-10,H,Red card for violent conduct,72nd minute,FAVOR
-Manchester United,Chelsea,2022-11-12,H,Penalty not awarded for foul,81st minute,AGAINST
-Arsenal,Liverpool,2023-01-04,A,Goal allowed after VAR review,19th minute,FAVOR
-Brighton & Hove Albion,West Ham,2022-08-17,H,Brighton goal ruled out for offside,27th minute,AGAINST
-Tottenham,Leicester,2023-02-20,H,VAR overturns penalty decision,65th minute,FAVOR
-Boca Juniors,HuracÃ¡n,2023-03-22,A,No VAR review for possible handball,44th minute,AGAINST
-Racing Club,Banfield,2023-04-10,H,VAR confirms penalty,60th minute,FAVOR
-River Plate,Talleres,2023-05-25,A,Goal disallowed after VAR,77th minute,AGAINST
+Manchester City,Estudiantes,2024-10-14,H,Penal no cobrado por falta,18',FAVOR
+Leeds United,Racing,2023-08-31,A,Penal por mano en el ï¿½ï¿½rea,4',F
+Estudiantes,Boca Juniors,2023-06-25,H,No intervenciï¿½ï¿½n del VAR ante posible falta,84',AGA
+Lanï¿½ï¿½s,Estudiantes,2025-01-01,H,Tarjeta roja por agresiï¿½ï¿½n,90'
+Racing,Newell's,2024-01-05,A,Gol anulado por fuera de juego,12',AGAINST
+Huracï¿½ï¿½n,Lanï¿½ï¿½s,2023-12-13,H,No intervenciï¿½ï¿½n del VAR ante posible fal
+Brighton,Racing,2023-11-26,A,Gol convalidado tras VAR,80',AGAINST
+Liverpool,River Plate,2023-09-22,H,Confirmaciï¿½ï¿½n de penal por VAR,11',F
+Brighton,Estudiantes,2024-12-29,A,Gol convalidado tras VAR,47',FAVOR
+Independiente,Lanï¿½ï¿½s,2023-08-24,H,Roja directa confirmada,82',F
+Manchester United,Huracï¿½ï¿½n,2024-11-12,A,VAR confirma gol legï¿½ï¿½timo,3
+Manchester City,Newell's,2025-01-01,H,Gol anulado tras revisiï¿½ï¿½n,52',AGA
+Lanï¿½ï¿½s,Liverpool,2025-04-28,H,Gol convalidado tras VAR,64',AGA
+Everton,San Lorenzo,2024-08-02,A,Tarjeta roja por agresiï¿½ï¿½n,32',AGA
+Brighton,West Ham,2023-08-12,A,Gol anulado tras revisiï¿½ï¿½n,29',F
+Liverpool,River Plate,2024-09-06,H,Tarjeta roja por agresiï¿½ï¿½n,81',F
+Brighton,Racing,2024-04-28,A,VAR confirma gol legï¿½ï¿½timo,77',AGA
+Leeds United,Boca Juniors,2023-06-30,H,Gol convalidado tras VAR,69',AGAINST
+Tottenham,Independiente,2023-06-29,A,VAR confirma gol legï¿½ï¿½timo,21',AGA
+San Lorenzo,Everton,2023-08-17,H,VAR determina simulaciï¿½ï¿½n,14',AGA
+Leeds United,Vï¿½ï¿½lez,2023-11-22,H,Gol anulado tras revisiï¿½ï¿½n,2
+Everton,Boca Juniors,2023-12-03,H,Gol anulado tras revisiï¿½ï¿½n,40',F
+Lanï¿½ï¿½s,Racing,2024-07-02,H,No intervenciï¿½ï¿½n del VAR ante posible falta,6
+Leeds United,San Lorenzo,2024-09-15,H,Gol convalidado tras VAR,61',FAVOR
+Lanï¿½ï¿½s,Chelsea,2023-06-26,H,VAR determina simulaciï¿½ï¿½n,8
+Brighton,Liverpool,2024-08-14,A,VAR determina simulaciï¿½ï¿½n,58',F
+River Plate,Liverpool,2023-11-07,H,Roja directa confirmada,71',FAVOR
+Manchester City,Racing,2024-12-13,H,Penal no cobrado por falta,9',FAVOR
+Liverpool,Everton,2024-10-22,H,Confirmaciï¿½ï¿½n de penal por VAR,86',AGA
+Racing,West Ham,2024-12-01,A,Penal no cobrado por falta,61',AGAINST
+River Plate,Chelsea,2024-08-02,A,VAR confirma gol legï¿½ï¿½timo,53',AGA
+Manchester City,Independiente,2024-04-26,H,VAR confirma gol legï¿½ï¿½timo,44',F
+Independiente,Leeds United,2023-11-24,A,Tarjeta roja por agresiï¿½ï¿½n,55',F
+Independiente,Racing,2024-05-19,A,VAR determina simulaciï¿½ï¿½n,13',F
+Leeds United,Boca Juniors,2024-09-05,H,Penal no cobrado por falta,22',AGAINST
+Independiente,Manchester United,2024-01-08,H,Tarjeta roja por agresiï¿½ï¿½n,49',F
+Chelsea,Tottenham,2025-02-23,A,VAR confirma gol legï¿½ï¿½timo,90',AGA
+San Lorenzo,Newell's,2025-04-11,H,Roja directa confirmada,70',FAVOR
+Manchester City,River Plate,2023-06-11,A,VAR determina simulaciï¿½ï¿½n,68',F
+Estudiantes,Racing,2025-01-15,H,Gol anulado por fuera de juego,77',FAVOR
+Manchester United,Arsenal,2025-02-20,H,Roja directa confirmada,32',FAVOR
+Brighton,West Ham,2023-10-08,A,Confirmaciï¿½ï¿½n de penal por VAR,27',AGA
+Vï¿½ï¿½lez,San Lorenzo,2024-11-29,A,VAR anula penal dudoso,41',F
+Lanï¿½ï¿½s,West Ham,2024-04-29,H,Gol anulado por fuera de juego,69',F
+Arsenal,Liverpool,2024-02-25,H,Penal no cobrado por falta,48',AGAINST
+Estudiantes,Manchester City,2024-01-07,H,Gol convalidado tras VAR,71',AGAINST
+Liverpool,San Lorenzo,2023-10-04,A,Gol anulado por fuera de juego,14',FAVOR
+Lanï¿½ï¿½s,Vï¿½ï¿½lez,2023-11-20,A,Penal no cobrado por falta,88'
+Chelsea,River Plate,2025-01-19,H,Gol convalidado tras VAR,55',AGAINST
+Huracï¿½ï¿½n,San Lorenzo,2024-02-22,A,Tarjeta roja por agresiï¿½ï¿½n,57'
+Liverpool,Racing,2023-08-24,H,VAR determina simulaciï¿½ï¿½n,5',AGA
+Arsenal,Chelsea,2023-08-17,H,Penal por mano en el ï¿½ï¿½rea,40',AGA
+Manchester City,Arsenal,2024-03-27,H,Gol convalidado tras VAR,32',FAVOR
+Estudiantes,Chelsea,2023-08-20,H,Penal no cobrado por falta,21',FAVOR
+Manchester City,Huracï¿½ï¿½n,2024-03-10,A,VAR confirma gol legï¿½ï¿½timo,8
+River Plate,Manchester United,2025-03-25,H,VAR anula penal dudoso,29',FAVOR
+Everton,Liverpool,2024-02-28,A,Penal no cobrado por falta,29',FAVOR
+Brighton,Manchester City,2024-09-16,A,Gol anulado por fuera de juego,36',AGAINST
+Brighton,Leeds United,2023-12-28,A,Penal por mano en el ï¿½ï¿½rea,15',AGA
+San Lorenzo,River Plate,2025-02-21,H,Roja directa confirmada,56',AGAINST
+Tottenham,Manchester United,2023-07-09,H,VAR confirma gol legï¿½ï¿½timo,74',F
+Vï¿½ï¿½lez,Boca Juniors,2024-12-23,H,Gol anulado tras revisiï¿½ï¿½n,5
+Tottenham,Manchester City,2024-05-27,H,No intervenciï¿½ï¿½n del VAR ante posible falta,39',AGA
+Tottenham,Arsenal,2024-07-26,A,VAR determina simulaciï¿½ï¿½n,17',F
+Vï¿½ï¿½lez,Huracï¿½ï¿½n,2023-09-10,A,VAR confirma gol legï¿½ï¿½ti
+Independiente,Chelsea,2025-05-22,A,VAR anula penal dudoso,57',AGAINST
+Leeds United,Tottenham,2024-03-26,H,Gol convalidado tras VAR,11',AGAINST
+West Ham,Manchester City,2023-08-06,H,Penal no cobrado por falta,87',AGAINST
+Independiente,Huracï¿½ï¿½n,2024-08-07,H,Penal por mano en el ï¿½ï¿½rea,32'
+Liverpool,Tottenham,2024-01-19,A,Gol convalidado tras VAR,74',FAVOR
+Brighton,Tottenham,2025-03-11,A,Penal no cobrado por falta,19',FAVOR
+Liverpool,Chelsea,2024-10-06,H,Tarjeta roja por agresiï¿½ï¿½n,90',AGA
+Independiente,San Lorenzo,2024-09-28,A,Tarjeta roja por agresiï¿½ï¿½n,60',AGA
+Everton,Brighton,2025-04-23,A,VAR determina simulaciï¿½ï¿½n,58',F
+Everton,Chelsea,2025-04-05,A,Penal no cobrado por falta,82',AGAINST
+Leeds United,Tottenham,2024-03-12,H,Confirmaciï¿½ï¿½n de penal por VAR,57',F
+Manchester United,Estudiantes,2024-08-27,A,Gol anulado tras revisiï¿½ï¿½n,70',F
+Independiente,Manchester United,2023-11-02,H,No intervenciï¿½ï¿½n del VAR ante posible falta,28',F
+Huracï¿½ï¿½n,Leeds United,2024-12-04,A,VAR confirma gol legï¿½ï¿½timo,
+Brighton,West Ham,2023-07-30,H,Roja directa confirmada,49',AGAINST
+Huracï¿½ï¿½n,Manchester City,2023-07-11,A,VAR confirma gol legï¿½ï¿½timo,6
+San Lorenzo,Chelsea,2024-10-31,A,Penal por mano en el ï¿½ï¿½rea,50',AGA
+Brighton,Huracï¿½ï¿½n,2023-11-30,A,Tarjeta roja por agresiï¿½ï¿½n,8
+West Ham,Leeds United,2025-01-26,H,Gol anulado por fuera de juego,83',AGAINST
+Newell's,Huracï¿½ï¿½n,2024-01-16,H,Confirmaciï¿½ï¿½n de penal por VAR,49'
+Huracï¿½ï¿½n,Liverpool,2023-08-06,A,Confirmaciï¿½ï¿½n de penal por VAR,54'
+Everton,Boca Juniors,2025-03-31,H,Gol anulado tras revisiï¿½ï¿½n,29',F
+Manchester City,Boca Juniors,2023-12-03,H,Penal no cobrado por falta,3',FAVOR
+Newell's,Independiente,2025-04-09,H,VAR anula penal dudoso,90',AGAINST
+Arsenal,Independiente,2023-08-23,H,Confirmaciï¿½ï¿½n de penal por VAR,14',F
+West Ham,Arsenal,2024-03-27,A,No intervenciï¿½ï¿½n del VAR ante posible falta,26',F
+Manchester United,Independiente,2024-01-07,A,Gol convalidado tras VAR,77',FAVOR
+West Ham,River Plate,2024-05-23,A,VAR determina simulaciï¿½ï¿½n,55',AGA
+Huracï¿½ï¿½n,Boca Juniors,2024-10-11,A,VAR anula penal dudoso,14',AGA
+Everton,San Lorenzo,2025-03-14,A,Tarjeta roja por agresiï¿½ï¿½n,67',AGA
+Leeds United,Tottenham,2024-03-15,A,VAR confirma gol legï¿½ï¿½timo,76',AGA
+Independiente,Racing,2023-10-10,A,VAR anula penal dudoso,32',AGAINST
+Brighton,Manchester City,2024-03-19,H,VAR anula penal dudoso,42',FAVOR
+Huracï¿½ï¿½n,Lanï¿½ï¿½s,2024-03-07,A,Confirmaciï¿½ï¿½n de penal por VAR
+Leeds United,Vï¿½ï¿½lez,2023-11-15,H,Penal no cobrado por falta,53',AGA
+Manchester United,Brighton,2024-11-07,A,VAR anula penal dudoso,3',FAVOR
+Vï¿½ï¿½lez,Estudiantes,2023-12-30,A,Gol convalidado tras VAR,75',AGA
+Estudiantes,Arsenal,2024-12-02,A,No intervenciï¿½ï¿½n del VAR ante posible falta,71',AGA
+Newell's,Lanï¿½ï¿½s,2025-06-02,A,Confirmaciï¿½ï¿½n de penal por VAR,3
+Tottenham,Independiente,2024-11-17,H,Penal no cobrado por falta,28',AGAINST
+Lanï¿½ï¿½s,Everton,2024-10-21,A,Gol anulado por fuera de juego,25',AGA
+Racing,Manchester City,2023-07-31,H,No intervenciï¿½ï¿½n del VAR ante posible falta,69',F
+Boca Juniors,Leeds United,2024-09-21,A,No intervenciï¿½ï¿½n del VAR ante posible falta,17',AGA
+Boca Juniors,West Ham,2024-10-11,A,VAR anula penal dudoso,62',AGAINST
+Boca Juniors,Lanï¿½ï¿½s,2023-10-16,A,Gol anulado por fuera de juego,9',AGA
+Lanï¿½ï¿½s,River Plate,2024-07-24,H,Tarjeta roja por agresiï¿½ï¿½n,73'
+Independiente,San Lorenzo,2024-12-23,A,Roja directa confirmada,77',FAVOR
+Brighton,Chelsea,2023-12-13,A,Confirmaciï¿½ï¿½n de penal por VAR,76',AGA
+Lanï¿½ï¿½s,River Plate,2023-10-10,H,Penal no cobrado por falta,81',F
+River Plate,Vï¿½ï¿½lez,2024-05-30,H,Tarjeta roja por agresiï¿½ï¿½n,7
+Vï¿½ï¿½lez,Tottenham,2024-03-26,A,Confirmaciï¿½ï¿½n de penal por VAR,
+San Lorenzo,Tottenham,2024-01-01,H,Gol convalidado tras VAR,30',AGAINST
+West Ham,Vï¿½ï¿½lez,2025-05-24,A,Gol anulado por fuera de juego,70',F
+Chelsea,San Lorenzo,2024-10-15,H,Penal por mano en el ï¿½ï¿½rea,22',AGA
+West Ham,Lanï¿½ï¿½s,2024-11-21,A,Gol anulado por fuera de juego,60',AGA
+Chelsea,Everton,2024-08-11,A,VAR anula penal dudoso,11',FAVOR
+Tottenham,Estudiantes,2023-11-23,H,Gol anulado por fuera de juego,30',FAVOR
+Chelsea,West Ham,2024-11-18,H,Tarjeta roja por agresiï¿½ï¿½n,61',AGA
+Arsenal,West Ham,2024-02-12,A,Gol convalidado tras VAR,63',FAVOR
+Vï¿½ï¿½lez,Liverpool,2025-03-21,A,Gol convalidado tras VAR,14',F
+Newell's,Manchester City,2025-01-22,A,VAR determina simulaciï¿½ï¿½n,5',AGA
+San Lorenzo,Liverpool,2025-01-28,H,VAR confirma gol legï¿½ï¿½timo,66',F
+Leeds United,Chelsea,2023-07-19,A,Penal por mano en el ï¿½ï¿½rea,25',AGA
+Everton,Chelsea,2023-11-30,H,Penal no cobrado por falta,35',FAVOR
+Everton,Tottenham,2025-03-05,H,Penal por mano en el ï¿½ï¿½rea,81',F
+Chelsea,Leeds United,2023-06-30,H,VAR determina simulaciï¿½ï¿½n,53',F
+River Plate,Tottenham,2025-02-20,H,Gol convalidado tras VAR,20',AGAINST
+Chelsea,Everton,2024-02-06,A,VAR confirma gol legï¿½ï¿½timo,62',AGA
+Estudiantes,San Lorenzo,2024-04-12,A,Penal no cobrado por falta,77',FAVOR
+Chelsea,Manchester United,2023-12-30,A,VAR determina simulaciï¿½ï¿½n,35',F
+San Lorenzo,West Ham,2023-07-27,A,Tarjeta roja por agresiï¿½ï¿½n,58',AGA
+Estudiantes,Leeds United,2023-11-16,A,VAR anula penal dudoso,42',FAVOR
+Manchester United,West Ham,2025-05-15,A,Penal no cobrado por falta,53',FAVOR
+Newell's,Manchester United,2024-08-19,A,Gol convalidado tras VAR,84',FAVOR
+Boca Juniors,Huracï¿½ï¿½n,2025-04-16,A,Gol anulado por fuera de juego,57',F
+Everton,Boca Juniors,2024-12-14,H,VAR confirma gol legï¿½ï¿½timo,84',F
+San Lorenzo,Liverpool,2024-02-05,A,Gol convalidado tras VAR,11',AGAINST
+Leeds United,Arsenal,2023-11-18,A,Gol convalidado tras VAR,63',FAVOR
+Manchester United,Lanï¿½ï¿½s,2024-10-27,H,No intervenciï¿½ï¿½n del VAR ante posible falta,12'
+Liverpool,Tottenham,2024-06-27,H,No intervenciï¿½ï¿½n del VAR ante posible falta,39',F
+Boca Juniors,Manchester City,2024-04-08,A,Gol anulado tras revisiï¿½ï¿½n,56',F
+Vï¿½ï¿½lez,West Ham,2025-04-23,H,Tarjeta roja por agresiï¿½ï¿½n,2
+Brighton,Newell's,2025-05-16,A,Roja directa confirmada,19',FAVOR
+San Lorenzo,Tottenham,2024-10-17,A,Gol convalidado tras VAR,2',AGAINST
+Leeds United,Huracï¿½ï¿½n,2024-05-27,H,VAR anula penal dudoso,45',AGA
+Brighton,Estudiantes,2023-09-24,A,Confirmaciï¿½ï¿½n de penal por VAR,26',AGA
+Liverpool,Newell's,2023-12-28,A,Roja directa confirmada,46',AGAINST
+Chelsea,Boca Juniors,2023-09-22,A,Confirmaciï¿½ï¿½n de penal por VAR,2',F
+Everton,Lanï¿½ï¿½s,2023-12-14,H,Roja directa confirmada,46',F
+West Ham,Estudiantes,2025-01-04,H,Gol convalidado tras VAR,13',FAVOR
+Newell's,River Plate,2024-08-15,A,No intervenciï¿½ï¿½n del VAR ante posible falta,17',F
+Tottenham,Manchester United,2024-07-28,H,Penal no cobrado por falta,17',AGAINST
+Chelsea,Huracï¿½ï¿½n,2023-12-27,A,VAR anula penal dudoso,38',AGA
+Everton,Racing,2025-01-06,H,Penal no cobrado por falta,87',AGAINST
+Leeds United,Liverpool,2024-09-02,H,VAR confirma gol legï¿½ï¿½timo,2',AGA
+Everton,Liverpool,2024-05-03,A,Roja directa confirmada,49',AGAINST
+Independiente,Brighton,2025-05-03,H,Roja directa confirmada,72',AGAINST
+Manchester United,Racing,2024-09-01,A,No intervenciï¿½ï¿½n del VAR ante posible falta,39',AGA
+Boca Juniors,Racing,2024-04-11,A,VAR anula penal dudoso,15',FAVOR
+Estudiantes,San Lorenzo,2024-03-13,A,VAR anula penal dudoso,48',AGAINST
+Arsenal,Chelsea,2023-11-23,H,VAR anula penal dudoso,79',AGAINST
+Chelsea,River Plate,2023-09-21,A,Penal no cobrado por falta,57',AGAINST
+Tottenham,Independiente,2024-07-05,A,VAR determina simulaciï¿½ï¿½n,83',AGA
+San Lorenzo,Newell's,2024-06-23,H,VAR anula penal dudoso,12',FAVOR
+West Ham,Boca Juniors,2023-08-15,H,Gol anulado tras revisiï¿½ï¿½n,32',F
+Manchester United,Racing,2025-01-13,H,Roja directa confirmada,28',FAVOR
+Racing,Boca Juniors,2023-07-12,A,Tarjeta roja por agresiï¿½ï¿½n,17',AGA
+Liverpool,Boca Juniors,2025-04-04,H,Penal por mano en el ï¿½ï¿½rea,46',F
+Manchester City,Huracï¿½ï¿½n,2023-08-30,A,Penal por mano en el ï¿½ï¿½rea,17'
+Liverpool,Brighton,2023-10-02,A,Gol anulado tras revisiï¿½ï¿½n,66',F
+Independiente,River Plate,2024-10-05,A,VAR anula penal dudoso,83',FAVOR
+Newell's,Manchester United,2023-10-08,A,Gol convalidado tras VAR,14',AGAINST
+Everton,Racing,2025-02-10,H,Gol anulado tras revisiï¿½ï¿½n,78',F
+San Lorenzo,West Ham,2024-11-15,A,VAR confirma gol legï¿½ï¿½timo,77',AGA
+Lanï¿½ï¿½s,Chelsea,2024-04-28,H,No intervenciï¿½ï¿½n del VAR ante posible falta,1
+Independiente,Chelsea,2024-09-11,A,VAR anula penal dudoso,52',AGAINST
+Tottenham,Manchester United,2023-07-25,A,Gol convalidado tras VAR,33',AGAINST
+Everton,Racing,2024-03-30,H,Gol anulado por fuera de juego,12',AGAINST
+Huracï¿½ï¿½n,San Lorenzo,2024-03-28,H,Roja directa confirmada,72',AGA
+Brighton,Liverpool,2024-09-10,A,No intervenciï¿½ï¿½n del VAR ante posible falta,7',AGA
+Tottenham,Independiente,2024-06-03,H,Tarjeta roja por agresiï¿½ï¿½n,85',AGA
+River Plate,Arsenal,2024-07-20,A,Gol anulado por fuera de juego,36',FAVOR
+Leeds United,Everton,2023-12-18,H,Roja directa confirmada,85',AGAINST
+San Lorenzo,Manchester City,2024-08-08,A,Gol anulado tras revisiï¿½ï¿½n,1',F
+West Ham,Arsenal,2025-04-04,H,Tarjeta roja por agresiï¿½ï¿½n,82',F
+Estudiantes,Vï¿½ï¿½lez,2023-06-14,A,VAR confirma gol legï¿½ï¿½timo,59'
+San Lorenzo,Liverpool,2024-11-15,H,Penal por mano en el ï¿½ï¿½rea,20',F
+Manchester City,Racing,2024-12-16,A,VAR anula penal dudoso,85',AGAINST
+Newell's,Chelsea,2023-09-02,A,Penal no cobrado por falta,66',FAVOR
+River Plate,Manchester City,2024-11-16,A,VAR determina simulaciï¿½ï¿½n,86',AGA
+Vï¿½ï¿½lez,River Plate,2025-04-23,H,Penal no cobrado por falta,39',F
+Chelsea,Lanï¿½ï¿½s,2024-07-27,A,Gol anulado por fuera de juego,1',AGA
+Arsenal,San Lorenzo,2025-01-09,A,VAR determina simulaciï¿½ï¿½n,30',AGA
+Boca Juniors,Chelsea,2023-12-30,H,VAR anula penal dudoso,10',AGAINST
+West Ham,Arsenal,2025-01-22,A,Confirmaciï¿½ï¿½n de penal por VAR,15',AGA
+Huracï¿½ï¿½n,Vï¿½ï¿½lez,2024-10-15,A,No intervenciï¿½ï¿½n del VAR ante posible fal
+River Plate,Estudiantes,2024-02-25,A,Roja directa confirmada,52',FAVOR
+San Lorenzo,Liverpool,2023-08-31,H,Gol anulado tras revisiï¿½ï¿½n,22',F
+Liverpool,Everton,2024-01-19,H,Gol anulado tras revisiï¿½ï¿½n,45',F
+Racing,Lanï¿½ï¿½s,2024-05-08,H,Tarjeta roja por agresiï¿½ï¿½n,7
+Liverpool,Huracï¿½ï¿½n,2023-10-06,A,VAR anula penal dudoso,73',AGA
+West Ham,Manchester City,2024-05-23,A,Tarjeta roja por agresiï¿½ï¿½n,57',F
+San Lorenzo,Lanï¿½ï¿½s,2023-06-08,H,Gol anulado tras revisiï¿½ï¿½n,6
+Newell's,River Plate,2024-12-17,H,Gol anulado tras revisiï¿½ï¿½n,37',F
+Liverpool,Everton,2025-04-16,A,VAR anula penal dudoso,75',FAVOR
+Lanï¿½ï¿½s,Vï¿½ï¿½lez,2024-12-15,A,Roja directa confirmada,6
+Everton,Independiente,2023-12-27,A,No intervenciï¿½ï¿½n del VAR ante posible falta,11',F
+Newell's,Tottenham,2024-06-28,H,Gol anulado tras revisiï¿½ï¿½n,48',AGA
+Huracï¿½ï¿½n,River Plate,2025-01-17,A,Gol anulado por fuera de juego,43',F
+Brighton,Lanï¿½ï¿½s,2023-10-22,A,No intervenciï¿½ï¿½n del VAR ante posible falta,8
+Lanï¿½ï¿½s,San Lorenzo,2024-07-04,A,Confirmaciï¿½ï¿½n de penal por VAR,84'
+River Plate,Manchester City,2025-05-14,A,Gol convalidado tras VAR,43',FAVOR
+Leeds United,Racing,2023-08-27,A,VAR determina simulaciï¿½ï¿½n,47',F
+Racing,Newell's,2025-04-12,A,VAR anula penal dudoso,25',FAVOR
+Arsenal,Racing,2024-10-03,A,Gol anulado por fuera de juego,65',FAVOR
+West Ham,San Lorenzo,2024-01-23,A,Tarjeta roja por agresiï¿½ï¿½n,21',F
+West Ham,Huracï¿½ï¿½n,2025-03-20,A,Penal por mano en el ï¿½ï¿½rea,53'
+Manchester United,Tottenham,2024-10-14,A,No intervenciï¿½ï¿½n del VAR ante posible falta,58',F
+Chelsea,Brighton,2024-07-04,H,Gol anulado tras revisiï¿½ï¿½n,87',AGA
+San Lorenzo,Manchester United,2024-09-21,A,Tarjeta roja por agresiï¿½ï¿½n,26',F
+Manchester City,Brighton,2023-11-07,A,VAR determina simulaciï¿½ï¿½n,14',F
+Racing,Lanï¿½ï¿½s,2023-10-02,A,VAR determina simulaciï¿½ï¿½n,19'
+Independiente,Tottenham,2024-03-22,A,Penal por mano en el ï¿½ï¿½rea,54',F
+Huracï¿½ï¿½n,Estudiantes,2025-01-18,A,Gol anulado por fuera de juego,48',F
+River Plate,Liverpool,2023-10-09,H,Tarjeta roja por agresiï¿½ï¿½n,5',AGA
+Everton,San Lorenzo,2024-07-28,A,VAR anula penal dudoso,79',FAVOR
+Manchester City,Estudiantes,2025-01-30,H,Tarjeta roja por agresiï¿½ï¿½n,71',AGA
+San Lorenzo,Estudiantes,2025-05-22,A,Gol anulado por fuera de juego,7',FAVOR
+Lanï¿½ï¿½s,Tottenham,2024-07-21,H,Gol anulado por fuera de juego,64',F
+West Ham,Newell's,2025-05-19,H,Confirmaciï¿½ï¿½n de penal por VAR,55',F
+Manchester United,West Ham,2023-06-06,A,Tarjeta roja por agresiï¿½ï¿½n,86',F
+Tottenham,Racing,2024-09-13,H,VAR confirma gol legï¿½ï¿½timo,61',F
+Tottenham,Estudiantes,2024-02-12,H,Gol anulado tras revisiï¿½ï¿½n,9',AGA
+River Plate,West Ham,2024-06-19,A,Tarjeta roja por agresiï¿½ï¿½n,6',AGA
+Arsenal,Tottenham,2023-06-21,A,Gol convalidado tras VAR,24',FAVOR
+Newell's,River Plate,2023-08-31,A,Penal no cobrado por falta,6',FAVOR
+Tottenham,Lanï¿½ï¿½s,2025-05-27,A,VAR determina simulaciï¿½ï¿½n,61'
+Independiente,Manchester City,2024-03-13,A,Penal por mano en el ï¿½ï¿½rea,84',AGA
+Huracï¿½ï¿½n,Chelsea,2025-04-18,A,No intervenciï¿½ï¿½n del VAR ante posible falta,57'
+Racing,Brighton,2025-03-12,A,Gol anulado tras revisiï¿½ï¿½n,67',AGA
+Brighton,Racing,2025-02-21,A,Roja directa confirmada,24',AGAINST
+River Plate,Liverpool,2024-01-30,A,Confirmaciï¿½ï¿½n de penal por VAR,58',AGA
+Newell's,Arsenal,2023-12-08,A,Penal por mano en el ï¿½ï¿½rea,46',AGA
+Boca Juniors,Independiente,2023-07-20,A,Gol anulado tras revisiï¿½ï¿½n,66',F
+Arsenal,Tottenham,2023-12-10,H,Tarjeta roja por agresiï¿½ï¿½n,9',F
+Tottenham,Liverpool,2025-04-17,A,Roja directa confirmada,5',FAVOR
+Tottenham,Liverpool,2024-08-19,A,Gol anulado por fuera de juego,74',FAVOR
+Brighton,Manchester City,2023-08-06,A,Penal no cobrado por falta,15',FAVOR
+Everton,Brighton,2023-08-11,A,VAR determina simulaciï¿½ï¿½n,16',AGA
+Everton,Vï¿½ï¿½lez,2024-12-25,A,No intervenciï¿½ï¿½n del VAR ante posible falta,6
+River Plate,Tottenham,2024-06-17,H,No intervenciï¿½ï¿½n del VAR ante posible falta,57',F
+Tottenham,Liverpool,2025-02-28,H,VAR determina simulaciï¿½ï¿½n,70',AGA
+Arsenal,Huracï¿½ï¿½n,2023-07-29,A,VAR determina simulaciï¿½ï¿½n,2
+Arsenal,Newell's,2025-01-16,A,Penal por mano en el ï¿½ï¿½rea,47',AGA
+Estudiantes,San Lorenzo,2024-07-23,H,Gol anulado por fuera de juego,40',AGAINST
+Everton,Brighton,2025-01-20,A,VAR confirma gol legï¿½ï¿½timo,74',F
+Huracï¿½ï¿½n,Racing,2023-09-11,A,VAR anula penal dudoso,88',AGA
+Estudiantes,West Ham,2023-09-13,H,Tarjeta roja por agresiï¿½ï¿½n,56',F
+Leeds United,San Lorenzo,2024-10-30,A,Tarjeta roja por agresiï¿½ï¿½n,21',AGA
+Manchester United,Liverpool,2024-06-09,A,Gol anulado por fuera de juego,33',FAVOR
+Leeds United,Estudiantes,2024-08-06,H,Gol convalidado tras VAR,39',FAVOR
+Arsenal,West Ham,2023-10-12,H,Tarjeta roja por agresiï¿½ï¿½n,85',AGA
+West Ham,River Plate,2023-12-28,H,Gol anulado por fuera de juego,6',AGAINST
+West Ham,Manchester United,2024-07-19,H,VAR anula penal dudoso,81',AGAINST
+Chelsea,Brighton,2025-04-13,H,Gol convalidado tras VAR,52',AGAINST
+Boca Juniors,Vï¿½ï¿½lez,2024-09-19,A,VAR confirma gol legï¿½ï¿½timo,62'
+Lanï¿½ï¿½s,San Lorenzo,2024-04-29,A,No intervenciï¿½ï¿½n del VAR ante posible falta,41'
+Arsenal,Liverpool,2023-11-17,H,Gol anulado tras revisiï¿½ï¿½n,31',AGA
+Newell's,Estudiantes,2025-05-27,H,Gol anulado por fuera de juego,7',AGAINST
+West Ham,Manchester United,2024-07-28,H,Tarjeta roja por agresiï¿½ï¿½n,42',AGA
+Racing,Brighton,2025-01-12,A,VAR anula penal dudoso,40',AGAINST
+Vï¿½ï¿½lez,Everton,2024-12-23,A,Penal no cobrado por falta,28',AGA
+San Lorenzo,Brighton,2024-11-22,A,Confirmaciï¿½ï¿½n de penal por VAR,69',F
+Brighton,San Lorenzo,2023-11-09,A,No intervenciï¿½ï¿½n del VAR ante posible falta,47',AGA
+Vï¿½ï¿½lez,River Plate,2024-12-10,H,Gol anulado tras revisiï¿½ï¿½n,71'
+Estudiantes,Tottenham,2024-02-03,A,Roja directa confirmada,88',FAVOR
+River Plate,Manchester United,2024-04-10,A,Gol anulado tras revisiï¿½ï¿½n,72',AGA
+Manchester United,Everton,2024-11-08,A,VAR determina simulaciï¿½ï¿½n,6',F
+Huracï¿½ï¿½n,Brighton,2024-10-22,A,Tarjeta roja por agresiï¿½ï¿½n,7
+Lanï¿½ï¿½s,Liverpool,2024-03-22,H,VAR confirma gol legï¿½ï¿½timo,79'
+Leeds United,Brighton,2024-05-11,A,No intervenciï¿½ï¿½n del VAR ante posible falta,73',AGA
+Boca Juniors,Arsenal,2025-05-04,A,Gol convalidado tras VAR,15',AGAINST
+Manchester City,Brighton,2024-07-12,A,Gol convalidado tras VAR,75',FAVOR
+West Ham,Tottenham,2024-05-21,H,VAR determina simulaciï¿½ï¿½n,81',AGA
+Independiente,River Plate,2023-09-07,H,Penal no cobrado por falta,3',AGAINST
+Racing,Chelsea,2023-12-15,H,VAR confirma gol legï¿½ï¿½timo,65',AGA
+Manchester City,San Lorenzo,2023-11-27,H,VAR determina simulaciï¿½ï¿½n,42',AGA
+Tottenham,Huracï¿½ï¿½n,2023-07-25,A,VAR determina simulaciï¿½ï¿½n,44'
+Chelsea,Brighton,2024-02-23,H,Penal no cobrado por falta,36',AGAINST
+San Lorenzo,Manchester City,2023-06-22,H,No intervenciï¿½ï¿½n del VAR ante posible falta,63',AGA
+Estudiantes,Lanï¿½ï¿½s,2024-09-04,A,Gol anulado por fuera de juego,74',AGA
+Brighton,Liverpool,2024-08-09,H,Confirmaciï¿½ï¿½n de penal por VAR,6',AGA
+Liverpool,Arsenal,2023-12-01,A,Gol convalidado tras VAR,33',AGAINST
+Estudiantes,Lanï¿½ï¿½s,2024-09-05,A,Tarjeta roja por agresiï¿½ï¿½n,1
+Estudiantes,Newell's,2023-11-24,H,Penal por mano en el ï¿½ï¿½rea,13',AGA
+Newell's,Independiente,2023-06-11,H,Penal por mano en el ï¿½ï¿½rea,71',F
+Newell's,Brighton,2023-07-31,H,Confirmaciï¿½ï¿½n de penal por VAR,42',AGA
+Liverpool,West Ham,2024-12-06,H,VAR determina simulaciï¿½ï¿½n,5',F
+Racing,River Plate,2024-10-08,A,VAR anula penal dudoso,24',AGAINST
+Manchester City,Lanï¿½ï¿½s,2023-07-21,H,Gol anulado tras revisiï¿½ï¿½n,37'
+Leeds United,Brighton,2023-11-30,A,Tarjeta roja por agresiï¿½ï¿½n,65',AGA
+River Plate,Liverpool,2023-07-28,H,No intervenciï¿½ï¿½n del VAR ante posible falta,59',AGA
+Manchester City,Liverpool,2025-05-09,A,Roja directa confirmada,87',FAVOR
+Vï¿½ï¿½lez,Chelsea,2023-06-30,A,Gol anulado por fuera de juego,52',F
+Racing,Brighton,2025-04-03,A,Penal no cobrado por falta,1',AGAINST
+Newell's,Lanï¿½ï¿½s,2024-02-17,A,Confirmaciï¿½ï¿½n de penal por VAR,7
+Huracï¿½ï¿½n,Estudiantes,2023-07-31,H,Gol convalidado tras VAR,16',AGA
+Vï¿½ï¿½lez,Everton,2024-07-09,A,No intervenciï¿½ï¿½n del VAR ante posible falta,16'
+Independiente,Estudiantes,2023-12-07,H,VAR anula penal dudoso,20',AGAINST
+West Ham,Liverpool,2024-01-08,A,No intervenciï¿½ï¿½n del VAR ante posible falta,71',AGA
+Manchester United,Newell's,2024-11-06,H,VAR determina simulaciï¿½ï¿½n,58',AGA
+Lanï¿½ï¿½s,Independiente,2024-06-17,H,VAR determina simulaciï¿½ï¿½n,6
+Arsenal,Huracï¿½ï¿½n,2023-11-19,A,VAR determina simulaciï¿½ï¿½n,5
+West Ham,Tottenham,2024-07-28,H,VAR determina simulaciï¿½ï¿½n,58',F
+Estudiantes,Chelsea,2023-09-16,A,Roja directa confirmada,8',AGAINST
+Chelsea,Boca Juniors,2024-12-18,A,Confirmaciï¿½ï¿½n de penal por VAR,1',F
+Manchester City,Chelsea,2025-06-01,A,No intervenciï¿½ï¿½n del VAR ante posible falta,9',F
+Liverpool,Brighton,2025-04-21,H,Confirmaciï¿½ï¿½n de penal por VAR,53',F
+Brighton,Liverpool,2024-08-22,A,VAR anula penal dudoso,49',AGAINST
+Estudiantes,San Lorenzo,2024-08-26,A,Gol anulado por fuera de juego,23',AGAINST
+Manchester United,Boca Juniors,2024-06-07,H,Confirmaciï¿½ï¿½n de penal por VAR,60',AGA
+Manchester United,Newell's,2023-12-11,A,Gol anulado tras revisiï¿½ï¿½n,20',AGA
+River Plate,Racing,2025-02-04,A,Roja directa confirmada,3',FAVOR
+River Plate,Racing,2024-06-07,A,Roja directa confirmada,87',FAVOR
+Boca Juniors,Manchester United,2025-02-22,A,Penal no cobrado por falta,70',FAVOR
+Manchester City,San Lorenzo,2024-04-17,A,Penal no cobrado por falta,74',AGAINST
+Tottenham,Newell's,2023-10-31,A,Tarjeta roja por agresiï¿½ï¿½n,85',F
+San Lorenzo,River Plate,2023-08-18,H,Gol convalidado tras VAR,87',AGAINST
+Manchester City,Arsenal,2023-08-20,A,VAR determina simulaciï¿½ï¿½n,41',AGA
+San Lorenzo,Manchester United,2024-10-29,H,VAR determina simulaciï¿½ï¿½n,61',F
+Chelsea,San Lorenzo,2024-05-05,A,Penal por mano en el ï¿½ï¿½rea,72',AGA
+Leeds United,Brighton,2024-03-07,H,VAR confirma gol legï¿½ï¿½timo,32',AGA
+River Plate,Tottenham,2024-04-30,A,Gol anulado por fuera de juego,69',FAVOR
+Vï¿½ï¿½lez,River Plate,2024-04-20,H,Penal no cobrado por falta,76',F
+Huracï¿½ï¿½n,Manchester City,2024-06-02,H,Penal no cobrado por falta,25',F
+Everton,Newell's,2025-04-06,H,VAR confirma gol legï¿½ï¿½timo,31',AGA
+Brighton,Chelsea,2024-12-23,A,Confirmaciï¿½ï¿½n de penal por VAR,34',AGA
+Everton,Chelsea,2023-07-18,H,No intervenciï¿½ï¿½n del VAR ante posible falta,61',AGA
+Tottenham,Manchester City,2024-11-10,A,Penal por mano en el ï¿½ï¿½rea,73',F
+Manchester City,Estudiantes,2024-10-25,A,Confirmaciï¿½ï¿½n de penal por VAR,20',F
+Vï¿½ï¿½lez,West Ham,2024-10-19,H,VAR anula penal dudoso,71',AGA
+Newell's,Brighton,2023-08-21,A,Tarjeta roja por agresiï¿½ï¿½n,46',F
+Estudiantes,Brighton,2023-07-23,H,VAR determina simulaciï¿½ï¿½n,83',F
+Liverpool,River Plate,2024-04-13,H,VAR confirma gol legï¿½ï¿½timo,18',F
+Racing,Boca Juniors,2024-12-22,H,VAR determina simulaciï¿½ï¿½n,59',AGA
+Lanï¿½ï¿½s,Brighton,2024-02-24,A,Penal por mano en el ï¿½ï¿½rea,1'
+Estudiantes,Lanï¿½ï¿½s,2025-02-16,A,Penal por mano en el ï¿½ï¿½rea,65'
+Arsenal,Independiente,2025-04-05,H,VAR determina simulaciï¿½ï¿½n,20',F
+Estudiantes,Lanï¿½ï¿½s,2023-08-29,A,Confirmaciï¿½ï¿½n de penal por VAR,5
+Vï¿½ï¿½lez,Tottenham,2023-12-16,H,No intervenciï¿½ï¿½n del VAR ante posible falta,29'
+Liverpool,River Plate,2023-11-01,H,VAR confirma gol legï¿½ï¿½timo,49',AGA
+Manchester City,Boca Juniors,2023-10-31,H,Gol anulado por fuera de juego,64',AGAINST
+Tottenham,West Ham,2024-07-26,H,VAR determina simulaciï¿½ï¿½n,6',F
+Lanï¿½ï¿½s,Brighton,2024-05-19,A,Penal por mano en el ï¿½ï¿½rea,10'
+West Ham,River Plate,2023-09-22,H,Gol anulado tras revisiï¿½ï¿½n,3',F
+Brighton,Racing,2024-04-28,A,Tarjeta roja por agresiï¿½ï¿½n,73',F
+Brighton,Leeds United,2023-10-26,A,VAR confirma gol legï¿½ï¿½timo,18',F
+Tottenham,River Plate,2024-01-08,H,VAR confirma gol legï¿½ï¿½timo,30',F
+Lanï¿½ï¿½s,Manchester United,2024-05-30,A,Penal por mano en el ï¿½ï¿½rea,82'
+Everton,Tottenham,2023-12-17,H,Gol anulado tras revisiï¿½ï¿½n,71',AGA
+Lanï¿½ï¿½s,Manchester United,2025-04-15,H,Roja directa confirmada,38',F
+Liverpool,Estudiantes,2025-05-23,H,VAR confirma gol legï¿½ï¿½timo,82',F
+Tottenham,Liverpool,2023-08-03,H,Gol anulado por fuera de juego,1',AGAINST
+San Lorenzo,Independiente,2024-05-15,H,Gol anulado por fuera de juego,24',AGAINST
+Estudiantes,Everton,2025-02-22,A,Gol anulado por fuera de juego,4',FAVOR
+River Plate,Liverpool,2025-04-05,A,Penal por mano en el ï¿½ï¿½rea,38',AGA
+River Plate,Leeds United,2025-03-31,H,Roja directa confirmada,67',FAVOR
+Arsenal,San Lorenzo,2024-08-06,A,Confirmaciï¿½ï¿½n de penal por VAR,35',AGA
+Racing,Chelsea,2023-08-21,A,VAR confirma gol legï¿½ï¿½timo,39',AGA
+Tottenham,Estudiantes,2023-07-15,H,No intervenciï¿½ï¿½n del VAR ante posible falta,81',AGA
+Manchester United,Tottenham,2024-10-24,H,Tarjeta roja por agresiï¿½ï¿½n,39',F
+Tottenham,Arsenal,2024-07-29,A,VAR anula penal dudoso,43',AGAINST
+West Ham,San Lorenzo,2025-03-16,A,Gol anulado tras revisiï¿½ï¿½n,78',F
+Racing,Manchester United,2023-06-17,A,Confirmaciï¿½ï¿½n de penal por VAR,89',AGA
+Manchester United,Manchester City,2023-08-17,A,Confirmaciï¿½ï¿½n de penal por VAR,51',AGA
+Lanï¿½ï¿½s,Vï¿½ï¿½lez,2025-05-25,H,Gol convalidado tras VAR,7
+Everton,Vï¿½ï¿½lez,2025-01-11,A,Confirmaciï¿½ï¿½n de penal por VAR,8
+Brighton,Tottenham,2025-03-26,H,Gol convalidado tras VAR,39',FAVOR
+Racing,Chelsea,2023-12-06,A,Gol anulado por fuera de juego,58',AGAINST
+Leeds United,Brighton,2023-10-13,A,VAR determina simulaciï¿½ï¿½n,5',AGA
+Leeds United,Racing,2024-04-16,H,Penal no cobrado por falta,85',AGAINST
+Lanï¿½ï¿½s,River Plate,2024-06-17,A,Gol anulado tras revisiï¿½ï¿½n,5
+San Lorenzo,Estudiantes,2024-06-13,H,VAR anula penal dudoso,48',AGAINST
+Lanï¿½ï¿½s,Everton,2023-11-19,H,Gol anulado tras revisiï¿½ï¿½n,4'
+Vï¿½ï¿½lez,Racing,2025-04-07,H,No intervenciï¿½ï¿½n del VAR ante posible falta,19'
+Newell's,Vï¿½ï¿½lez,2024-04-12,A,Gol anulado tras revisiï¿½ï¿½n,6
+Newell's,Liverpool,2025-05-06,H,Confirmaciï¿½ï¿½n de penal por VAR,6',F
+Huracï¿½ï¿½n,Independiente,2023-07-21,H,No intervenciï¿½ï¿½n del VAR ante posible falta,3
+Tottenham,Leeds United,2023-10-11,A,VAR anula penal dudoso,30',AGAINST
+Arsenal,Chelsea,2024-03-26,A,Penal por mano en el ï¿½ï¿½rea,79',F
+Vï¿½ï¿½lez,Manchester United,2023-06-07,H,No intervenciï¿½ï¿½n del VAR ante posible falta,2
+River Plate,West Ham,2024-04-04,H,VAR determina simulaciï¿½ï¿½n,24',AGA
+Newell's,Independiente,2023-12-28,A,Gol convalidado tras VAR,63',AGAINST
+West Ham,Arsenal,2025-05-25,H,Gol anulado tras revisiï¿½ï¿½n,46',AGA
+Chelsea,West Ham,2025-02-04,H,Gol convalidado tras VAR,18',AGAINST
+San Lorenzo,Independiente,2025-02-04,H,Gol anulado tras revisiï¿½ï¿½n,89',F
+Brighton,San Lorenzo,2024-05-24,A,VAR confirma gol legï¿½ï¿½timo,24',AGA
+Arsenal,Leeds United,2024-01-13,H,VAR anula penal dudoso,37',FAVOR
+Newell's,River Plate,2024-04-29,A,Penal por mano en el ï¿½ï¿½rea,63',F
+Vï¿½ï¿½lez,Leeds United,2024-11-28,A,VAR confirma gol legï¿½ï¿½timo,88'
+Newell's,Brighton,2024-12-24,H,Gol anulado por fuera de juego,73',FAVOR
+Manchester United,Lanï¿½ï¿½s,2025-02-03,H,Confirmaciï¿½ï¿½n de penal por VAR,29'
+Newell's,West Ham,2024-08-10,A,VAR determina simulaciï¿½ï¿½n,66',F
+Chelsea,Leeds United,2024-11-01,A,VAR determina simulaciï¿½ï¿½n,6',AGA
+Brighton,Independiente,2024-12-15,H,Confirmaciï¿½ï¿½n de penal por VAR,5',AGA
+River Plate,Tottenham,2024-06-18,H,Penal no cobrado por falta,27',AGAINST
+West Ham,Manchester United,2023-10-04,H,Roja directa confirmada,18',FAVOR
+Manchester City,West Ham,2023-10-31,A,VAR determina simulaciï¿½ï¿½n,36',F
+San Lorenzo,Manchester City,2024-01-22,A,VAR determina simulaciï¿½ï¿½n,87',F
+Vï¿½ï¿½lez,River Plate,2023-11-22,A,Gol convalidado tras VAR,17',F
+Huracï¿½ï¿½n,Estudiantes,2023-07-21,A,VAR anula penal dudoso,19',AGA
+Brighton,Chelsea,2024-08-28,H,Gol convalidado tras VAR,12',AGAINST
+Chelsea,Liverpool,2024-12-28,A,VAR anula penal dudoso,42',FAVOR
+Liverpool,Tottenham,2024-07-31,A,Gol anulado por fuera de juego,69',AGAINST
+Vï¿½ï¿½lez,Newell's,2023-07-23,A,Confirmaciï¿½ï¿½n de penal por VAR,42'
+Lanï¿½ï¿½s,San Lorenzo,2025-01-06,A,Gol anulado tras revisiï¿½ï¿½n,8
+Newell's,Boca Juniors,2024-02-04,H,Tarjeta roja por agresiï¿½ï¿½n,57',AGA
+Vï¿½ï¿½lez,Newell's,2023-07-20,H,Gol convalidado tras VAR,39',F
+Chelsea,Racing,2023-07-14,A,Confirmaciï¿½ï¿½n de penal por VAR,11',AGA
+Arsenal,River Plate,2024-09-01,A,Gol convalidado tras VAR,40',FAVOR
+River Plate,San Lorenzo,2024-06-10,H,Penal no cobrado por falta,62',FAVOR
+Independiente,Everton,2024-06-30,A,Penal por mano en el ï¿½ï¿½rea,2',AGA
+Brighton,San Lorenzo,2025-05-20,A,Gol anulado por fuera de juego,30',AGAINST
+River Plate,San Lorenzo,2025-03-29,A,Gol anulado tras revisiï¿½ï¿½n,39',F
+Racing,Huracï¿½ï¿½n,2024-07-22,H,VAR determina simulaciï¿½ï¿½n,7
+Arsenal,Tottenham,2023-10-06,A,No intervenciï¿½ï¿½n del VAR ante posible falta,28',F
+West Ham,Chelsea,2023-07-20,H,Gol anulado por fuera de juego,13',FAVOR
+West Ham,Arsenal,2024-07-04,A,VAR confirma gol legï¿½ï¿½timo,41',F
+River Plate,Estudiantes,2023-08-07,A,No intervenciï¿½ï¿½n del VAR ante posible falta,4',AGA
+Lanï¿½ï¿½s,Everton,2025-03-28,H,No intervenciï¿½ï¿½n del VAR ante posible falta,51'
+Manchester United,Brighton,2023-10-28,A,Gol anulado por fuera de juego,31',AGAINST
+Liverpool,Everton,2023-07-29,H,Gol anulado tras revisiï¿½ï¿½n,41',F
+Lanï¿½ï¿½s,Chelsea,2024-09-10,A,VAR determina simulaciï¿½ï¿½n,8
+Liverpool,Boca Juniors,2023-07-28,H,Penal por mano en el ï¿½ï¿½rea,34',F
+Boca Juniors,Manchester United,2024-11-11,A,Gol convalidado tras VAR,65',AGAINST
+Vï¿½ï¿½lez,Racing,2025-04-05,H,Confirmaciï¿½ï¿½n de penal por VAR,11'
+Independiente,Huracï¿½ï¿½n,2023-12-05,A,VAR confirma gol legï¿½ï¿½timo,7
+Vï¿½ï¿½lez,Estudiantes,2024-04-14,H,Penal no cobrado por falta,12',AGA
+Lanï¿½ï¿½s,River Plate,2023-09-07,A,Gol convalidado tras VAR,85',F
+Racing,Boca Juniors,2025-04-27,H,VAR anula penal dudoso,45',AGAINST
+Racing,Lanï¿½ï¿½s,2024-08-21,H,Penal por mano en el ï¿½ï¿½rea,43'
+River Plate,Lanï¿½ï¿½s,2023-12-14,H,VAR anula penal dudoso,59',AGA
+Lanï¿½ï¿½s,Huracï¿½ï¿½n,2024-08-28,A,Tarjeta roja por agresiï¿½ï¿
+Liverpool,Newell's,2024-09-09,H,Penal por mano en el ï¿½ï¿½rea,2',F
+Huracï¿½ï¿½n,Manchester United,2023-07-06,H,Tarjeta roja por agresiï¿½ï¿½n,5'
+Independiente,Chelsea,2024-09-29,A,Confirmaciï¿½ï¿½n de penal por VAR,10',AGA
+Boca Juniors,Vï¿½ï¿½lez,2023-08-08,H,VAR determina simulaciï¿½ï¿½n,6'
+Newell's,Manchester City,2024-04-26,A,Gol anulado tras revisiï¿½ï¿½n,12',AGA
+Independiente,Manchester City,2024-10-28,A,No intervenciï¿½ï¿½n del VAR ante posible falta,80',F
+Lanï¿½ï¿½s,Brighton,2024-09-01,H,No intervenciï¿½ï¿½n del VAR ante posible falta,7
+Vï¿½ï¿½lez,Boca Juniors,2024-08-18,H,VAR determina simulaciï¿½ï¿½n,4
+Manchester City,Manchester United,2024-07-16,A,Gol anulado por fuera de juego,27',FAVOR
+Boca Juniors,Huracï¿½ï¿½n,2024-02-06,A,Gol anulado por fuera de juego,6',F
+Leeds United,Manchester United,2025-06-01,A,VAR anula penal dudoso,11',FAVOR
+Brighton,Racing,2023-12-25,H,VAR confirma gol legï¿½ï¿½timo,85',F
+San Lorenzo,Liverpool,2023-11-11,A,No intervenciï¿½ï¿½n del VAR ante posible falta,42',AGA
+Independiente,Racing,2024-11-07,H,Tarjeta roja por agresiï¿½ï¿½n,75',F
+Racing,Tottenham,2024-12-13,A,Gol anulado tras revisiï¿½ï¿½n,53',F
+Manchester United,Tottenham,2024-02-05,A,VAR anula penal dudoso,34',FAVOR
+San Lorenzo,River Plate,2023-12-08,H,Gol anulado tras revisiï¿½ï¿½n,19',F
+Tottenham,Arsenal,2023-12-29,H,Gol convalidado tras VAR,39',AGAINST
+Arsenal,Boca Juniors,2024-04-08,A,VAR anula penal dudoso,72',FAVOR
+River Plate,Huracï¿½ï¿½n,2023-09-15,H,Penal por mano en el ï¿½ï¿½rea,
+Vï¿½ï¿½lez,Arsenal,2024-11-08,H,Roja directa confirmada,76',AGA
+Liverpool,Boca Juniors,2024-10-19,H,Penal no cobrado por falta,83',AGAINST
+Liverpool,Manchester City,2024-01-25,H,Penal por mano en el ï¿½ï¿½rea,60',F
+Lanï¿½ï¿½s,Chelsea,2024-05-26,A,VAR anula penal dudoso,4',AGA
+Arsenal,Liverpool,2024-02-06,H,Tarjeta roja por agresiï¿½ï¿½n,36',AGA
+Racing,River Plate,2025-05-27,H,Gol convalidado tras VAR,38',AGAINST
+Estudiantes,Brighton,2025-01-09,H,Gol anulado por fuera de juego,36',AGAINST
+Independiente,Everton,2025-06-01,H,Gol convalidado tras VAR,70',FAVOR
+Tottenham,Brighton,2023-08-01,A,Gol anulado tras revisiï¿½ï¿½n,73',AGA
+Racing,Boca Juniors,2023-06-13,A,Roja directa confirmada,29',FAVOR
+Chelsea,River Plate,2024-05-26,A,VAR determina simulaciï¿½ï¿½n,46',F
+Liverpool,Newell's,2024-09-30,H,Confirmaciï¿½ï¿½n de penal por VAR,69',F
+Manchester United,West Ham,2024-08-16,A,Gol anulado tras revisiï¿½ï¿½n,23',F
+Huracï¿½ï¿½n,Arsenal,2023-08-22,H,No intervenciï¿½ï¿½n del VAR ante posible falta,90'
+West Ham,San Lorenzo,2023-08-01,H,VAR anula penal dudoso,70',AGAINST
+Boca Juniors,Independiente,2024-07-27,H,Penal no cobrado por falta,78',FAVOR
+Newell's,Boca Juniors,2023-11-18,A,Roja directa confirmada,26',FAVOR
+Racing,Liverpool,2024-07-02,H,Penal por mano en el ï¿½ï¿½rea,19',F
+Leeds United,Liverpool,2023-12-28,H,Gol anulado tras revisiï¿½ï¿½n,85',AGA
+Tottenham,Lanï¿½ï¿½s,2023-09-16,A,Tarjeta roja por agresiï¿½ï¿½n,21'
+Everton,Manchester City,2025-05-30,H,No intervenciï¿½ï¿½n del VAR ante posible falta,72',AGA
+Lanï¿½ï¿½s,Huracï¿½ï¿½n,2024-03-03,A,Confirmaciï¿½ï¿½n de penal por VAR
+Boca Juniors,West Ham,2025-04-20,A,Roja directa confirmada,5',FAVOR
+West Ham,Newell's,2023-07-29,H,VAR anula penal dudoso,19',AGAINST
+Manchester United,Liverpool,2025-04-18,A,Tarjeta roja por agresiï¿½ï¿½n,82',F
+Tottenham,Chelsea,2023-12-12,H,Confirmaciï¿½ï¿½n de penal por VAR,27',F
+Tottenham,Estudiantes,2024-03-19,H,No intervenciï¿½ï¿½n del VAR ante posible falta,1',F
+Vï¿½ï¿½lez,Huracï¿½ï¿½n,2024-01-13,A,VAR anula penal dudoso,49'
+Liverpool,Brighton,2023-10-06,H,Tarjeta roja por agresiï¿½ï¿½n,58',F
+Manchester City,Lanï¿½ï¿½s,2024-05-11,H,Gol anulado tras revisiï¿½ï¿½n,3
+Racing,Manchester United,2025-03-14,H,No intervenciï¿½ï¿½n del VAR ante posible falta,10',F
+Lanï¿½ï¿½s,Brighton,2024-07-31,H,VAR confirma gol legï¿½ï¿½timo,8
+Brighton,Huracï¿½ï¿½n,2024-12-03,H,Gol anulado por fuera de juego,43',F
+Brighton,Leeds United,2024-01-26,A,Gol convalidado tras VAR,37',AGAINST
+Boca Juniors,Manchester United,2024-09-23,A,Tarjeta roja por agresiï¿½ï¿½n,7',AGA
+River Plate,Manchester City,2025-02-21,A,Penal no cobrado por falta,13',FAVOR
+San Lorenzo,Racing,2024-10-25,A,Gol anulado por fuera de juego,40',AGAINST
+San Lorenzo,Racing,2024-07-20,A,Tarjeta roja por agresiï¿½ï¿½n,48',AGA
+Newell's,River Plate,2023-06-12,A,VAR anula penal dudoso,60',AGAINST
+San Lorenzo,West Ham,2024-11-05,H,Tarjeta roja por agresiï¿½ï¿½n,90',F
+Huracï¿½ï¿½n,Leeds United,2025-03-01,A,Roja directa confirmada,30',F
+Leeds United,Manchester United,2024-08-09,A,Roja directa confirmada,31',AGAINST
+Vï¿½ï¿½lez,River Plate,2024-01-24,H,Gol anulado por fuera de juego,58',F
+Arsenal,Vï¿½ï¿½lez,2025-05-29,H,Tarjeta roja por agresiï¿½ï¿½n,6'
+Vï¿½ï¿½lez,Newell's,2024-11-02,H,Roja directa confirmada,34',AGA
+Liverpool,Racing,2023-08-25,A,VAR determina simulaciï¿½ï¿½n,51',AGA
+Leeds United,Chelsea,2025-06-04,H,No intervenciï¿½ï¿½n del VAR ante posible falta,80',AGA
+Racing,Huracï¿½ï¿½n,2025-04-18,H,Gol anulado por fuera de juego,73',F
+Leeds United,Liverpool,2023-09-18,A,Confirmaciï¿½ï¿½n de penal por VAR,50',AGA
+Everton,River Plate,2023-12-28,H,Confirmaciï¿½ï¿½n de penal por VAR,52',F
+Brighton,River Plate,2023-09-03,A,Gol anulado tras revisiï¿½ï¿½n,89',F
+Newell's,Lanï¿½ï¿½s,2025-04-27,A,Penal por mano en el ï¿½ï¿½rea,44'
+Newell's,Independiente,2023-08-28,H,Tarjeta roja por agresiï¿½ï¿½n,39',AGA
+Tottenham,Estudiantes,2025-01-02,A,Roja directa confirmada,83',FAVOR
+Independiente,Chelsea,2024-08-08,A,VAR determina simulaciï¿½ï¿½n,48',F
+Arsenal,Racing,2023-10-04,A,No intervenciï¿½ï¿½n del VAR ante posible falta,65',AGA
+Estudiantes,West Ham,2024-01-03,H,Tarjeta roja por agresiï¿½ï¿½n,25',F
+Manchester United,River Plate,2024-01-10,A,Penal por mano en el ï¿½ï¿½rea,47',F
+Newell's,Everton,2024-09-17,A,Gol convalidado tras VAR,16',FAVOR
+Newell's,Tottenham,2023-11-16,H,VAR anula penal dudoso,76',AGAINST
+San Lorenzo,Racing,2024-12-14,A,Penal por mano en el ï¿½ï¿½rea,50',F
+Lanï¿½ï¿½s,Vï¿½ï¿½lez,2024-02-27,H,Gol convalidado tras VAR,2
+Vï¿½ï¿½lez,Everton,2023-11-11,H,Gol convalidado tras VAR,2',AGA
+Arsenal,Boca Juniors,2024-11-20,H,Confirmaciï¿½ï¿½n de penal por VAR,78',AGA
+Chelsea,Manchester United,2024-10-10,A,Gol anulado tras revisiï¿½ï¿½n,59',AGA
+San Lorenzo,Everton,2025-03-29,A,Roja directa confirmada,14',FAVOR
+Tottenham,Leeds United,2023-12-28,A,Confirmaciï¿½ï¿½n de penal por VAR,88',F
+Huracï¿½ï¿½n,Lanï¿½ï¿½s,2024-07-02,A,Confirmaciï¿½ï¿½n de penal por VAR
+Estudiantes,Newell's,2024-06-19,H,Roja directa confirmada,52',AGAINST
+Manchester City,Brighton,2023-12-18,A,Confirmaciï¿½ï¿½n de penal por VAR,54',AGA
+Boca Juniors,West Ham,2025-05-09,H,Gol anulado tras revisiï¿½ï¿½n,29',AGA
+Tottenham,Everton,2025-05-11,A,Tarjeta roja por agresiï¿½ï¿½n,85',F
+Newell's,San Lorenzo,2025-03-24,A,No intervenciï¿½ï¿½n del VAR ante posible falta,72',F
+Tottenham,Racing,2023-07-15,H,Gol anulado tras revisiï¿½ï¿½n,29',AGA
+Huracï¿½ï¿½n,Arsenal,2023-08-16,A,Roja directa confirmada,38',AGA
+Everton,River Plate,2024-10-10,H,VAR anula penal dudoso,25',FAVOR
+Brighton,Everton,2024-04-30,A,VAR confirma gol legï¿½ï¿½timo,7',F
+Independiente,Liverpool,2025-03-11,A,Roja directa confirmada,59',FAVOR
+Racing,Independiente,2024-01-06,A,Gol anulado tras revisiï¿½ï¿½n,81',F
+Boca Juniors,River Plate,2023-07-10,A,Confirmaciï¿½ï¿½n de penal por VAR,27',F
+Arsenal,Brighton,2023-06-08,H,Tarjeta roja por agresiï¿½ï¿½n,79',AGA
+Brighton,Manchester United,2024-02-20,A,VAR confirma gol legï¿½ï¿½timo,1',F
+Tottenham,Boca Juniors,2025-01-24,A,VAR determina simulaciï¿½ï¿½n,25',F
+Manchester United,Newell's,2023-09-15,A,Confirmaciï¿½ï¿½n de penal por VAR,17',F
+Lanï¿½ï¿½s,Manchester City,2024-10-12,H,Gol anulado por fuera de juego,6',AGA
+Everton,Brighton,2023-12-26,A,VAR confirma gol legï¿½ï¿½timo,88',F
+Newell's,Arsenal,2023-10-09,H,Tarjeta roja por agresiï¿½ï¿½n,52',F
+Racing,Newell's,2025-01-01,H,Roja directa confirmada,65',FAVOR
+Boca Juniors,Manchester United,2024-05-14,A,VAR determina simulaciï¿½ï¿½n,80',F
+Manchester City,Independiente,2024-08-07,H,Penal por mano en el ï¿½ï¿½rea,89',F
+Vï¿½ï¿½lez,Independiente,2024-12-05,A,VAR anula penal dudoso,90',F
+Boca Juniors,Manchester City,2024-05-03,A,Gol convalidado tras VAR,13',AGAINST
+Arsenal,Chelsea,2024-08-14,H,VAR determina simulaciï¿½ï¿½n,80',F
+River Plate,Brighton,2023-06-13,H,Roja directa confirmada,26',AGAINST
+Manchester United,Liverpool,2023-08-31,A,Confirmaciï¿½ï¿½n de penal por VAR,21',F
+Manchester United,Brighton,2023-08-03,A,Penal no cobrado por falta,1',FAVOR
+Liverpool,West Ham,2025-04-21,A,Tarjeta roja por agresiï¿½ï¿½n,12',F
+Liverpool,Estudiantes,2024-11-23,H,VAR anula penal dudoso,38',AGAINST
+River Plate,Vï¿½ï¿½lez,2025-05-08,H,Confirmaciï¿½ï¿½n de penal por VAR,47'
+River Plate,San Lorenzo,2023-09-29,H,Penal por mano en el ï¿½ï¿½rea,18',F
+Newell's,Lanï¿½ï¿½s,2024-08-02,H,Gol anulado tras revisiï¿½ï¿½n,4
+Vï¿½ï¿½lez,Tottenham,2023-07-03,A,VAR confirma gol legï¿½ï¿½timo,89'
+Arsenal,Independiente,2025-03-15,H,No intervenciï¿½ï¿½n del VAR ante posible falta,8',F
+Lanï¿½ï¿½s,Brighton,2024-03-18,A,Tarjeta roja por agresiï¿½ï¿½n,79'
+West Ham,Boca Juniors,2024-08-31,H,VAR anula penal dudoso,63',FAVOR
+Everton,River Plate,2024-08-08,H,Confirmaciï¿½ï¿½n de penal por VAR,84',AGA
+Estudiantes,West Ham,2023-09-29,H,Gol convalidado tras VAR,44',FAVOR
+Independiente,Brighton,2024-05-04,A,Gol convalidado tras VAR,87',AGAINST
+Estudiantes,River Plate,2023-09-12,H,Gol convalidado tras VAR,21',AGAINST
+Arsenal,Racing,2023-07-08,A,Gol anulado tras revisiï¿½ï¿½n,31',AGA
+Manchester City,Everton,2024-01-31,H,VAR determina simulaciï¿½ï¿½n,83',AGA
+Independiente,Racing,2024-03-15,A,VAR anula penal dudoso,74',AGAINST
+Newell's,Tottenham,2025-05-04,A,Gol anulado por fuera de juego,64',FAVOR
+Vï¿½ï¿½lez,River Plate,2025-05-30,H,Gol anulado por fuera de juego,78',AGA
+Leeds United,Vï¿½ï¿½lez,2025-02-13,A,Gol anulado tras revisiï¿½ï¿½n,4
+Everton,Manchester City,2025-04-04,A,No intervenciï¿½ï¿½n del VAR ante posible falta,85',AGA
+Liverpool,Independiente,2023-07-06,H,Penal por mano en el ï¿½ï¿½rea,44',AGA
+Chelsea,Leeds United,2025-05-04,A,No intervenciï¿½ï¿½n del VAR ante posible falta,14',F
+Everton,San Lorenzo,2024-03-09,A,Gol anulado por fuera de juego,33',FAVOR
+Vï¿½ï¿½lez,Newell's,2023-11-16,A,Penal no cobrado por falta,44',F
+Manchester City,West Ham,2024-11-16,H,VAR anula penal dudoso,59',FAVOR
+Manchester City,Everton,2023-12-16,H,VAR determina simulaciï¿½ï¿½n,56',AGA
+Arsenal,West Ham,2024-11-05,H,No intervenciï¿½ï¿½n del VAR ante posible falta,17',F
+Lanï¿½ï¿½s,Liverpool,2023-08-24,A,VAR confirma gol legï¿½ï¿½timo,7
+Huracï¿½ï¿½n,Manchester City,2024-03-06,A,Tarjeta roja por agresiï¿½ï¿½n,18'
+Leeds United,Lanï¿½ï¿½s,2025-01-31,A,No intervenciï¿½ï¿½n del VAR ante posible falta,7
+Lanï¿½ï¿½s,Manchester City,2024-08-13,A,Gol convalidado tras VAR,17',F
+Tottenham,Independiente,2025-04-22,A,VAR determina simulaciï¿½ï¿½n,62',AGA
+Leeds United,Lanï¿½ï¿½s,2025-04-15,A,Penal por mano en el ï¿½ï¿½rea,6
+Racing,River Plate,2024-04-16,H,Penal no cobrado por falta,35',FAVOR
+Chelsea,San Lorenzo,2024-09-30,H,No intervenciï¿½ï¿½n del VAR ante posible falta,38',F
+Manchester City,Arsenal,2025-01-08,A,Gol anulado por fuera de juego,79',FAVOR
+Leeds United,Arsenal,2023-10-04,H,VAR determina simulaciï¿½ï¿½n,90',AGA
+Manchester City,Manchester United,2025-05-25,A,VAR confirma gol legï¿½ï¿½timo,88',AGA
+Manchester City,Boca Juniors,2025-05-28,A,Penal no cobrado por falta,80',AGAINST
+Tottenham,West Ham,2023-12-06,H,No intervenciï¿½ï¿½n del VAR ante posible falta,25',AGA
+River Plate,Vï¿½ï¿½lez,2025-04-07,H,No intervenciï¿½ï¿½n del VAR ante posible falta,6
+Vï¿½ï¿½lez,Lanï¿½ï¿½s,2023-10-10,A,Tarjeta roja por agresiï¿½ï¿½n
+Newell's,San Lorenzo,2025-02-16,H,Tarjeta roja por agresiï¿½ï¿½n,42',F
+West Ham,Lanï¿½ï¿½s,2025-02-24,A,Roja directa confirmada,71',AGA
+Huracï¿½ï¿½n,Everton,2023-10-21,H,Tarjeta roja por agresiï¿½ï¿½n,6
+Arsenal,Chelsea,2025-04-20,A,Gol anulado por fuera de juego,45',FAVOR
+Tottenham,Manchester City,2024-04-21,A,Confirmaciï¿½ï¿½n de penal por VAR,28',AGA
+Manchester City,Independiente,2023-06-25,A,VAR anula penal dudoso,31',FAVOR
+Tottenham,Arsenal,2023-10-23,H,VAR confirma gol legï¿½ï¿½timo,33',AGA
+Estudiantes,Arsenal,2024-12-29,A,VAR anula penal dudoso,6',AGAINST
+Manchester United,Manchester City,2025-05-24,H,Gol anulado por fuera de juego,22',FAVOR
+Manchester United,Vï¿½ï¿½lez,2024-02-19,A,Gol anulado por fuera de juego,27',AGA
+Liverpool,San Lorenzo,2025-02-02,H,VAR anula penal dudoso,43',FAVOR
+Boca Juniors,Vï¿½ï¿½lez,2025-05-28,A,VAR determina simulaciï¿½ï¿½n,1
+Brighton,Arsenal,2024-04-20,A,Gol convalidado tras VAR,52',AGAINST
+Vï¿½ï¿½lez,Independiente,2025-02-18,H,Gol convalidado tras VAR,80',F
+West Ham,River Plate,2024-11-07,H,Gol anulado tras revisiï¿½ï¿½n,65',F
+San Lorenzo,Racing,2025-04-07,A,VAR anula penal dudoso,49',AGAINST
+Manchester City,Brighton,2024-12-27,H,VAR determina simulaciï¿½ï¿½n,29',F
+Leeds United,Lanï¿½ï¿½s,2025-02-24,H,Confirmaciï¿½ï¿½n de penal por VAR,87'
+Manchester City,Leeds United,2023-12-15,H,Gol anulado por fuera de juego,6',FAVOR
+Brighton,Leeds United,2023-12-30,H,Confirmaciï¿½ï¿½n de penal por VAR,27',AGA
+Estudiantes,San Lorenzo,2023-10-07,H,Tarjeta roja por agresiï¿½ï¿½n,29',AGA
+Racing,West Ham,2025-02-06,H,VAR determina simulaciï¿½ï¿½n,60',F
+River Plate,Lanï¿½ï¿½s,2024-12-01,H,Penal no cobrado por falta,75',AGA
+Tottenham,San Lorenzo,2023-08-28,H,Gol anulado por fuera de juego,37',FAVOR
+Tottenham,Brighton,2024-03-29,A,Gol anulado tras revisiï¿½ï¿½n,79',AGA
+Arsenal,West Ham,2025-04-13,A,Gol anulado tras revisiï¿½ï¿½n,55',F
+Independiente,Estudiantes,2023-07-06,A,Confirmaciï¿½ï¿½n de penal por VAR,47',F
+Tottenham,Brighton,2025-04-02,A,VAR anula penal dudoso,46',AGAINST
+River Plate,Vï¿½ï¿½lez,2024-06-05,H,Confirmaciï¿½ï¿½n de penal por VAR,1
+River Plate,Independiente,2023-11-25,H,VAR determina simulaciï¿½ï¿½n,81',F
+West Ham,Arsenal,2023-11-08,H,Penal por mano en el ï¿½ï¿½rea,71',AGA
+Leeds United,Tottenham,2025-03-01,H,Gol anulado tras revisiï¿½ï¿½n,51',F
+West Ham,Lanï¿½ï¿½s,2025-05-19,H,VAR anula penal dudoso,65',F
+Estudiantes,Boca Juniors,2024-05-28,H,Roja directa confirmada,88',FAVOR
+Arsenal,Tottenham,2024-03-03,H,Tarjeta roja por agresiï¿½ï¿½n,73',F
+Everton,Liverpool,2024-01-29,H,Penal no cobrado por falta,63',FAVOR
+Huracï¿½ï¿½n,Estudiantes,2025-03-04,H,Gol convalidado tras VAR,27',AGA
+Newell's,River Plate,2025-02-12,H,Gol convalidado tras VAR,42',FAVOR
+Leeds United,Estudiantes,2025-04-12,A,Roja directa confirmada,70',FAVOR
+Vï¿½ï¿½lez,Arsenal,2023-11-29,H,VAR determina simulaciï¿½ï¿½n,33'
+Manchester United,Everton,2023-11-26,A,Gol anulado tras revisiï¿½ï¿½n,45',AGA
+West Ham,Boca Juniors,2023-06-24,H,VAR anula penal dudoso,22',FAVOR
+San Lorenzo,Newell's,2024-10-30,H,Tarjeta roja por agresiï¿½ï¿½n,21',AGA
+Liverpool,Newell's,2023-11-03,A,Gol anulado tras revisiï¿½ï¿½n,15',AGA
+Everton,Vï¿½ï¿½lez,2024-04-10,H,Gol convalidado tras VAR,53',F
+Racing,West Ham,2024-02-15,H,Tarjeta roja por agresiï¿½ï¿½n,81',F
+Arsenal,River Plate,2024-01-08,H,Confirmaciï¿½ï¿½n de penal por VAR,24',AGA
+West Ham,Boca Juniors,2025-04-07,A,Gol anulado por fuera de juego,28',AGAINST
+Everton,Tottenham,2023-07-29,H,Penal no cobrado por falta,53',FAVOR
+Arsenal,Everton,2025-01-26,A,Tarjeta roja por agresiï¿½ï¿½n,88',AGA
+West Ham,Leeds United,2024-01-08,H,Penal no cobrado por falta,49',AGAINST
+Boca Juniors,Newell's,2024-03-04,A,Tarjeta roja por agresiï¿½ï¿½n,78',F
+Lanï¿½ï¿½s,River Plate,2024-10-16,H,Gol anulado por fuera de juego,62',F
+Leeds United,Boca Juniors,2024-07-05,A,VAR determina simulaciï¿½ï¿½n,54',AGA
+Leeds United,Manchester United,2024-04-11,H,VAR anula penal dudoso,49',AGAINST
+West Ham,Independiente,2024-11-14,A,Tarjeta roja por agresiï¿½ï¿½n,33',AGA
+Liverpool,Lanï¿½ï¿½s,2025-03-22,A,Confirmaciï¿½ï¿½n de penal por VAR,2
+Manchester City,West Ham,2024-07-26,H,VAR determina simulaciï¿½ï¿½n,1',AGA
+Tottenham,Manchester United,2024-02-18,A,Gol anulado por fuera de juego,20',AGAINST
+Chelsea,Estudiantes,2025-06-04,A,Roja directa confirmada,47',AGAINST
+Brighton,Vï¿½ï¿½lez,2023-06-27,A,VAR determina simulaciï¿½ï¿½n,72'
+Estudiantes,Leeds United,2023-09-03,A,Confirmaciï¿½ï¿½n de penal por VAR,40',AGA
+Brighton,San Lorenzo,2025-04-17,H,No intervenciï¿½ï¿½n del VAR ante posible falta,30',AGA
+Arsenal,Independiente,2023-12-25,H,VAR determina simulaciï¿½ï¿½n,52',AGA
+West Ham,River Plate,2023-10-22,H,VAR confirma gol legï¿½ï¿½timo,82',F
+Arsenal,Brighton,2024-08-29,A,Gol anulado por fuera de juego,9',AGAINST
+River Plate,Racing,2023-12-29,A,VAR confirma gol legï¿½ï¿½timo,79',AGA
+West Ham,River Plate,2023-07-05,H,Gol convalidado tras VAR,64',AGAINST
+Estudiantes,Manchester City,2023-08-29,H,Penal por mano en el ï¿½ï¿½rea,77',F
+Manchester City,Arsenal,2024-09-11,H,Gol convalidado tras VAR,1',FAVOR
+San Lorenzo,Manchester United,2024-05-08,A,Gol convalidado tras VAR,51',AGAINST
+Leeds United,Boca Juniors,2024-02-29,H,Gol anulado por fuera de juego,71',AGAINST
+Leeds United,West Ham,2024-12-22,A,Gol anulado tras revisiï¿½ï¿½n,36',F
+Manchester United,Tottenham,2025-02-05,A,Roja directa confirmada,1',AGAINST
+Estudiantes,Independiente,2024-02-04,H,VAR determina simulaciï¿½ï¿½n,38',AGA
+Leeds United,Estudiantes,2024-05-09,A,No intervenciï¿½ï¿½n del VAR ante posible falta,57',AGA
+Manchester United,Manchester City,2024-09-18,A,Gol convalidado tras VAR,59',FAVOR
+San Lorenzo,Racing,2024-07-07,A,Gol convalidado tras VAR,29',FAVOR
+Brighton,Liverpool,2023-09-03,H,No intervenciï¿½ï¿½n del VAR ante posible falta,34',F
+Vï¿½ï¿½lez,Liverpool,2024-03-31,H,VAR determina simulaciï¿½ï¿½n,23'
+Independiente,West Ham,2025-05-04,A,Tarjeta roja por agresiï¿½ï¿½n,88',F
+Independiente,Estudiantes,2024-08-26,H,Confirmaciï¿½ï¿½n de penal por VAR,27',F
+Independiente,Arsenal,2023-10-31,H,Gol anulado por fuera de juego,16',FAVOR
+Everton,Boca Juniors,2023-12-20,H,VAR anula penal dudoso,48',AGAINST
+Lanï¿½ï¿½s,Estudiantes,2023-07-10,A,Tarjeta roja por agresiï¿½ï¿½n,66'
+Lanï¿½ï¿½s,San Lorenzo,2024-12-07,H,VAR determina simulaciï¿½ï¿½n,55'
+Manchester City,Everton,2024-05-09,A,VAR confirma gol legï¿½ï¿½timo,88',F
+River Plate,Everton,2023-06-07,A,Gol anulado tras revisiï¿½ï¿½n,89',F
+Independiente,Manchester United,2024-07-13,H,Gol anulado tras revisiï¿½ï¿½n,47',AGA
+San Lorenzo,Estudiantes,2025-05-24,A,VAR anula penal dudoso,79',AGAINST
+Newell's,Chelsea,2025-02-21,H,VAR confirma gol legï¿½ï¿½timo,90',AGA
+Vï¿½ï¿½lez,Lanï¿½ï¿½s,2024-07-28,A,Tarjeta roja por agresiï¿½ï¿
+Manchester United,Independiente,2024-11-20,A,Penal no cobrado por falta,72',AGAINST
+Manchester United,San Lorenzo,2024-12-15,H,VAR anula penal dudoso,2',FAVOR
+Racing,Everton,2025-06-05,A,VAR anula penal dudoso,39',AGAINST
+West Ham,River Plate,2025-01-02,A,Gol anulado por fuera de juego,89',FAVOR
+San Lorenzo,Brighton,2024-12-29,H,VAR anula penal dudoso,43',AGAINST
+Estudiantes,Leeds United,2024-11-07,A,Gol anulado tras revisiï¿½ï¿½n,3',AGA
+Lanï¿½ï¿½s,Vï¿½ï¿½lez,2023-11-06,H,Confirmaciï¿½ï¿½n de penal por VAR
+Everton,Chelsea,2024-03-14,H,VAR confirma gol legï¿½ï¿½timo,79',AGA
+Racing,Vï¿½ï¿½lez,2024-05-05,A,VAR confirma gol legï¿½ï¿½timo,81'
+Liverpool,Racing,2023-07-30,H,Gol anulado tras revisiï¿½ï¿½n,30',AGA
+San Lorenzo,Lanï¿½ï¿½s,2024-11-02,A,Confirmaciï¿½ï¿½n de penal por VAR,57'
+Leeds United,Chelsea,2025-05-21,A,Tarjeta roja por agresiï¿½ï¿½n,24',F
+Independiente,Lanï¿½ï¿½s,2024-02-17,H,Penal no cobrado por falta,22',AGA
+River Plate,Brighton,2024-10-02,H,Penal por mano en el ï¿½ï¿½rea,51',F
+Lanï¿½ï¿½s,San Lorenzo,2024-02-04,H,Gol convalidado tras VAR,50',AGA
+San Lorenzo,Tottenham,2024-11-02,H,Tarjeta roja por agresiï¿½ï¿½n,68',F
+Huracï¿½ï¿½n,Liverpool,2025-03-25,A,VAR anula penal dudoso,70',AGA
+Arsenal,Leeds United,2023-09-10,H,Roja directa confirmada,77',AGAINST
+West Ham,Manchester United,2024-12-16,A,Gol anulado tras revisiï¿½ï¿½n,62',F
+Everton,Lanï¿½ï¿½s,2025-05-05,A,VAR confirma gol legï¿½ï¿½timo,3
+Boca Juniors,Everton,2024-01-25,H,Gol anulado tras revisiï¿½ï¿½n,37',AGA
+Everton,Tottenham,2024-07-03,A,Penal por mano en el ï¿½ï¿½rea,56',AGA
+Manchester City,Leeds United,2024-02-01,A,Penal no cobrado por falta,53',AGAINST
+Racing,Manchester United,2024-11-04,A,Penal no cobrado por falta,34',FAVOR
+Independiente,Everton,2024-04-18,A,Confirmaciï¿½ï¿½n de penal por VAR,84',AGA
+River Plate,Vï¿½ï¿½lez,2024-02-14,H,Confirmaciï¿½ï¿½n de penal por VAR,15'
+Chelsea,Brighton,2024-04-13,H,Gol anulado tras revisiï¿½ï¿½n,3',F
+Estudiantes,Boca Juniors,2024-11-28,H,Gol anulado por fuera de juego,37',AGAINST
+Newell's,Boca Juniors,2024-01-21,H,Gol anulado por fuera de juego,20',FAVOR
+Huracï¿½ï¿½n,Chelsea,2024-08-09,A,VAR anula penal dudoso,48',AGA
+Manchester City,Liverpool,2023-09-12,H,Tarjeta roja por agresiï¿½ï¿½n,8',AGA
+Liverpool,Leeds United,2023-11-02,A,Tarjeta roja por agresiï¿½ï¿½n,25',AGA
+Manchester City,Independiente,2024-04-27,H,VAR confirma gol legï¿½ï¿½timo,57',F
+Manchester City,Vï¿½ï¿½lez,2024-11-03,A,No intervenciï¿½ï¿½n del VAR ante posible falta,1
+San Lorenzo,Liverpool,2025-06-05,H,Gol convalidado tras VAR,6',FAVOR
+San Lorenzo,Newell's,2024-03-26,A,Penal por mano en el ï¿½ï¿½rea,86',F
+Manchester United,Chelsea,2024-11-13,A,Penal por mano en el ï¿½ï¿½rea,22',AGA
+Brighton,Newell's,2025-01-07,H,Penal por mano en el ï¿½ï¿½rea,75',AGA
+Arsenal,Liverpool,2025-05-07,H,Penal no cobrado por falta,21',AGAINST
+Lanï¿½ï¿½s,Liverpool,2023-10-19,H,Penal por mano en el ï¿½ï¿½rea,4
+Liverpool,San Lorenzo,2024-09-26,A,Penal no cobrado por falta,41',AGAINST
+Everton,Vï¿½ï¿½lez,2024-08-21,H,No intervenciï¿½ï¿½n del VAR ante posible falta,49'
+Chelsea,River Plate,2024-01-25,A,No intervenciï¿½ï¿½n del VAR ante posible falta,57',AGA
+Everton,Vï¿½ï¿½lez,2024-04-16,H,VAR determina simulaciï¿½ï¿½n,45'
+Chelsea,Leeds United,2024-08-04,H,Gol anulado por fuera de juego,68',FAVOR
+San Lorenzo,Leeds United,2025-03-14,A,VAR anula penal dudoso,1',AGAINST
+Manchester City,Arsenal,2023-06-06,H,Gol anulado tras revisiï¿½ï¿½n,9',AGA
+Newell's,Leeds United,2024-01-28,H,Roja directa confirmada,37',AGAINST
+Huracï¿½ï¿½n,Independiente,2024-01-14,H,VAR determina simulaciï¿½ï¿½n,8
+Racing,Vï¿½ï¿½lez,2023-11-16,H,Penal no cobrado por falta,14',AGA
+Boca Juniors,West Ham,2024-05-04,A,Gol convalidado tras VAR,63',AGAINST
+Independiente,Racing,2025-02-05,H,Penal no cobrado por falta,84',AGAINST
+Liverpool,Tottenham,2024-08-29,H,Gol anulado tras revisiï¿½ï¿½n,72',AGA
+Manchester City,Estudiantes,2024-09-19,H,No intervenciï¿½ï¿½n del VAR ante posible falta,10',AGA
+Independiente,Everton,2024-10-26,H,Gol anulado por fuera de juego,30',AGAINST
+Estudiantes,Newell's,2024-02-11,H,VAR determina simulaciï¿½ï¿½n,72',AGA
+West Ham,Liverpool,2024-06-01,A,No intervenciï¿½ï¿½n del VAR ante posible falta,86',AGA
+Arsenal,Huracï¿½ï¿½n,2024-05-14,A,VAR determina simulaciï¿½ï¿½n,4
+West Ham,Chelsea,2024-05-14,A,Gol anulado tras revisiï¿½ï¿½n,71',AGA
+Brighton,Manchester United,2024-11-11,A,Roja directa confirmada,31',FAVOR
+Estudiantes,Lanï¿½ï¿½s,2023-11-18,A,VAR anula penal dudoso,58',AGA
+Boca Juniors,Manchester City,2024-07-07,H,VAR determina simulaciï¿½ï¿½n,18',AGA
+Independiente,Newell's,2024-06-07,A,Penal por mano en el ï¿½ï¿½rea,89',AGA
+Leeds United,Everton,2025-02-11,H,Gol anulado por fuera de juego,5',AGAINST
+Racing,Lanï¿½ï¿½s,2025-05-05,A,Roja directa confirmada,32',F
+San Lorenzo,Racing,2025-02-13,A,Roja directa confirmada,28',FAVOR
+Everton,Huracï¿½ï¿½n,2024-12-28,A,No intervenciï¿½ï¿½n del VAR ante posible falta,9
+Chelsea,River Plate,2023-10-15,A,Gol anulado por fuera de juego,8',AGAINST
+Vï¿½ï¿½lez,Chelsea,2024-10-29,H,Penal no cobrado por falta,84',F
+Brighton,River Plate,2023-08-10,A,VAR determina simulaciï¿½ï¿½n,6',AGA
+Arsenal,Manchester City,2024-01-12,H,Tarjeta roja por agresiï¿½ï¿½n,7',AGA
+West Ham,Leeds United,2024-07-10,H,Penal no cobrado por falta,56',AGAINST
+Arsenal,San Lorenzo,2024-11-02,A,Gol anulado por fuera de juego,61',FAVOR
+Chelsea,Racing,2024-10-09,A,VAR determina simulaciï¿½ï¿½n,56',F
+Everton,Leeds United,2024-09-28,H,VAR anula penal dudoso,51',FAVOR
+Leeds United,Newell's,2024-02-21,H,Gol anulado por fuera de juego,35',AGAINST
+Lanï¿½ï¿½s,Racing,2023-08-17,H,Gol convalidado tras VAR,53',AGA
+Independiente,Liverpool,2025-03-02,A,Roja directa confirmada,84',FAVOR
+Arsenal,Liverpool,2025-01-09,A,Roja directa confirmada,19',AGAINST
+Independiente,Newell's,2023-12-05,A,Tarjeta roja por agresiï¿½ï¿½n,11',F
+Manchester United,San Lorenzo,2024-11-09,A,Penal por mano en el ï¿½ï¿½rea,44',F
+Newell's,Boca Juniors,2024-02-02,A,Penal no cobrado por falta,69',FAVOR
+Estudiantes,Lanï¿½ï¿½s,2023-11-27,A,Roja directa confirmada,19',F
+Estudiantes,River Plate,2025-02-21,A,Tarjeta roja por agresiï¿½ï¿½n,8',AGA
+Lanï¿½ï¿½s,Estudiantes,2023-11-07,H,VAR anula penal dudoso,84',F
+San Lorenzo,Arsenal,2023-09-28,H,Penal por mano en el ï¿½ï¿½rea,38',AGA
+Vï¿½ï¿½lez,Everton,2023-06-24,H,Gol anulado tras revisiï¿½ï¿½n,6
+Estudiantes,Tottenham,2023-07-11,H,Penal por mano en el ï¿½ï¿½rea,32',AGA
+Vï¿½ï¿½lez,Huracï¿½ï¿½n,2023-12-13,H,Gol anulado tras revisiï¿½ï¿½n
+San Lorenzo,Estudiantes,2024-06-09,A,Penal por mano en el ï¿½ï¿½rea,81',AGA
+Manchester City,Leeds United,2024-09-22,A,Penal no cobrado por falta,20',AGAINST
+Arsenal,Racing,2025-03-27,A,VAR determina simulaciï¿½ï¿½n,87',F
+Lanï¿½ï¿½s,San Lorenzo,2025-01-22,A,Confirmaciï¿½ï¿½n de penal por VAR,78'
+Racing,Newell's,2023-08-01,H,Roja directa confirmada,70',FAVOR
+Chelsea,Everton,2024-05-24,H,VAR confirma gol legï¿½ï¿½timo,19',F
+Estudiantes,Leeds United,2024-04-22,H,Tarjeta roja por agresiï¿½ï¿½n,41',F
+Tottenham,Manchester United,2025-04-24,A,Confirmaciï¿½ï¿½n de penal por VAR,57',AGA
+Independiente,San Lorenzo,2024-10-07,H,Tarjeta roja por agresiï¿½ï¿½n,4',AGA
+West Ham,Newell's,2024-08-26,H,Penal no cobrado por falta,88',FAVOR
+Newell's,San Lorenzo,2023-11-04,A,No intervenciï¿½ï¿½n del VAR ante posible falta,84',AGA
+Vï¿½ï¿½lez,Brighton,2024-12-14,A,Tarjeta roja por agresiï¿½ï¿½n,2
+Vï¿½ï¿½lez,Boca Juniors,2024-11-27,A,VAR confirma gol legï¿½ï¿½timo,2
+Liverpool,Huracï¿½ï¿½n,2024-03-30,A,Roja directa confirmada,63',AGA
+Manchester United,Chelsea,2024-06-23,A,Penal por mano en el ï¿½ï¿½rea,78',AGA
+Brighton,West Ham,2024-04-11,H,VAR determina simulaciï¿½ï¿½n,14',AGA
+Boca Juniors,Estudiantes,2023-12-12,A,No intervenciï¿½ï¿½n del VAR ante posible falta,6',AGA
+Manchester City,Vï¿½ï¿½lez,2023-09-28,A,VAR anula penal dudoso,51',AGA
+Chelsea,Tottenham,2024-10-27,H,VAR confirma gol legï¿½ï¿½timo,38',F
+Arsenal,Tottenham,2024-11-21,A,Gol anulado por fuera de juego,65',FAVOR
+Lanï¿½ï¿½s,Leeds United,2023-06-10,H,VAR confirma gol legï¿½ï¿½timo,53'
+Racing,Tottenham,2025-04-29,H,VAR anula penal dudoso,12',AGAINST
+Racing,San Lorenzo,2025-01-09,H,Gol anulado por fuera de juego,58',AGAINST
+Vï¿½ï¿½lez,Everton,2025-04-04,H,VAR confirma gol legï¿½ï¿½timo,71'
+Racing,Liverpool,2025-01-24,H,Tarjeta roja por agresiï¿½ï¿½n,19',F
+Manchester City,Chelsea,2025-04-23,A,Confirmaciï¿½ï¿½n de penal por VAR,58',AGA
+Liverpool,San Lorenzo,2023-08-27,H,Penal por mano en el ï¿½ï¿½rea,80',AGA
+Newell's,Brighton,2025-01-30,H,Roja directa confirmada,64',FAVOR
+Newell's,Tottenham,2024-05-01,A,VAR anula penal dudoso,11',FAVOR
+Estudiantes,Lanï¿½ï¿½s,2023-11-22,H,Penal por mano en el ï¿½ï¿½rea,2
+Huracï¿½ï¿½n,River Plate,2023-10-20,H,Penal por mano en el ï¿½ï¿½rea,86'
+River Plate,Racing,2025-02-19,H,VAR confirma gol legï¿½ï¿½timo,23',F
+West Ham,Leeds United,2024-11-27,H,VAR anula penal dudoso,75',AGAINST
+Liverpool,Lanï¿½ï¿½s,2024-07-12,A,Gol anulado tras revisiï¿½ï¿½n,4
+Leeds United,Racing,2024-05-31,A,VAR anula penal dudoso,18',FAVOR
+Chelsea,Manchester City,2023-07-15,A,VAR determina simulaciï¿½ï¿½n,27',F
+Liverpool,West Ham,2024-08-11,H,VAR anula penal dudoso,89',AGAINST
+Huracï¿½ï¿½n,Lanï¿½ï¿½s,2023-12-16,A,Tarjeta roja por agresiï¿½ï¿½n
+Everton,Tottenham,2025-05-18,H,Roja directa confirmada,30',AGAINST
+Manchester City,Independiente,2025-03-25,H,VAR anula penal dudoso,81',FAVOR
+Manchester United,Chelsea,2023-09-08,A,Penal por mano en el ï¿½ï¿½rea,43',AGA
+Manchester United,Boca Juniors,2024-05-25,H,No intervenciï¿½ï¿½n del VAR ante posible falta,37',AGA
+Chelsea,Lanï¿½ï¿½s,2023-09-17,A,Penal por mano en el ï¿½ï¿½rea,15'
+Lanï¿½ï¿½s,Boca Juniors,2025-02-17,H,Penal no cobrado por falta,43',AGA
+Everton,Tottenham,2024-05-31,H,Gol convalidado tras VAR,18',AGAINST
+Newell's,Leeds United,2024-11-05,A,VAR anula penal dudoso,53',FAVOR
+Chelsea,West Ham,2024-07-22,A,VAR determina simulaciï¿½ï¿½n,69',F
+Huracï¿½ï¿½n,Arsenal,2024-08-13,H,Tarjeta roja por agresiï¿½ï¿½n,3
+Vï¿½ï¿½lez,Leeds United,2024-09-10,H,Roja directa confirmada,78',AGA
+River Plate,Manchester City,2024-02-07,A,No intervenciï¿½ï¿½n del VAR ante posible falta,5',AGA
+Newell's,Estudiantes,2025-01-12,A,VAR anula penal dudoso,39',FAVOR
+Arsenal,Independiente,2025-04-28,A,Penal por mano en el ï¿½ï¿½rea,26',F
+Boca Juniors,Brighton,2024-05-14,H,Penal no cobrado por falta,44',AGAINST
+Leeds United,Lanï¿½ï¿½s,2024-09-23,A,Tarjeta roja por agresiï¿½ï¿½n,1
+Boca Juniors,Tottenham,2025-02-28,A,No intervenciï¿½ï¿½n del VAR ante posible falta,67',F
+Boca Juniors,Independiente,2024-12-15,A,VAR anula penal dudoso,6',FAVOR
+Chelsea,Boca Juniors,2025-04-28,A,Gol convalidado tras VAR,27',AGAINST
+San Lorenzo,Lanï¿½ï¿½s,2024-07-02,A,VAR anula penal dudoso,86',F
+Racing,Lanï¿½ï¿½s,2024-05-02,H,Penal por mano en el ï¿½ï¿½rea,8
+Huracï¿½ï¿½n,Leeds United,2025-03-12,A,Confirmaciï¿½ï¿½n de penal por VAR,19'
+Arsenal,Racing,2025-05-10,A,Roja directa confirmada,44',AGAINST
+Boca Juniors,Brighton,2024-08-04,H,Gol anulado por fuera de juego,50',FAVOR
+Vï¿½ï¿½lez,Huracï¿½ï¿½n,2024-05-17,A,Roja directa confirmada,46'
+Independiente,Leeds United,2025-05-02,H,VAR anula penal dudoso,73',FAVOR
+Newell's,Independiente,2023-10-07,A,Confirmaciï¿½ï¿½n de penal por VAR,88',AGA
+Independiente,Huracï¿½ï¿½n,2025-01-03,A,Gol anulado tras revisiï¿½ï¿½n,5
+Tottenham,Manchester City,2025-04-05,A,VAR anula penal dudoso,4',FAVOR
+Huracï¿½ï¿½n,Brighton,2024-06-08,A,Tarjeta roja por agresiï¿½ï¿½n,37'
+Arsenal,Everton,2024-05-20,H,VAR confirma gol legï¿½ï¿½timo,14',AGA
+Liverpool,Lanï¿½ï¿½s,2023-12-24,A,VAR confirma gol legï¿½ï¿½timo,76'
+Independiente,Leeds United,2025-01-09,H,VAR anula penal dudoso,50',FAVOR
+Lanï¿½ï¿½s,Chelsea,2023-12-15,A,Roja directa confirmada,44',F
+River Plate,West Ham,2025-03-19,A,Gol anulado por fuera de juego,76',AGAINST
+River Plate,Tottenham,2024-10-13,H,Confirmaciï¿½ï¿½n de penal por VAR,52',F
+West Ham,Arsenal,2024-01-07,A,VAR anula penal dudoso,83',FAVOR
+Racing,West Ham,2025-01-20,H,Tarjeta roja por agresiï¿½ï¿½n,85',F
+San Lorenzo,Manchester United,2025-01-30,A,Penal no cobrado por falta,27',AGAINST
+San Lorenzo,Chelsea,2024-07-14,A,Gol anulado por fuera de juego,75',FAVOR
+Leeds United,Arsenal,2024-06-16,H,Confirmaciï¿½ï¿½n de penal por VAR,8',AGA
+Manchester City,Boca Juniors,2024-10-04,A,Gol anulado por fuera de juego,37',FAVOR
+Lanï¿½ï¿½s,Manchester United,2023-12-08,A,No intervenciï¿½ï¿½n del VAR ante posible falta,49'
+Estudiantes,Vï¿½ï¿½lez,2024-01-05,H,VAR anula penal dudoso,18',F
+Tottenham,Manchester United,2024-05-12,H,Confirmaciï¿½ï¿½n de penal por VAR,86',F
+River Plate,Boca Juniors,2023-08-05,H,No intervenciï¿½ï¿½n del VAR ante posible falta,63',AGA
+Arsenal,Racing,2024-12-11,H,Gol convalidado tras VAR,54',AGAINST
+West Ham,Manchester United,2024-01-13,H,VAR anula penal dudoso,66',AGAINST
+Everton,Arsenal,2023-12-05,A,Penal no cobrado por falta,24',AGAINST
+West Ham,Tottenham,2024-01-03,H,No intervenciï¿½ï¿½n del VAR ante posible falta,65',AGA
+Estudiantes,West Ham,2024-02-21,A,Penal por mano en el ï¿½ï¿½rea,5',AGA
+Liverpool,West Ham,2024-02-09,A,No intervenciï¿½ï¿½n del VAR ante posible falta,11',F
+Leeds United,Estudiantes,2025-04-29,A,VAR determina simulaciï¿½ï¿½n,11',F
+River Plate,Leeds United,2024-07-29,A,Roja directa confirmada,7',AGAINST
+Manchester City,Brighton,2023-08-07,A,VAR determina simulaciï¿½ï¿½n,61',AGA
+San Lorenzo,Manchester City,2023-09-21,H,Penal por mano en el ï¿½ï¿½rea,89',AGA
+West Ham,Estudiantes,2023-10-01,H,Gol convalidado tras VAR,61',FAVOR
+Chelsea,Boca Juniors,2023-12-02,A,VAR anula penal dudoso,11',FAVOR
+Chelsea,Estudiantes,2024-03-29,H,Roja directa confirmada,36',AGAINST
+Manchester City,Independiente,2024-11-26,H,Roja directa confirmada,20',AGAINST
+Racing,Lanï¿½ï¿½s,2023-10-02,H,VAR anula penal dudoso,24',F
+River Plate,Huracï¿½ï¿½n,2024-12-05,H,VAR anula penal dudoso,53',AGA
+Newell's,Huracï¿½ï¿½n,2023-11-19,H,Roja directa confirmada,45',F
+Liverpool,River Plate,2023-07-25,H,VAR anula penal dudoso,52',AGAINST
+Estudiantes,Newell's,2024-04-23,A,Gol convalidado tras VAR,50',AGAINST
+Estudiantes,Chelsea,2024-04-17,H,Confirmaciï¿½ï¿½n de penal por VAR,58',AGA
+Leeds United,River Plate,2024-02-18,H,VAR determina simulaciï¿½ï¿½n,82',AGA
+Brighton,Estudiantes,2024-07-31,A,Confirmaciï¿½ï¿½n de penal por VAR,35',F
+Lanï¿½ï¿½s,Manchester United,2024-06-01,A,Gol convalidado tras VAR,31',F
+Arsenal,Manchester City,2024-04-23,H,Gol convalidado tras VAR,2',FAVOR
+River Plate,Everton,2023-07-24,H,Gol convalidado tras VAR,58',AGAINST
+San Lorenzo,Lanï¿½ï¿½s,2023-11-13,H,Penal por mano en el ï¿½ï¿½rea,
+Lanï¿½ï¿½s,Vï¿½ï¿½lez,2025-03-13,H,No intervenciï¿½ï¿½n del VAR ante posible fal
+Arsenal,Manchester United,2024-04-27,H,Gol anulado por fuera de juego,90',FAVOR
+Newell's,Racing,2024-04-03,A,Confirmaciï¿½ï¿½n de penal por VAR,55',AGA
+River Plate,Lanï¿½ï¿½s,2025-05-08,H,VAR confirma gol legï¿½ï¿½timo,50'
+Chelsea,Estudiantes,2025-01-23,H,VAR anula penal dudoso,9',AGAINST
+Manchester United,Arsenal,2024-09-01,H,Gol convalidado tras VAR,63',FAVOR
+Vï¿½ï¿½lez,Newell's,2024-11-27,H,VAR anula penal dudoso,34',F
+River Plate,West Ham,2023-06-21,A,VAR anula penal dudoso,3',AGAINST
+Boca Juniors,Racing,2025-04-01,A,Confirmaciï¿½ï¿½n de penal por VAR,20',AGA
+West Ham,Boca Juniors,2025-04-20,A,VAR anula penal dudoso,56',AGAINST
+Liverpool,Leeds United,2025-01-20,H,Penal por mano en el ï¿½ï¿½rea,50',AGA
+Estudiantes,Arsenal,2024-08-26,A,Gol convalidado tras VAR,39',AGAINST
+River Plate,Arsenal,2024-03-27,A,Gol anulado por fuera de juego,59',AGAINST
+Arsenal,Leeds United,2024-06-10,H,VAR confirma gol legï¿½ï¿½timo,85',F
+Vï¿½ï¿½lez,Independiente,2023-06-10,A,VAR anula penal dudoso,11',AGA
+Arsenal,River Plate,2024-03-05,H,Penal por mano en el ï¿½ï¿½rea,76',F
+River Plate,Leeds United,2024-01-23,A,VAR anula penal dudoso,69',AGAINST
+Manchester City,River Plate,2025-01-11,A,Penal por mano en el ï¿½ï¿½rea,44',F
+Independiente,Everton,2024-04-03,A,Gol convalidado tras VAR,69',FAVOR
+Manchester United,Racing,2025-03-29,H,No intervenciï¿½ï¿½n del VAR ante posible falta,19',AGA
+Everton,River Plate,2025-04-28,H,No intervenciï¿½ï¿½n del VAR ante posible falta,84',F
+Boca Juniors,Manchester City,2025-03-16,H,VAR anula penal dudoso,79',FAVOR
+Liverpool,Independiente,2024-04-26,H,VAR anula penal dudoso,77',FAVOR
+Independiente,Chelsea,2024-07-28,A,No intervenciï¿½ï¿½n del VAR ante posible falta,87',AGA
+Lanï¿½ï¿½s,Leeds United,2025-01-06,H,Gol anulado tras revisiï¿½ï¿½n,2
+Tottenham,Racing,2024-12-27,H,Confirmaciï¿½ï¿½n de penal por VAR,19',AGA
+Huracï¿½ï¿½n,Leeds United,2024-08-03,H,VAR anula penal dudoso,32',F
+Lanï¿½ï¿½s,Manchester United,2025-02-16,H,Penal por mano en el ï¿½ï¿½rea,6
+Racing,Independiente,2024-09-16,A,VAR confirma gol legï¿½ï¿½timo,89',AGA
+Manchester United,San Lorenzo,2025-05-03,A,VAR determina simulaciï¿½ï¿½n,58',AGA
+Racing,River Plate,2023-11-24,H,No intervenciï¿½ï¿½n del VAR ante posible falta,64',F
+Chelsea,Liverpool,2024-06-19,A,Penal por mano en el ï¿½ï¿½rea,72',F
+Estudiantes,Independiente,2023-11-23,A,VAR determina simulaciï¿½ï¿½n,65',F
+Independiente,Lanï¿½ï¿½s,2024-01-03,H,Penal no cobrado por falta,15',F
+Everton,Tottenham,2024-05-09,H,Tarjeta roja por agresiï¿½ï¿½n,86',F
+Huracï¿½ï¿½n,Manchester City,2024-06-17,H,VAR confirma gol legï¿½ï¿½timo,33'
+Everton,River Plate,2023-06-28,H,No intervenciï¿½ï¿½n del VAR ante posible falta,7',F
+Boca Juniors,Brighton,2024-04-03,H,Gol anulado por fuera de juego,31',AGAINST
+Tottenham,Manchester United,2024-02-22,H,No intervenciï¿½ï¿½n del VAR ante posible falta,87',AGA
+River Plate,Liverpool,2024-11-06,H,Gol anulado por fuera de juego,31',AGAINST
+Brighton,Newell's,2024-11-14,H,VAR anula penal dudoso,75',AGAINST
+Vï¿½ï¿½lez,San Lorenzo,2025-02-14,H,Roja directa confirmada,59',F
+Racing,Tottenham,2024-04-15,H,Gol convalidado tras VAR,46',AGAINST
+Racing,River Plate,2024-12-19,H,Confirmaciï¿½ï¿½n de penal por VAR,18',F
+Everton,Manchester United,2023-10-12,H,Gol anulado tras revisiï¿½ï¿½n,29',AGA
+West Ham,Huracï¿½ï¿½n,2025-03-19,H,Gol anulado por fuera de juego,53',AGA
+Manchester United,West Ham,2024-06-03,A,VAR anula penal dudoso,36',FAVOR
+Manchester United,Newell's,2025-05-20,A,VAR confirma gol legï¿½ï¿½timo,75',F
+West Ham,San Lorenzo,2023-09-13,H,VAR confirma gol legï¿½ï¿½timo,6',F
+Leeds United,River Plate,2024-10-01,A,VAR determina simulaciï¿½ï¿½n,51',AGA
+Liverpool,Tottenham,2024-07-24,A,Penal no cobrado por falta,11',FAVOR
+Brighton,Vï¿½ï¿½lez,2023-06-26,H,Gol anulado tras revisiï¿½ï¿½n,3
+Liverpool,Boca Juniors,2025-05-10,A,Gol convalidado tras VAR,40',FAVOR
+West Ham,Leeds United,2024-04-07,H,VAR anula penal dudoso,60',FAVOR
+Brighton,Huracï¿½ï¿½n,2024-09-07,A,Gol convalidado tras VAR,60',F
+Liverpool,Manchester United,2024-08-17,A,VAR determina simulaciï¿½ï¿½n,5',AGA
+San Lorenzo,Leeds United,2024-11-01,H,Gol convalidado tras VAR,11',AGAINST
+Manchester City,Everton,2023-06-27,A,Penal por mano en el ï¿½ï¿½rea,15',AGA
+Lanï¿½ï¿½s,River Plate,2023-08-10,A,Gol anulado tras revisiï¿½ï¿½n,2
+Manchester United,San Lorenzo,2024-10-17,A,Penal no cobrado por falta,70',FAVOR
+West Ham,Vï¿½ï¿½lez,2024-05-03,H,Gol anulado tras revisiï¿½ï¿½n,46'
+Brighton,Estudiantes,2023-09-19,H,Gol anulado por fuera de juego,48',AGAINST
+Estudiantes,Everton,2025-04-09,H,VAR anula penal dudoso,69',AGAINST
+Huracï¿½ï¿½n,Racing,2024-05-29,H,VAR anula penal dudoso,12',F
+Racing,Manchester City,2023-10-25,H,Gol anulado por fuera de juego,22',AGAINST
+Racing,Brighton,2023-07-15,H,Penal no cobrado por falta,67',FAVOR
+Estudiantes,San Lorenzo,2023-12-25,A,Gol anulado tras revisiï¿½ï¿½n,54',AGA
+Manchester City,Lanï¿½ï¿½s,2024-03-26,H,Gol anulado por fuera de juego,3',F
+Leeds United,Manchester City,2024-02-15,A,Roja directa confirmada,44',AGAINST
+Estudiantes,Leeds United,2023-11-17,A,VAR anula penal dudoso,39',FAVOR
+Chelsea,Huracï¿½ï¿½n,2024-05-24,A,Penal no cobrado por falta,62',AGA
+Manchester City,San Lorenzo,2024-02-14,A,Confirmaciï¿½ï¿½n de penal por VAR,59',F
+Arsenal,Leeds United,2024-02-23,A,Tarjeta roja por agresiï¿½ï¿½n,23',F
+River Plate,Racing,2025-01-17,A,Roja directa confirmada,17',AGAINST
+Racing,Newell's,2025-04-19,H,Gol convalidado tras VAR,41',AGAINST
+Newell's,Leeds United,2024-03-26,H,VAR determina simulaciï¿½ï¿½n,39',F
+Brighton,Tottenham,2024-01-08,H,VAR anula penal dudoso,41',FAVOR
+Estudiantes,Everton,2025-01-10,A,Gol convalidado tras VAR,38',AGAINST
+West Ham,San Lorenzo,2025-03-13,A,Gol anulado tras revisiï¿½ï¿½n,89',F
+Manchester City,San Lorenzo,2024-04-28,H,Confirmaciï¿½ï¿½n de penal por VAR,4',AGA
+Manchester United,Tottenham,2023-12-18,A,Gol anulado por fuera de juego,42',FAVOR
+Manchester United,West Ham,2025-03-15,H,Confirmaciï¿½ï¿½n de penal por VAR,26',F
+Newell's,Racing,2023-08-08,A,Penal no cobrado por falta,63',AGAINST
+Leeds United,River Plate,2024-06-05,A,VAR confirma gol legï¿½ï¿½timo,19',AGA
+Huracï¿½ï¿½n,Boca Juniors,2023-06-21,A,Gol anulado tras revisiï¿½ï¿½n,45'
+Leeds United,Racing,2025-01-07,H,No intervenciï¿½ï¿½n del VAR ante posible falta,57',AGA
+Chelsea,Huracï¿½ï¿½n,2024-07-28,A,No intervenciï¿½ï¿½n del VAR ante posible falta,5
+West Ham,Racing,2023-07-16,H,Penal no cobrado por falta,39',AGAINST
+Leeds United,Manchester City,2024-03-03,H,Roja directa confirmada,49',FAVOR
+San Lorenzo,Chelsea,2023-11-27,H,VAR determina simulaciï¿½ï¿½n,60',F
+Vï¿½ï¿½lez,Manchester City,2024-10-22,A,Penal por mano en el ï¿½ï¿½rea,39'
+Newell's,Estudiantes,2023-07-29,H,Penal por mano en el ï¿½ï¿½rea,20',AGA
+Newell's,Independiente,2025-02-01,A,VAR confirma gol legï¿½ï¿½timo,23',AGA
+Manchester United,Boca Juniors,2024-10-24,H,Confirmaciï¿½ï¿½n de penal por VAR,64',F
+Tottenham,West Ham,2023-07-07,A,Roja directa confirmada,56',AGAINST
+Everton,Independiente,2025-01-11,A,VAR determina simulaciï¿½ï¿½n,74',F
+Arsenal,West Ham,2023-06-30,H,Tarjeta roja por agresiï¿½ï¿½n,41',AGA
+Arsenal,Liverpool,2023-12-15,H,Penal por mano en el ï¿½ï¿½rea,35',AGA
+Huracï¿½ï¿½n,River Plate,2023-11-07,A,Confirmaciï¿½ï¿½n de penal por VAR,6
+Arsenal,Independiente,2025-03-18,H,VAR determina simulaciï¿½ï¿½n,42',AGA
+Chelsea,Estudiantes,2023-06-21,A,Gol anulado por fuera de juego,69',AGAINST
+Manchester City,San Lorenzo,2024-09-30,A,Gol anulado tras revisiï¿½ï¿½n,63',AGA
+Racing,San Lorenzo,2023-10-02,H,Tarjeta roja por agresiï¿½ï¿½n,65',F
