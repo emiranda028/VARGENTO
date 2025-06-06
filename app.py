@@ -85,7 +85,7 @@ def extraer_articulo(descripcion):
 
 @st.cache_data
 def cargar_modelo():
-    df = pd.read_csv("var.csv")
+    df = pd.read_csv("var.csv", encoding='latin1')
     df['Liga'] = df['Team'].apply(lambda x: "Argentina" if x in ["River Plate", "Boca Juniors", "Racing", "Independiente", "San Lorenzo"] else "Inglaterra")
     df = df.dropna(subset=['Incident', 'VAR used'])
     vectorizer = CountVectorizer()
