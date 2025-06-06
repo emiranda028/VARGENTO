@@ -2,7 +2,6 @@
 
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import plotly.express as px
 from PIL import Image
 import io
@@ -61,35 +60,33 @@ if uploaded_file is not None:
     if uploaded_file.type.startswith("video"):
         st.video(uploaded_file)
         frame_number = st.number_input("Ingresá el número de frame clave (ej: 174)", min_value=0, value=174)
-        if st.button("🔍 Analizar jugada del video"):
-            descripcion = st.text_input("Describí brevemente la jugada para análisis predictivo")
-            if descripcion:
-                X_new = vectorizador.transform([descripcion])
-                prediccion = modelo.predict(X_new)[0]
-                st.success(f"Frame seleccionado: {frame_number}")
-                st.write(f"🤖 Predicción automática: **{prediccion.upper()}**")
-                st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
-                jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
-                st.dataframe(jugadas_similares.head(5))
-                st.caption("Árbitro responsable: Germán Delfino")
-            else:
-                st.warning("Por favor, describí la jugada para hacer la predicción.")
+        descripcion = st.text_input("Describí brevemente la jugada para análisis predictivo")
+        if st.button("🔍 Analizar jugada del video") and descripcion:
+            X_new = vectorizador.transform([descripcion])
+            prediccion = modelo.predict(X_new)[0]
+            st.success(f"Frame seleccionado: {frame_number}")
+            st.write(f"🤖 Predicción automática: **{prediccion.upper()}**")
+            st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
+            jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
+            st.dataframe(jugadas_similares.head(5))
+            st.caption("Árbitro responsable: Germán Delfino")
+        elif not descripcion:
+            st.warning("Por favor, describí la jugada para hacer la predicción.")
 
     elif uploaded_file.type.startswith("image"):
         image = Image.open(uploaded_file)
         st.image(image, caption="Imagen cargada", use_column_width=True)
-        if st.button("🔍 Analizar jugada de la imagen"):
-            descripcion = st.text_input("Describí brevemente la jugada para análisis predictivo")
-            if descripcion:
-                X_new = vectorizador.transform([descripcion])
-                prediccion = modelo.predict(X_new)[0]
-                st.write(f"🤖 Predicción automática: **{prediccion.upper()}**")
-                st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
-                jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
-                st.dataframe(jugadas_similares.head(5))
-                st.caption("Árbitro responsable: Darío Herrera")
-            else:
-                st.warning("Por favor, describí la jugada para hacer la predicción.")
+        descripcion = st.text_input("Describí brevemente la jugada para análisis predictivo")
+        if st.button("🔍 Analizar jugada de la imagen") and descripcion:
+            X_new = vectorizador.transform([descripcion])
+            prediccion = modelo.predict(X_new)[0]
+            st.write(f"🤖 Predicción automática: **{prediccion.upper()}**")
+            st.write(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
+            jugadas_similares = df_data[df_data['VAR used'].str.upper() == prediccion.upper()]
+            st.dataframe(jugadas_similares.head(5))
+            st.caption("Árbitro responsable: Darío Herrera")
+        elif not descripcion:
+            st.warning("Por favor, describí la jugada para hacer la predicción.")
 else:
     st.info("Esperando que subas una jugada para analizar...")
 
@@ -128,3 +125,4 @@ if st.checkbox("Mostrar estadísticas por equipo, árbitro y jugada"):
         pais_counts.columns = ['País', 'Cantidad']
         fig5 = px.bar(pais_counts, x='País', y='Cantidad', title='Jugadas revisadas por país/liga', text='Cantidad')
         st.plotly_chart(fig5)
+
