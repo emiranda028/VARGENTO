@@ -45,13 +45,22 @@ with st.expander("🔍 Iniciando revisión VAR..."):
 # Función para cargar el modelo
 @st.cache_resource
 def cargar_modelo():
-    df = pd.read_csv("var.csv", encoding="latin1")
-    print("Columnas disponibles:", df.columns)
-    col_match = [col for col in df.columns if col.lower().strip() == "descripcion"]
-    if not col_match:
-        st.error("No se encontró la columna 'Descripcion' en el archivo CSV.")
+    try:
+        df = pd.read_csv("var.csv", encoding="utf-8")
+    except UnicodeDecodeError:
+        df = pd.read_csv("var.csv", encoding="latin1")
+
+    columnas = [col.lower().strip() for col in df.columns]
+    if "descripcion" in columnas:
+        col_name = df.columns[columnas.index("descripcion")]
+    else:
+        st.error(f"No se encontró la columna 'Descripcion' en el CSV. Columnas disponibles: {list(df.columns)}")
         st.stop()
-    col_name = col_match[0]
+
+    if "Decision" not in df.columns:
+        st.error("No se encontró la columna 'Decision' en el CSV.")
+        st.stop()
+
     vectorizador = CountVectorizer()
     X = vectorizador.fit_transform(df[col_name])
     y = df["Decision"]
@@ -69,7 +78,6 @@ st.markdown('<div class="subtitle">Plataforma Inteligente de Análisis VAR en ti
 
 st.markdown('<div class="subtitle">¿Qué desea chequear?</div>', unsafe_allow_html=True)
 
-# Cargar modelo y vectorizador si no existen
 if 'modelo' not in locals() or 'vectorizador' not in locals():
     modelo, vectorizador, acc, df_data = cargar_modelo()
 
@@ -82,14 +90,12 @@ if texto_input:
     st.markdown(f"✅ Decisión sugerida por VARGENTO: **{prediccion}**")
     st.markdown(f"🔍 Precisión estimada del modelo: **{acc:.2%}**")
 
-    # Mostrar artículos relevantes del reglamento (ejemplo simulado)
     articulo = "Regla 12 - Faltas e incorrecciones"
     resumen = "Se sanciona con tiro libre directo si un jugador toca el balón con la mano de manera antinatural ampliando su volumen corporal."
     st.markdown("---")
     st.markdown(f"📘 **Referencia reglamentaria:** {articulo}")
     st.markdown(f"📝 {resumen}")
 
-    # Generar PDF con el resultado
     class PDF(FPDF):
         def header(self):
             self.set_font('Arial', 'B', 12)
@@ -114,7 +120,6 @@ if texto_input:
             href = f'<a href="data:application/octet-stream;base64,{b64}" download="reporte_vargento.pdf">📥 Descargar informe PDF</a>'
             st.markdown(href, unsafe_allow_html=True)
 
-# Visualizaciones por equipo y árbitro
 if 'df_data' in locals():
     st.subheader("📈 Estadísticas por equipo y árbitro")
     col1, col2 = st.columns(2)
@@ -152,5 +157,3 @@ if 'df_data' in locals():
     eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
     fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_eq_filtrado, use_container_width=True)
-
-  
