@@ -46,8 +46,14 @@ with st.expander("🔍 Iniciando revisión VAR..."):
 @st.cache_resource
 def cargar_modelo():
     df = pd.read_csv("var.csv", encoding="latin1")
+    print("Columnas disponibles:", df.columns)
+    col_match = [col for col in df.columns if col.lower().strip() == "descripcion"]
+    if not col_match:
+        st.error("No se encontró la columna 'Descripcion' en el archivo CSV.")
+        st.stop()
+    col_name = col_match[0]
     vectorizador = CountVectorizer()
-    X = vectorizador.fit_transform(df["Descripcion"])
+    X = vectorizador.fit_transform(df[col_name])
     y = df["Decision"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     modelo = MultinomialNB()
@@ -146,3 +152,5 @@ if 'df_data' in locals():
     eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
     fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_eq_filtrado, use_container_width=True)
+
+  
