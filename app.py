@@ -14,7 +14,18 @@ import plotly.express as px
 import os
 
 # Estilo de la app con fondo blanco para mayor legibilidad
-st.set_page_config(layout="centered", page_title="VARGENTO", page_icon="⚽")
+st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
+
+# Estilo personalizado
+st.markdown("""
+    <style>
+        body { background-color: white !important; }
+        .title { font-size: 36px; font-weight: bold; color: #003366; }
+        .subtitle { font-size: 20px; color: #333333; margin-bottom: 15px; }
+        .footer { font-size: 13px; color: gray; margin-top: 40px; text-align: center; }
+        .block-container { padding-top: 2rem; padding-bottom: 2rem; }
+    </style>
+""", unsafe_allow_html=True)
 
 # Visualizaciones por equipo y árbitro
 st.subheader("📈 Estadísticas por equipo y árbitro")
@@ -64,28 +75,28 @@ if 'arbitro_counts' in locals():
     fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_ref, use_container_width=True)
 
-# Filtro por tipo de jugada
-st.subheader("🎯 Filtro por tipo de jugada")
-tipos_jugada = df_data['Incident'].unique().tolist()
-tipo_seleccionado = st.selectbox("Seleccione un tipo de jugada para ver estadísticas específicas:", ["Todas"] + tipos_jugada)
+if 'df_data' in locals():
+    st.subheader("🎯 Filtro por tipo de jugada")
+    tipos_jugada = df_data['Incident'].unique().tolist()
+    tipo_seleccionado = st.selectbox("Seleccione un tipo de jugada para ver estadísticas específicas:", ["Todas"] + tipos_jugada)
 
-if tipo_seleccionado != "Todas":
-    df_filtrado = df_data[df_data['Incident'] == tipo_seleccionado]
-else:
-    df_filtrado = df_data
+    if tipo_seleccionado != "Todas":
+        df_filtrado = df_data[df_data['Incident'] == tipo_seleccionado]
+    else:
+        df_filtrado = df_data
 
-# Recalcular estadísticas filtradas
-eq_counts_filtrado = df_filtrado['Team'].value_counts().reset_index()
-eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
-fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
-st.plotly_chart(fig_eq_filtrado, use_container_width=True)
+    # Recalcular estadísticas filtradas
+    eq_counts_filtrado = df_filtrado['Team'].value_counts().reset_index()
+    eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
+    fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
+    st.plotly_chart(fig_eq_filtrado, use_container_width=True)
 
 st.image("VAR_System_Logo.svg.png", width=200)
 
-st.title("📺 VARGENTO")
-st.subheader("Plataforma Inteligente de Análisis VAR")
+st.markdown('<div class="title">📺 VARGENTO</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Plataforma Inteligente de Análisis VAR en tiempo real para decisiones arbitrales</div>', unsafe_allow_html=True)
 
-st.subheader("¿Qué desea chequear?")
+st.markdown('<div class="subtitle">¿Qué desea chequear?</div>', unsafe_allow_html=True)
 texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
 uploaded_file = st.file_uploader("Opcional: suba una imagen o video de la jugada", type=["mp4", "jpg", "jpeg", "png"])
 
@@ -119,7 +130,10 @@ if texto_input:
             pdf = FPDF()
             pdf.add_page()
             pdf.set_font("Arial", size=12)
-            pdf.cell(200, 10, txt="Informe de Análisis VAR", ln=True, align='C')
+            pdf.set_fill_color(0, 102, 204)
+            pdf.set_text_color(255, 255, 255)
+            pdf.cell(200, 10, txt="Informe de Análisis VAR", ln=True, align='C', fill=True)
+            pdf.set_text_color(0, 0, 0)
             pdf.ln(10)
             pdf.multi_cell(0, 10, txt=f"Jugada descripta: {jugada}")
             pdf.multi_cell(0, 10, txt=f"Decisión automática: {decision}")
@@ -142,6 +156,7 @@ if texto_input:
 
             pdf.ln(10)
             pdf.set_font("Arial", style="I", size=10)
+            pdf.set_text_color(100, 100, 100)
             pdf.cell(200, 10, txt="Dictamen generado por el sistema VARGENTO - Desarrollado por LTELC", ln=True, align='C')
 
             pdf_output = f"informe_var.pdf"
@@ -151,5 +166,8 @@ if texto_input:
                 href = f'<a href="data:application/pdf;base64,{base64_pdf}" download="informe_var.pdf">📄 Descargar informe en PDF</a>'
                 st.markdown(href, unsafe_allow_html=True)
 
+        st.markdown('<div class="footer">⚽ VARGENTO es un producto de <a href="https://lotengoenlacabeza.com.ar" target="_blank">LTELC</a></div>', unsafe_allow_html=True)
+
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
+
 
