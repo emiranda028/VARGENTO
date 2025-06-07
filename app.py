@@ -14,109 +14,75 @@ import os
 
 # Estilo de la app con fondo blanco para mayor legibilidad
 st.set_page_config(layout="centered", page_title="VARGENTO", page_icon="⚽")
-st.markdown("""
-    <style>
-        .stApp {
-            background-color: white;
-            color: black;
-            font-family: 'Segoe UI', sans-serif;
-        }
-        .block-container {
-            padding: 2rem;
-        }
-        .stButton>button {
-            background-color: #0052cc;
-            color: white;
-            border-radius: 5px;
-        }
-        .stButton>button:hover {
-            background-color: #003d99;
-        }
-    </style>
-""", unsafe_allow_html=True)
+st.markdown(href, unsafe_allow_html=True)
+
+    # Visualizaciones por equipo y árbitro
+    st.subheader("📈 Estadísticas por equipo y árbitro")
+
+    if 'df_data' in locals():
+        col1, col2 = st.columns(2)
+
+        with col1:
+            st.markdown("**Jugadas por equipo**")
+            equipo_counts = df_data['Team'].value_counts().reset_index()
+            equipo_counts.columns = ['Equipo', 'Cantidad']
+            st.dataframe(equipo_counts)
+
+        with col2:
+            st.markdown("**Jugadas por árbitro**")
+            arbitro_counts = df_data['Referee'].value_counts().reset_index()
+            arbitro_counts.columns = ['Árbitro', 'Cantidad']
+            st.dataframe(arbitro_counts)
+
+import plotly.express as px
+
+# Gráfico por equipo
+st.markdown("**📊 Gráfico: Jugadas por equipo**")
+fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
+st.plotly_chart(fig_eq, use_container_width=True)
+
+# Gráfico por árbitro
+st.markdown("**📊 Gráfico: Jugadas por árbitro**")
+fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
+st.plotly_chart(fig_ref, use_container_width=True)
+
+# Filtro por tipo de jugada
+st.subheader("🎯 Filtro por tipo de jugada")
+tipos_jugada = df_data['Incident'].unique().tolist()
+tipo_seleccionado = st.selectbox("Seleccione un tipo de jugada para ver estadísticas específicas:", ["Todas"] + tipos_jugada)
+
+if tipo_seleccionado != "Todas":
+    df_filtrado = df_data[df_data['Incident'] == tipo_seleccionado]
+else:
+    df_filtrado = df_data
+
+# Recalcular estadísticas filtradas
+eq_counts_filtrado = df_filtrado['Team'].value_counts().reset_index()
+eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
+fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
+st.plotly_chart(fig_eq_filtrado, use_container_width=True)
 
 st.image("VAR_System_Logo.svg.png", width=200)
 
 st.title("📺 VARGENTO")
 st.subheader("Plataforma Inteligente de Análisis VAR")
 
-st.write("Subí un video o una imagen de una jugada para analizarla automáticamente.")
-
-st.markdown("🧠 *VARGENTO es un desarrollo de [LTELC](https://lotengoenlacabeza.com.ar/), consultora en inteligencia de datos y visualización aplicada al fútbol profesional.*")
-
-# Subida de archivo
-uploaded_file = st.file_uploader("Subí tu jugada (video .mp4 o imagen .jpg/.png)", type=["mp4", "jpg", "jpeg", "png"])
-
-# Reglas y artículos FIFA relacionados
-articulos_fifa = {
-    "mano": (
-        "Regla 12 - Faltas e incorrecciones: Infracción por mano (pág. 104)",
-        "Se sanciona si un jugador toca deliberadamente el balón con la mano o el brazo."
-    ),
-    "fuera de juego": (
-        "Regla 11 - Fuera de juego (pág. 98)",
-        "Un jugador está en fuera de juego si está más cerca de la portería rival que el balón y el penúltimo defensor cuando recibe el balón."
-    ),
-    "agresión": (
-        "Regla 12 - conducta violenta (pág. 108)",
-        "Incluye golpes, empujones o agresiones físicas hacia otro jugador."
-    ),
-    "simulación": (
-        "Regla 12 - conducta antideportiva (pág. 109)",
-        "Simular una falta o exagerar una caída para engañar al árbitro es sancionable."
-    ),
-    "penal": (
-        "Regla 14 - Tiros penales (pág. 113)",
-        "Los penales se ejecutan desde el punto penal tras una falta cometida dentro del área."
-    ),
-    "gol": (
-        "Regla 10 - Determinación del resultado (pág. 92)",
-        "Un gol es válido si el balón cruza completamente la línea entre los postes y bajo el travesaño."
-    )
-}
-
-def extraer_articulo(descripcion):
-    descripcion = descripcion.lower()
-    for clave, (articulo, resumen) in articulos_fifa.items():
-        if clave in descripcion:
-            return f"📖 {articulo}\n📝 {resumen}", articulo, resumen
-    return ("📖 Regla correspondiente según criterio arbitral.\n📝 El incidente debe analizarse según el contexto del partido.",
-            "Regla correspondiente", "Debe analizarse según contexto arbitral")
-
-@st.cache_data
-def cargar_modelo():
-    df = pd.read_csv("var.csv", encoding='latin1')
-    df['Liga'] = df['Team'].apply(lambda x: "Argentina" if x in ["River Plate", "Boca Juniors", "Racing", "Independiente", "San Lorenzo"] else "Inglaterra")
-    df = df.dropna(subset=['Incident', 'VAR used'])
-    vectorizer = CountVectorizer()
-    X = vectorizer.fit_transform(df['Incident'])
-    y = df['VAR used']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = MultinomialNB()
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    accuracy = accuracy_score(y_test, y_pred)
-    return model, vectorizer, accuracy, df
-
-modelo, vectorizador, acc, df_data = cargar_modelo()
-
-st.markdown("📘 Consultá el reglamento oficial completo de FIFA [aquí](https://digitalhub.fifa.com/m/7ae8d5dc60c7da1/original/Reglas-de-Juego-2023-24.pdf)")
-
-texto_input = st.text_area("Describí brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
+st.subheader("¿Qué desea chequear?")
+uploaded_file = st.file_uploader("Opcional: suba una imagen o video de la jugada", type=["mp4", "jpg", "jpeg", "png"])
 
 if texto_input:
     X_nuevo = vectorizador.transform([texto_input])
     prediccion = modelo.predict(X_nuevo)[0]
     if prediccion.upper() == "AGAINST":
-        prediccion = "Cobrar en contra del equipo"
-    elif prediccion.upper() == "FAVOR":
-        prediccion = "Cobrar a favor del equipo"
-    elif prediccion.upper() == "PENAL":
-        prediccion = "Cobrar penal"
-    elif prediccion.upper() == "NO ACTION":
-        prediccion = "No tomar ninguna acción"
-    elif prediccion.upper() == "EXPULSIÓN":
-        prediccion = "Expulsar al jugador involucrado"
+        prediccion = "Cobrar tiro libre indirecto en contra del equipo que cometió la infracción"
+elif prediccion.upper() == "FAVOR":
+        prediccion = "Cobrar falta a favor del equipo que sufrió la infracción"
+elif prediccion.upper() == "PENAL":
+        prediccion = "Cobrar penal a favor del equipo atacado"
+elif prediccion.upper() == "NO ACTION":
+        prediccion = "No tomar ninguna acción disciplinaria ni técnica"
+elif prediccion.upper() == "EXPULSIÓN":
+        prediccion = "Mostrar tarjeta roja y expulsar al jugador involucrado"
     st.markdown(f"✅ Decisión sugerida por VARGENTO: **{prediccion}**")
     st.markdown(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
 
@@ -158,6 +124,7 @@ if texto_input:
                 st.markdown(href, unsafe_allow_html=True)
 
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
+
 
 
 
