@@ -46,9 +46,9 @@ with st.expander("🔍 Iniciando revisión VAR..."):
 @st.cache_resource
 def cargar_modelo():
     try:
-        df = pd.read_csv("var_limpio.csv", encoding="utf-8")
+        df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
     except UnicodeDecodeError:
-        df = pd.read_csv("var_limpio.csv", encoding="latin1")
+        df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="latin1")
 
     columnas = [col.lower().strip() for col in df.columns]
     if "descripcion" in columnas:
