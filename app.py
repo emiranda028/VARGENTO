@@ -59,13 +59,13 @@ def cargar_modelo():
         st.error(f"No se encontró una columna válida para descripción de jugada ('Descripcion' o 'Incident'). Columnas disponibles: {list(df.columns)}")
         st.stop()
 
-    if "Decision" not in df.columns:
-        st.warning("⚠️ No se encontró la columna 'Decision' en el CSV. Se generarán decisiones ficticias para fines de demostración.")
+    if "Decision" not in df.columns or df["Decision"].nunique() < 2:
+        st.warning("⚠️ No se encontró la columna 'Decision' válida en el CSV. Se generarán decisiones ficticias para fines de demostración.")
         decisiones = ["Penal", "Tiro libre", "Sin falta", "Amarilla", "Roja"]
         df["Decision"] = [random.choice(decisiones) for _ in range(len(df))]
 
     vectorizador = CountVectorizer()
-    X = vectorizador.fit_transform(df[col_name])
+    X = vectorizador.fit_transform(df[col_name].astype(str))
     y = df["Decision"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
@@ -161,3 +161,4 @@ if 'df_data' in locals():
     eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
     fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_eq_filtrado, use_container_width=True)
+
