@@ -25,9 +25,13 @@ st.markdown("""
         .footer { font-size: 13px; color: gray; margin-top: 40px; text-align: center; }
         .block-container { padding-top: 2rem; padding-bottom: 2rem; }
     </style>
+    <script>
+        var audio = new Audio('https://www.fesliyanstudios.com/play-mp3/4385');
+        window.addEventListener('load', function() {
+            audio.play().catch(e => console.log('Auto play blocked'));
+        });
+    </script>
 """, unsafe_allow_html=True)
-
-st.audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg", format="audio/ogg")
 
 with st.expander("🔍 Iniciando revisión VAR..."):
     st.markdown("""
@@ -42,9 +46,9 @@ with st.expander("🔍 Iniciando revisión VAR..."):
 @st.cache_resource
 def cargar_modelo():
     try:
-        df = pd.read_csv("var.csv", encoding="utf-8")
+        df = pd.read_csv("var_limpio.csv", encoding="utf-8")
     except UnicodeDecodeError:
-        df = pd.read_csv("var.csv", encoding="latin1")
+        df = pd.read_csv("var_limpio.csv", encoding="latin1")
 
     columnas = [col.lower().strip() for col in df.columns]
     if "descripcion" in columnas:
@@ -157,6 +161,3 @@ if 'df_data' in locals():
     eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
     fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_eq_filtrado, use_container_width=True)
-
-
-    
