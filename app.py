@@ -45,7 +45,7 @@ with st.expander("🔍 Iniciando revisión VAR..."):
 # Función para cargar el modelo
 @st.cache_resource
 def cargar_modelo():
-    df = pd.read_csv("var.csv", encoding="utf-8")
+    df = pd.read_csv("var.csv", encoding="latin1")
     vectorizador = CountVectorizer()
     X = vectorizador.fit_transform(df["Descripcion"])
     y = df["Decision"]
@@ -55,49 +55,6 @@ def cargar_modelo():
     y_pred = modelo.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
     return modelo, vectorizador, acc, df
-
-# Visualizaciones por equipo y árbitro
-st.subheader("📈 Estadísticas por equipo y árbitro")
-
-if 'df_data' in locals():
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown("**Jugadas por equipo**")
-        equipo_counts = df_data['Team'].value_counts().reset_index()
-        equipo_counts.columns = ['Equipo', 'Cantidad']
-        st.dataframe(equipo_counts)
-
-    with col2:
-        st.markdown("**Jugadas por árbitro**")
-        arbitro_counts = df_data['Referee'].value_counts().reset_index()
-        arbitro_counts.columns = ['Árbitro', 'Cantidad']
-        st.dataframe(arbitro_counts)
-
-if 'equipo_counts' in locals():
-    st.markdown("**📊 Gráfico: Jugadas por equipo**")
-    fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
-    st.plotly_chart(fig_eq, use_container_width=True)
-
-if 'arbitro_counts' in locals():
-    st.markdown("**📊 Gráfico: Jugadas por árbitro**")
-    fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
-    st.plotly_chart(fig_ref, use_container_width=True)
-
-if 'df_data' in locals():
-    st.subheader("🎯 Filtro por tipo de jugada")
-    tipos_jugada = df_data['Incident'].unique().tolist()
-    tipo_seleccionado = st.selectbox("Seleccione un tipo de jugada para ver estadísticas específicas:", ["Todas"] + tipos_jugada)
-
-    if tipo_seleccionado != "Todas":
-        df_filtrado = df_data[df_data['Incident'] == tipo_seleccionado]
-    else:
-        df_filtrado = df_data
-
-    eq_counts_filtrado = df_filtrado['Team'].value_counts().reset_index()
-    eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
-    fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
-    st.plotly_chart(fig_eq_filtrado, use_container_width=True)
 
 st.image("VAR_System_Logo.svg.png", width=200)
 
@@ -151,3 +108,41 @@ if texto_input:
             href = f'<a href="data:application/octet-stream;base64,{b64}" download="reporte_vargento.pdf">📥 Descargar informe PDF</a>'
             st.markdown(href, unsafe_allow_html=True)
 
+# Visualizaciones por equipo y árbitro
+if 'df_data' in locals():
+    st.subheader("📈 Estadísticas por equipo y árbitro")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("**Jugadas por equipo**")
+        equipo_counts = df_data['Team'].value_counts().reset_index()
+        equipo_counts.columns = ['Equipo', 'Cantidad']
+        st.dataframe(equipo_counts)
+
+    with col2:
+        st.markdown("**Jugadas por árbitro**")
+        arbitro_counts = df_data['Referee'].value_counts().reset_index()
+        arbitro_counts.columns = ['Árbitro', 'Cantidad']
+        st.dataframe(arbitro_counts)
+
+    st.markdown("**📊 Gráfico: Jugadas por equipo**")
+    fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
+    st.plotly_chart(fig_eq, use_container_width=True)
+
+    st.markdown("**📊 Gráfico: Jugadas por árbitro**")
+    fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
+    st.plotly_chart(fig_ref, use_container_width=True)
+
+    st.subheader("🎯 Filtro por tipo de jugada")
+    tipos_jugada = df_data['Incident'].unique().tolist()
+    tipo_seleccionado = st.selectbox("Seleccione un tipo de jugada para ver estadísticas específicas:", ["Todas"] + tipos_jugada)
+
+    if tipo_seleccionado != "Todas":
+        df_filtrado = df_data[df_data['Incident'] == tipo_seleccionado]
+    else:
+        df_filtrado = df_data
+
+    eq_counts_filtrado = df_filtrado['Team'].value_counts().reset_index()
+    eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
+    fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
+    st.plotly_chart(fig_eq_filtrado, use_container_width=True)
