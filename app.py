@@ -15,10 +15,8 @@ import os
 import streamlit.components.v1 as components
 import random
 
-# Estilo de la app con fondo blanco para mayor legibilidad
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
 
-# Estilo personalizado
 st.markdown("""
     <style>
         body { background-color: white !important; }
@@ -29,10 +27,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Sonido al generar decisión
 st.audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg", format="audio/ogg")
 
-# Mostrar animación de VAR al comenzar revisión
 with st.expander("🔍 Iniciando revisión VAR..."):
     st.markdown("""
     <div style='font-size: 48px; text-align: center;'>
@@ -43,7 +39,6 @@ with st.expander("🔍 Iniciando revisión VAR..."):
     </div>
     """, unsafe_allow_html=True)
 
-# Función para cargar el modelo
 @st.cache_resource
 def cargar_modelo():
     try:
@@ -80,12 +75,13 @@ st.image("VAR_System_Logo.svg.png", width=200)
 st.markdown('<div class="title">📺 VARGENTO</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Plataforma Inteligente de Análisis VAR en tiempo real para decisiones arbitrales</div>', unsafe_allow_html=True)
 
+modelo, vectorizador, acc, df_data = cargar_modelo()
+
 st.markdown('<div class="subtitle">¿Qué desea chequear?</div>', unsafe_allow_html=True)
 
-if 'modelo' not in locals() or 'vectorizador' not in locals():
-    modelo, vectorizador, acc, df_data = cargar_modelo()
-
 texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
+video_link = st.text_input("(Opcional) Ingrese un enlace de YouTube o suba un video MP4")
+uploaded_file = st.file_uploader("(Opcional) Suba una imagen o captura de la jugada", type=["png", "jpg", "jpeg", "mp4"])
 
 if texto_input:
     X_nuevo = vectorizador.transform([texto_input])
@@ -114,8 +110,6 @@ if texto_input:
         if imagen:
             pdf.image(imagen, x=10, y=pdf.get_y() + 10, w=100)
         pdf.output("reporte_vargento.pdf")
-
-    uploaded_file = st.file_uploader("(Opcional) Suba una imagen o captura de la jugada", type=["png", "jpg", "jpeg"])
 
     if st.button("📄 Generar informe en PDF"):
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
