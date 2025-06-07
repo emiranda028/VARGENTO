@@ -53,8 +53,10 @@ def cargar_modelo():
     columnas = [col.lower().strip() for col in df.columns]
     if "descripcion" in columnas:
         col_name = df.columns[columnas.index("descripcion")]
+    elif "incident" in columnas:
+        col_name = df.columns[columnas.index("incident")]
     else:
-        st.error(f"No se encontró la columna 'Descripcion' en el CSV. Columnas disponibles: {list(df.columns)}")
+        st.error(f"No se encontró una columna válida para descripción de jugada ('Descripcion' o 'Incident'). Columnas disponibles: {list(df.columns)}")
         st.stop()
 
     if "Decision" not in df.columns:
