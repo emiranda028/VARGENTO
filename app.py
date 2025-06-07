@@ -174,5 +174,3 @@ if texto_input:
 
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
 
-
-
