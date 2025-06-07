@@ -10,6 +10,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 from fpdf import FPDF
 import base64
+import plotly.express as px
 import os
 
 # Estilo de la app con fondo blanco para mayor legibilidad
@@ -53,15 +54,15 @@ if 'df_data' in locals():
 
 import plotly.express as px
 
-# Gráfico por equipo
-st.markdown("**📊 Gráfico: Jugadas por equipo**")
-fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
-st.plotly_chart(fig_eq, use_container_width=True)
+if 'equipo_counts' in locals():
+    st.markdown("**📊 Gráfico: Jugadas por equipo**")
+    fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
+    st.plotly_chart(fig_eq, use_container_width=True)
 
-# Gráfico por árbitro
-st.markdown("**📊 Gráfico: Jugadas por árbitro**")
-fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
-st.plotly_chart(fig_ref, use_container_width=True)
+if 'arbitro_counts' in locals():
+    st.markdown("**📊 Gráfico: Jugadas por árbitro**")
+    fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
+    st.plotly_chart(fig_ref, use_container_width=True)
 
 # Filtro por tipo de jugada
 st.subheader("🎯 Filtro por tipo de jugada")
