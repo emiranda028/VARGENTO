@@ -128,3 +128,4 @@ elif prediccion.upper() == "EXPULSIÓN":
 
 
 
+
