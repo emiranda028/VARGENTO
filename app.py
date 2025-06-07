@@ -6,7 +6,7 @@ from PIL import Image
 import io
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
+from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 from fpdf import FPDF
 import base64
@@ -64,7 +64,7 @@ def cargar_modelo():
     X = vectorizador.fit_transform(df[col_name])
     y = df["Decision"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    modelo = MultinomialNB()
+    modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
     modelo.fit(X_train, y_train)
     y_pred = modelo.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
