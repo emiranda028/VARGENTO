@@ -93,14 +93,15 @@ if texto_input:
     prediccion = modelo.predict(X_nuevo)[0]
     if prediccion.upper() == "AGAINST":
         prediccion = "Cobrar tiro libre indirecto en contra del equipo que cometió la infracción"
-elif prediccion.upper() == "FAVOR":
+    elif prediccion.upper() == "FAVOR":
         prediccion = "Cobrar falta a favor del equipo que sufrió la infracción"
-elif prediccion.upper() == "PENAL":
+    elif prediccion.upper() == "PENAL":
         prediccion = "Cobrar penal a favor del equipo atacado"
-elif prediccion.upper() == "NO ACTION":
+    elif prediccion.upper() == "NO ACTION":
         prediccion = "No tomar ninguna acción disciplinaria ni técnica"
-elif prediccion.upper() == "EXPULSIÓN":
+    elif prediccion.upper() == "EXPULSIÓN":
         prediccion = "Mostrar tarjeta roja y expulsar al jugador involucrado"
+
     st.markdown(f"✅ Decisión sugerida por VARGENTO: **{prediccion}**")
     st.markdown(f"📊 Precisión del modelo: **{acc*100:.2f}%**")
 
@@ -142,6 +143,3 @@ elif prediccion.upper() == "EXPULSIÓN":
                 st.markdown(href, unsafe_allow_html=True)
 
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
-
-
-
