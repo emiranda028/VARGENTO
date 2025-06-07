@@ -159,3 +159,5 @@ if 'df_data' in locals():
     eq_counts_filtrado.columns = ['Equipo', 'Cantidad']
     fig_eq_filtrado = px.bar(eq_counts_filtrado, x='Equipo', y='Cantidad', title=f'Jugadas de tipo "{tipo_seleccionado}" por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_eq_filtrado, use_container_width=True)
+
+
