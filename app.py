@@ -12,6 +12,7 @@ from fpdf import FPDF
 import base64
 import plotly.express as px
 import os
+import streamlit.components.v1 as components
 
 # Estilo de la app con fondo blanco para mayor legibilidad
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
@@ -27,9 +28,19 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Sonido al generar decisión
+st.audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg", format="audio/ogg")
+
 # Mostrar animación de VAR al comenzar revisión
 with st.expander("🔍 Iniciando revisión VAR..."):
-    st.image("imagen de seña de var.jpg", caption="Revisión VAR en curso", use_column_width=True)
+    st.markdown("""
+    <div style='font-size: 48px; text-align: center;'>
+        🖐️➡️⬇️⬅️⬆️🖐️
+    </div>
+    <div style='text-align: center;'>
+        <em>El árbitro está revisando la jugada...</em>
+    </div>
+    """, unsafe_allow_html=True)
 
 # Función para cargar el modelo
 @st.cache_resource
@@ -139,5 +150,4 @@ if texto_input:
             b64 = base64.b64encode(f.read()).decode()
             href = f'<a href="data:application/octet-stream;base64,{b64}" download="reporte_vargento.pdf">📥 Descargar informe PDF</a>'
             st.markdown(href, unsafe_allow_html=True)
-
 
