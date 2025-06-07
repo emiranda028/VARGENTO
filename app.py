@@ -14,7 +14,6 @@ import os
 
 # Estilo de la app con fondo blanco para mayor legibilidad
 st.set_page_config(layout="centered", page_title="VARGENTO", page_icon="⚽")
-st.markdown(href, unsafe_allow_html=True)
 
 # Visualizaciones por equipo y árbitro
 st.subheader("📈 Estadísticas por equipo y árbitro")
@@ -143,3 +142,4 @@ if texto_input:
                 st.markdown(href, unsafe_allow_html=True)
 
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
+
