@@ -7,3 +7,9 @@ Pillow
 scikit-learn
 numpy
 fpdf
+streamlit
+pandas
+Pillow
+scikit-learn
+fpdf
+plotly
