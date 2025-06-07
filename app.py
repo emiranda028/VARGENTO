@@ -97,7 +97,11 @@ st.markdown('<div class="title">📺 VARGENTO</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Plataforma Inteligente de Análisis VAR en tiempo real para decisiones arbitrales</div>', unsafe_allow_html=True)
 
 st.markdown('<div class="subtitle">¿Qué desea chequear?</div>', unsafe_allow_html=True)
-texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
+# Cargar modelo y vectorizador si no existen
+if 'modelo' not in locals() or 'vectorizador' not in locals():
+    modelo, vectorizador, acc, df_data = cargar_modelo()
+
+texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")")
 uploaded_file = st.file_uploader("Opcional: suba una imagen o video de la jugada", type=["mp4", "jpg", "jpeg", "png"])
 
 # Campo adicional para enlace de YouTube
@@ -169,5 +173,6 @@ if texto_input:
         st.markdown('<div class="footer">⚽ VARGENTO es un producto de <a href="https://lotengoenlacabeza.com.ar" target="_blank">LTELC</a></div>', unsafe_allow_html=True)
 
         generar_pdf(texto_input, prediccion, acc, articulo, resumen, uploaded_file if uploaded_file else None)
+
 
 
