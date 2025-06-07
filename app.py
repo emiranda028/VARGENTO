@@ -13,6 +13,7 @@ import base64
 import plotly.express as px
 import os
 import streamlit.components.v1 as components
+import random
 
 # Estilo de la app con fondo blanco para mayor legibilidad
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
@@ -60,8 +61,9 @@ def cargar_modelo():
         st.stop()
 
     if "Decision" not in df.columns:
-        st.error("No se encontró la columna 'Decision' en el CSV.")
-        st.stop()
+        st.warning("⚠️ No se encontró la columna 'Decision' en el CSV. Se generarán decisiones ficticias para fines de demostración.")
+        decisiones = ["Penal", "Tiro libre", "Sin falta", "Amarilla", "Roja"]
+        df["Decision"] = [random.choice(decisiones) for _ in range(len(df))]
 
     vectorizador = CountVectorizer()
     X = vectorizador.fit_transform(df[col_name])
@@ -134,17 +136,19 @@ if 'df_data' in locals():
 
     with col2:
         st.markdown("**Jugadas por árbitro**")
-        arbitro_counts = df_data['Referee'].value_counts().reset_index()
-        arbitro_counts.columns = ['Árbitro', 'Cantidad']
-        st.dataframe(arbitro_counts)
+        if 'Referee' in df_data.columns:
+            arbitro_counts = df_data['Referee'].value_counts().reset_index()
+            arbitro_counts.columns = ['Árbitro', 'Cantidad']
+            st.dataframe(arbitro_counts)
 
     st.markdown("**📊 Gráfico: Jugadas por equipo**")
     fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
     st.plotly_chart(fig_eq, use_container_width=True)
 
-    st.markdown("**📊 Gráfico: Jugadas por árbitro**")
-    fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
-    st.plotly_chart(fig_ref, use_container_width=True)
+    if 'Referee' in df_data.columns:
+        st.markdown("**📊 Gráfico: Jugadas por árbitro**")
+        fig_ref = px.bar(arbitro_counts, x='Árbitro', y='Cantidad', title='Jugadas analizadas por árbitro', labels={'Cantidad': 'Cantidad de jugadas'})
+        st.plotly_chart(fig_ref, use_container_width=True)
 
     st.subheader("🎯 Filtro por tipo de jugada")
     tipos_jugada = df_data['Incident'].unique().tolist()
