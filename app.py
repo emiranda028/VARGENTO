@@ -85,7 +85,13 @@ st.title("📺 VARGENTO")
 st.subheader("Plataforma Inteligente de Análisis VAR")
 
 st.subheader("¿Qué desea chequear?")
+texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
 uploaded_file = st.file_uploader("Opcional: suba una imagen o video de la jugada", type=["mp4", "jpg", "jpeg", "png"])
+
+# Campo adicional para enlace de YouTube
+youtube_url = st.text_input("O pegue aquí un enlace de YouTube con la jugada")
+if youtube_url:
+    st.video(youtube_url)
 
 if texto_input:
     X_nuevo = vectorizador.transform([texto_input])
@@ -119,6 +125,9 @@ if texto_input:
             pdf.multi_cell(0, 10, txt=f"Precisión del modelo: {precision*100:.2f}%")
             pdf.multi_cell(0, 10, txt=f"Reglamento aplicable: {articulo}")
             pdf.multi_cell(0, 10, txt=f"Descripción de la regla: {resumen}")
+
+            if youtube_url:
+                pdf.multi_cell(0, 10, txt=f"Enlace de jugada (YouTube): {youtube_url}")
 
             if imagen_bytes is not None and hasattr(imagen_bytes, 'read'):
                 try:
