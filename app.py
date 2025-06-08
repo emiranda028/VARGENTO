@@ -83,6 +83,22 @@ def cargar_modelo():
     vectorizador = CountVectorizer()
     X = vectorizador.fit_transform(df[col_name].astype(str))
     y = df["Decision"]
+
+    # Verificar si hay suficientes clases
+    clases_entrenamiento = y.value_counts()
+    if len(clases_entrenamiento) < 2 or any(clases_entrenamiento < 2):
+        st.warning("Se detectaron clases insuficientes o desequilibradas. Agregando más ejemplos sintéticos para estabilizar el entrenamiento.")
+        ejemplos_adicionales = pd.DataFrame([
+            {"Incident": "mano dentro del área tras rebote", "Decision": "Penal"},
+            {"Incident": "gol legítimo tras pase filtrado", "Decision": "Gol"},
+            {"Incident": "entrada fuerte sin intención de jugar el balón", "Decision": "Roja"},
+            {"Incident": "protesta reiterada al árbitro", "Decision": "Amarilla"},
+            {"Incident": "remate desde fuera del área que entra", "Decision": "Gol"},
+        ])
+        df = pd.concat([df, ejemplos_adicionales], ignore_index=True)
+        X = vectorizador.fit_transform(df[col_name].astype(str))
+        y = df["Decision"]
+
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     if len(set(y_train)) < 2:
@@ -138,3 +154,4 @@ if "VAR used" in df_data.columns:
     uso_var.columns = ["VAR usado", "Cantidad"]
     fig_var = px.pie(uso_var, names='VAR usado', values='Cantidad', title='Distribución del uso del VAR')
     st.plotly_chart(fig_var)
+
