@@ -24,16 +24,21 @@ st.markdown("""
         .footer { font-size: 13px; color: gray; margin-top: 40px; text-align: center; }
         .block-container { padding-top: 2rem; padding-bottom: 2rem; }
     </style>
-    <script>
-        var audio = new Audio('https://www.fesliyanstudios.com/play-mp3/4385');
-        window.addEventListener('load', function() {
-            audio.play().catch(e => console.log('Auto play blocked'));
-        });
-    </script>
+""", unsafe_allow_html=True)
+
+st.image("https://media.tenor.com/xOb4uwv-VV8AAAAC/var-checking.gif", use_column_width=True)
+st.markdown("""
+# ⚽ Bienvenido a VARGENTO
+La plataforma inteligente para asistir en decisiones arbitrales mediante IA y análisis de jugadas.
+
+👉 Subí una imagen, video o link de YouTube de la jugada.
+👉 Describí brevemente lo ocurrido.
+👉 Recibí la sugerencia de decisión basada en el historial VAR.
+
+📖 [Ver Reglamento de Juego FIFA](https://digitalhub.fifa.com/m/799749e5f64c0f86/original/lnc9zjo8xf2j3nvwfazh-pdf.pdf)
 """, unsafe_allow_html=True)
 
 @st.cache_resource
-
 def cargar_modelo():
     try:
         df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
@@ -74,9 +79,7 @@ def cargar_modelo():
         st.stop()
 
     try:
-        X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, stratify=y, random_state=42
-        )
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
     except ValueError:
         st.warning("⚠️ Estratificación fallida. Usando división aleatoria.")
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -84,8 +87,6 @@ def cargar_modelo():
     if X_train.shape[0] == 0:
         st.error("❌ El conjunto de entrenamiento está vacío. No se puede entrenar el modelo.")
         st.stop()
-
-    st.write("🧪 Muestra de y_train:", y_train.value_counts())
 
     modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
     modelo.fit(X_train, y_train)
@@ -96,18 +97,14 @@ def cargar_modelo():
 
 modelo, vectorizador, acc, df_data, col_name = cargar_modelo()
 
-st.title("⚽ VARGENTO: Análisis Inteligente del VAR")
-
 st.markdown(f"""
-### 🧠 Precisión del modelo
-La precisión actual del modelo es: **{acc * 100:.2f}%**
+## 🧠 Precisión del modelo actual: **{acc * 100:.2f}%**
 """)
 
 st.markdown("---")
 
 st.subheader("📸 Analizar nueva jugada")
 texto_jugada = st.text_area("Describí la jugada:", "Jugador comete falta dentro del área tras revisión del VAR")
-
 archivo_subido = st.file_uploader("Subí una imagen o video de la jugada (opcional):", type=["jpg", "jpeg", "png", "mp4"])
 link_youtube = st.text_input("O pegá un link de YouTube con la jugada (opcional):")
 
@@ -117,7 +114,8 @@ if st.button("🔍 Predecir decisión"):
     else:
         X_nueva = vectorizador.transform([texto_jugada])
         pred = modelo.predict(X_nueva)[0]
-        st.success(f"✅ Decisión sugerida por el modelo: **{pred}**")
+
+        st.success(f"📢 Decisión sugerida: **{pred}**")
 
         if archivo_subido:
             if archivo_subido.type.startswith("video"):
