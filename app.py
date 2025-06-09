@@ -60,35 +60,21 @@ def cargar_modelo():
     conteo_decisiones = df["Decision"].value_counts()
     st.write("📌 Distribución actual de clases:", conteo_decisiones)
 
-    clases_validas = conteo_decisiones[conteo_decisiones >= 3].index.tolist()
-    df = df[df["Decision"].isin(clases_validas)]
-
-    if len(clases_validas) < 2 or df.shape[0] < 10:
-        st.warning("⚠️ No hay suficientes datos representativos para entrenar el modelo.")
-        ejemplos_sinteticos = pd.DataFrame([
-            {"Incident": "remate al arco que termina en gol", "Decision": "Gol"},
-            {"Incident": "remate desviado", "Decision": "No gol"},
-            {"Incident": "mano clara dentro del área", "Decision": "Penal"},
-            {"Incident": "entrada fuerte con plancha", "Decision": "Roja"},
-            {"Incident": "protesta reiterada", "Decision": "Amarilla"},
-        ])
-        df = pd.concat([df, ejemplos_sinteticos], ignore_index=True)
+    clases_validas_para_split = conteo_decisiones[conteo_decisiones >= 2].index.tolist()
+    df_filtrado = df[df["Decision"].isin(clases_validas_para_split)]
 
     vectorizador = CountVectorizer()
-    X = vectorizador.fit_transform(df[col_name].astype(str))
-    y = df["Decision"]
+    X = vectorizador.fit_transform(df_filtrado[col_name].astype(str))
+    y = df_filtrado["Decision"]
 
     if len(set(y)) < 2:
-        st.error("❌ No hay suficientes clases distintas para entrenar el modelo.")
-        st.stop()
-
-    clase_counts = Counter(y)
-    if any(v < 3 for v in clase_counts.values()):
-        st.error("❌ Cada clase debe tener al menos 3 ejemplos para entrenar adecuadamente.")
+        st.error("❌ No hay suficientes clases con ocurrencias suficientes para stratificar y entrenar.")
         st.stop()
 
     try:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, stratify=y, random_state=42
+        )
     except ValueError as e:
         st.error(f"❌ No se pudo dividir los datos de entrenamiento: {e}")
         st.stop()
@@ -145,4 +131,3 @@ if st.button("📥 Exportar predicción a PDF"):
 st.markdown("""
 <div class="footer">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>
 """, unsafe_allow_html=True)
-
