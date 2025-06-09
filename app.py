@@ -14,6 +14,7 @@ import plotly.express as px
 import os
 import streamlit.components.v1 as components
 import random
+from collections import Counter
 
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
 
@@ -62,8 +63,8 @@ def cargar_modelo():
     clases_validas = conteo_decisiones[conteo_decisiones >= 3].index.tolist()
     df = df[df["Decision"].isin(clases_validas)]
 
-    if len(clases_validas) < 2:
-        st.warning("⚠️ No hay suficientes clases representadas para entrenar un modelo.")
+    if len(clases_validas) < 2 or df.shape[0] < 10:
+        st.warning("⚠️ No hay suficientes datos representativos para entrenar el modelo.")
         ejemplos_sinteticos = pd.DataFrame([
             {"Incident": "remate al arco que termina en gol", "Decision": "Gol"},
             {"Incident": "remate desviado", "Decision": "No gol"},
@@ -81,10 +82,15 @@ def cargar_modelo():
         st.error("❌ No hay suficientes clases distintas para entrenar el modelo.")
         st.stop()
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    clase_counts = Counter(y)
+    if any(v < 3 for v in clase_counts.values()):
+        st.error("❌ Cada clase debe tener al menos 3 ejemplos para entrenar adecuadamente.")
+        st.stop()
 
-    if len(set(y_train)) < 2:
-        st.error("❌ Error: El set de entrenamiento no contiene al menos dos clases distintas.")
+    try:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
+    except ValueError as e:
+        st.error(f"❌ No se pudo dividir los datos de entrenamiento: {e}")
         st.stop()
 
     modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
@@ -96,73 +102,47 @@ def cargar_modelo():
 
 modelo, vectorizador, acc, df_data = cargar_modelo()
 
-st.header("¿Qué desea chequear?")
-texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
-uploaded_file = st.file_uploader("Suba una imagen, video MP4 o enlace de YouTube para analizar", type=["jpg", "jpeg", "png", "mp4"])
-youtube_link = st.text_input("O ingrese un enlace de YouTube")
+st.markdown("""
+### 🧠 Precisión del modelo
+La precisión actual del modelo es: **{:.2f}%**
+""".format(acc * 100))
 
-if "historial" not in st.session_state:
-    st.session_state.historial = []
+st.markdown("---")
 
-if st.button("Revisar jugada"):
-    if not texto_input:
-        st.warning("Por favor describa brevemente la jugada.")
-    else:
-        X_nuevo = vectorizador.transform([texto_input])
-        prediccion = modelo.predict(X_nuevo)[0]
-        probas = modelo.predict_proba(X_nuevo)[0]
-        confianza = round(max(probas) * 100, 2)
+st.subheader("📸 Analizar nueva jugada")
+texto_jugada = st.text_area("Describí la jugada para que el modelo sugiera una decisión:", "Jugador comete falta dentro del área tras revisión del VAR")
 
-        st.markdown(f"## ✅ Decisión sugerida por VARGENTO: **{prediccion}**")
-        st.markdown(f"### 🔍 Precisión estimada del modelo: **{confianza}%**")
+if st.button("🔍 Predecir decisión"):
+    X_nuevo = vectorizador.transform([texto_jugada])
+    prediccion = modelo.predict(X_nuevo)[0]
+    st.success(f"✅ Decisión sugerida por el modelo: **{prediccion}**")
 
-        if uploaded_file:
-            if uploaded_file.type.startswith("image"):
-                image = Image.open(uploaded_file)
-                st.image(image, caption="Imagen subida", use_column_width=True)
-            elif uploaded_file.type == "video/mp4":
-                video_bytes = uploaded_file.read()
-                st.video(video_bytes)
+st.markdown("---")
 
-        if youtube_link:
-            if "youtube.com" in youtube_link or "youtu.be" in youtube_link:
-                video_id = youtube_link.split("v=")[-1] if "v=" in youtube_link else youtube_link.split("/")[-1]
-                embed_link = f"https://www.youtube.com/embed/{video_id}"
-                components.iframe(embed_link, height=315)
+st.subheader("📊 Análisis de distribución de decisiones")
+fig = px.histogram(df_data, x="Decision", title="Distribución de decisiones en el dataset")
+st.plotly_chart(fig)
 
-        st.session_state.historial.append({
-            "Texto": texto_input,
-            "Decisión": prediccion,
-            "Precisión": confianza
-        })
+st.markdown("---")
 
-        if st.button("📄 Exportar resultado a PDF"):
-            pdf = FPDF()
-            pdf.add_page()
-            pdf.set_font("Arial", size=12)
-            pdf.cell(200, 10, txt="Informe de jugada analizada por VARGENTO", ln=True, align='C')
-            pdf.ln(10)
-            pdf.multi_cell(0, 10, txt=f"Descripción: {texto_input}\nDecisión: {prediccion}\nPrecisión: {confianza}%")
-            pdf.output("resultado_var.pdf")
-            with open("resultado_var.pdf", "rb") as f:
-                b64_pdf = base64.b64encode(f.read()).decode()
-                href = f'<a href="data:application/octet-stream;base64,{b64_pdf}" download="resultado_var.pdf">📥 Descargar PDF</a>'
-                st.markdown(href, unsafe_allow_html=True)
+st.subheader("📤 Descargar resultados")
+if st.button("📥 Exportar predicción a PDF"):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    pdf.cell(200, 10, txt="Reporte de decisión VARGENTO", ln=True, align='C')
+    pdf.ln(10)
+    pdf.multi_cell(0, 10, f"Jugada: {texto_jugada}\n\nDecisión sugerida: {prediccion}")
 
-st.subheader("📊 Estadísticas por equipo y árbitro")
-if "Team" in df_data.columns:
-    equipo_counts = df_data["Team"].value_counts().reset_index()
-    equipo_counts.columns = ["Equipo", "Cantidad"]
-    fig_eq = px.bar(equipo_counts, x='Equipo', y='Cantidad', title='Jugadas analizadas por equipo', labels={'Cantidad': 'Cantidad de jugadas'})
-    st.plotly_chart(fig_eq)
+    pdf_output = io.BytesIO()
+    pdf.output(pdf_output)
+    pdf_output.seek(0)
 
-if "VAR used" in df_data.columns:
-    uso_var = df_data["VAR used"].value_counts().reset_index()
-    uso_var.columns = ["VAR usado", "Cantidad"]
-    fig_var = px.pie(uso_var, names='VAR usado', values='Cantidad', title='Distribución del uso del VAR')
-    st.plotly_chart(fig_var)
+    b64 = base64.b64encode(pdf_output.read()).decode('utf-8')
+    href = f'<a href="data:application/octet-stream;base64,{b64}" download="reporte_var.pdf">📄 Descargar PDF</a>'
+    st.markdown(href, unsafe_allow_html=True)
 
-if st.session_state.historial:
-    st.subheader("📘 Historial de decisiones")
-    df_hist = pd.DataFrame(st.session_state.historial)
-    st.dataframe(df_hist)
+st.markdown("""
+<div class="footer">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>
+""", unsafe_allow_html=True)
+
