@@ -54,7 +54,7 @@ def cargar_modelo():
         st.warning("⚠️ No se encontró la columna 'Decision'. Se agregará automáticamente.")
         df["Decision"] = "Desconocido"
 
-    df = df.dropna(subset=["Decision"])
+    df = df.dropna(subset=["Decision", col_name])
     df = df[df["Decision"].astype(str).str.strip() != ""]
 
     conteo_decisiones = df["Decision"].value_counts()
@@ -68,7 +68,7 @@ def cargar_modelo():
     y = df_filtrado["Decision"]
 
     if len(set(y)) < 2:
-        st.error("❌ No hay suficientes clases con ocurrencias suficientes para stratificar y entrenar.")
+        st.error("❌ El modelo necesita al menos 2 clases distintas para entrenar.")
         st.stop()
 
     try:
