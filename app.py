@@ -56,8 +56,14 @@ def cargar_modelo():
     df = df.dropna(subset=["Decision"])
     df = df[df["Decision"].astype(str).str.strip() != ""]
 
-    if df["Decision"].nunique() < 2 or df["Decision"].value_counts().min() < 2:
-        st.warning("⚠️ Los datos no tienen clases suficientes o balanceadas. Se agregarán ejemplos sintéticos.")
+    conteo_decisiones = df["Decision"].value_counts()
+    st.write("📌 Distribución actual de clases:", conteo_decisiones)
+
+    clases_validas = conteo_decisiones[conteo_decisiones >= 3].index.tolist()
+    df = df[df["Decision"].isin(clases_validas)]
+
+    if len(clases_validas) < 2:
+        st.warning("⚠️ No hay suficientes clases representadas para entrenar un modelo.")
         ejemplos_sinteticos = pd.DataFrame([
             {"Incident": "remate al arco que termina en gol", "Decision": "Gol"},
             {"Incident": "remate desviado", "Decision": "No gol"},
@@ -66,9 +72,6 @@ def cargar_modelo():
             {"Incident": "protesta reiterada", "Decision": "Amarilla"},
         ])
         df = pd.concat([df, ejemplos_sinteticos], ignore_index=True)
-
-    st.write("📊 Distribución de decisiones en los datos:")
-    st.dataframe(df["Decision"].value_counts())
 
     vectorizador = CountVectorizer()
     X = vectorizador.fit_transform(df[col_name].astype(str))
@@ -79,6 +82,10 @@ def cargar_modelo():
         st.stop()
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    if len(set(y_train)) < 2:
+        st.error("❌ Error: El set de entrenamiento no contiene al menos dos clases distintas.")
+        st.stop()
 
     modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
     modelo.fit(X_train, y_train)
@@ -129,7 +136,6 @@ if st.button("Revisar jugada"):
             "Precisión": confianza
         })
 
-        # Exportar a PDF
         if st.button("📄 Exportar resultado a PDF"):
             pdf = FPDF()
             pdf.add_page()
