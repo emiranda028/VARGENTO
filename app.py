@@ -131,4 +131,3 @@ if st.button("📥 Exportar predicción a PDF"):
 st.markdown("""
 <div class="footer">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>
 """, unsafe_allow_html=True)
-
