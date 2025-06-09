@@ -67,7 +67,10 @@ def cargar_modelo():
     X = vectorizador.fit_transform(df_filtrado[col_name].astype(str))
     y = df_filtrado["Decision"]
 
-    if len(set(y)) < 2:
+    clases_en_y = Counter(y)
+    st.write("🔍 Clases encontradas en los datos para entrenamiento:", clases_en_y)
+
+    if len(clases_en_y) < 2:
         st.error("❌ El modelo necesita al menos 2 clases distintas para entrenar.")
         st.stop()
 
@@ -131,4 +134,3 @@ if st.button("📥 Exportar predicción a PDF"):
 st.markdown("""
 <div class="footer">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>
 """, unsafe_allow_html=True)
-
