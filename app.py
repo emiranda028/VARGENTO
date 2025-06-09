@@ -26,7 +26,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.image("https://media.tenor.com/xOb4uwv-VV8AAAAC/var-checking.gif", use_column_width=True)
+st.image("https://media.tenor.com/xOb4uwv-VV8AAAAC/var-checking.gif", use_container_width=True)
 st.markdown("""
 # ⚽ Bienvenido a VARGENTO
 La plataforma inteligente para asistir en decisiones arbitrales mediante IA y análisis de jugadas.
@@ -151,4 +151,3 @@ st.plotly_chart(fig)
 st.markdown("""
 <div class="footer">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>
 """, unsafe_allow_html=True)
-
