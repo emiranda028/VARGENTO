@@ -33,16 +33,6 @@ st.markdown("""
     </script>
 """, unsafe_allow_html=True)
 
-with st.expander("🔍 Iniciando revisión VAR..."):
-    st.markdown("""
-    <div style='font-size: 48px; text-align: center;'>
-        🖐️➡️⬇️⬅️⬆️🖐️
-    </div>
-    <div style='text-align: center;'>
-        <em>El árbitro está revisando la jugada...</em>
-    </div>
-    """, unsafe_allow_html=True)
-
 @st.cache_resource
 def cargar_modelo():
     try:
@@ -60,55 +50,41 @@ def cargar_modelo():
         st.stop()
 
     if "Decision" not in df.columns:
-        st.warning("⚠️ No se encontró la columna 'Decision' en el CSV. Se agregará automáticamente.")
+        st.warning("⚠️ No se encontró la columna 'Decision'. Se agregará automáticamente.")
         df["Decision"] = "Desconocido"
 
     df = df.dropna(subset=["Decision"])
     df = df[df["Decision"].astype(str).str.strip() != ""]
 
-    if df["Decision"].nunique() < 2:
-        st.warning("Solo hay una clase en 'Decision'. Se agregarán ejemplos sintéticos para poder entrenar el modelo.")
+    if df["Decision"].nunique() < 2 or df["Decision"].value_counts().min() < 2:
+        st.warning("⚠️ Los datos no tienen clases suficientes o balanceadas. Se agregarán ejemplos sintéticos.")
         ejemplos_sinteticos = pd.DataFrame([
             {"Incident": "remate al arco que termina en gol", "Decision": "Gol"},
-            {"Incident": "remate que va desviado", "Decision": "No gol"},
+            {"Incident": "remate desviado", "Decision": "No gol"},
             {"Incident": "mano clara dentro del área", "Decision": "Penal"},
             {"Incident": "entrada fuerte con plancha", "Decision": "Roja"},
-            {"Incident": "empujón leve sin balón", "Decision": "Amarilla"}
+            {"Incident": "protesta reiterada", "Decision": "Amarilla"},
         ])
         df = pd.concat([df, ejemplos_sinteticos], ignore_index=True)
 
-    st.write("Distribución de decisiones en los datos:")
+    st.write("📊 Distribución de decisiones en los datos:")
     st.dataframe(df["Decision"].value_counts())
 
     vectorizador = CountVectorizer()
     X = vectorizador.fit_transform(df[col_name].astype(str))
     y = df["Decision"]
 
-    # Verificar si hay suficientes clases
-    clases_entrenamiento = y.value_counts()
-    if len(clases_entrenamiento) < 2 or any(clases_entrenamiento < 2):
-        st.warning("Se detectaron clases insuficientes o desequilibradas. Agregando más ejemplos sintéticos para estabilizar el entrenamiento.")
-        ejemplos_adicionales = pd.DataFrame([
-            {"Incident": "mano dentro del área tras rebote", "Decision": "Penal"},
-            {"Incident": "gol legítimo tras pase filtrado", "Decision": "Gol"},
-            {"Incident": "entrada fuerte sin intención de jugar el balón", "Decision": "Roja"},
-            {"Incident": "protesta reiterada al árbitro", "Decision": "Amarilla"},
-            {"Incident": "remate desde fuera del área que entra", "Decision": "Gol"},
-        ])
-        df = pd.concat([df, ejemplos_adicionales], ignore_index=True)
-        X = vectorizador.fit_transform(df[col_name].astype(str))
-        y = df["Decision"]
+    if len(set(y)) < 2:
+        st.error("❌ No hay suficientes clases distintas para entrenar el modelo.")
+        st.stop()
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-    if len(set(y_train)) < 2:
-        st.error("Los datos de entrenamiento no contienen suficientes clases distintas.")
-        st.stop()
 
     modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
     modelo.fit(X_train, y_train)
     y_pred = modelo.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
+
     return modelo, vectorizador, acc, df
 
 modelo, vectorizador, acc, df_data = cargar_modelo()
@@ -117,6 +93,9 @@ st.header("¿Qué desea chequear?")
 texto_input = st.text_area("Describa brevemente la jugada (por ejemplo: 'mano en el área tras un centro')")
 uploaded_file = st.file_uploader("Suba una imagen, video MP4 o enlace de YouTube para analizar", type=["jpg", "jpeg", "png", "mp4"])
 youtube_link = st.text_input("O ingrese un enlace de YouTube")
+
+if "historial" not in st.session_state:
+    st.session_state.historial = []
 
 if st.button("Revisar jugada"):
     if not texto_input:
@@ -140,7 +119,29 @@ if st.button("Revisar jugada"):
 
         if youtube_link:
             if "youtube.com" in youtube_link or "youtu.be" in youtube_link:
-                components.iframe(youtube_link.replace("watch?v=", "embed/"), height=315)
+                video_id = youtube_link.split("v=")[-1] if "v=" in youtube_link else youtube_link.split("/")[-1]
+                embed_link = f"https://www.youtube.com/embed/{video_id}"
+                components.iframe(embed_link, height=315)
+
+        st.session_state.historial.append({
+            "Texto": texto_input,
+            "Decisión": prediccion,
+            "Precisión": confianza
+        })
+
+        # Exportar a PDF
+        if st.button("📄 Exportar resultado a PDF"):
+            pdf = FPDF()
+            pdf.add_page()
+            pdf.set_font("Arial", size=12)
+            pdf.cell(200, 10, txt="Informe de jugada analizada por VARGENTO", ln=True, align='C')
+            pdf.ln(10)
+            pdf.multi_cell(0, 10, txt=f"Descripción: {texto_input}\nDecisión: {prediccion}\nPrecisión: {confianza}%")
+            pdf.output("resultado_var.pdf")
+            with open("resultado_var.pdf", "rb") as f:
+                b64_pdf = base64.b64encode(f.read()).decode()
+                href = f'<a href="data:application/octet-stream;base64,{b64_pdf}" download="resultado_var.pdf">📥 Descargar PDF</a>'
+                st.markdown(href, unsafe_allow_html=True)
 
 st.subheader("📊 Estadísticas por equipo y árbitro")
 if "Team" in df_data.columns:
@@ -155,3 +156,7 @@ if "VAR used" in df_data.columns:
     fig_var = px.pie(uso_var, names='VAR usado', values='Cantidad', title='Distribución del uso del VAR')
     st.plotly_chart(fig_var)
 
+if st.session_state.historial:
+    st.subheader("📘 Historial de decisiones")
+    df_hist = pd.DataFrame(st.session_state.historial)
+    st.dataframe(df_hist)
