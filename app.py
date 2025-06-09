@@ -79,8 +79,10 @@ def cargar_modelo():
             X, y, test_size=0.2, stratify=y, random_state=42
         )
     except ValueError as e:
-        st.error(f"❌ No se pudo dividir los datos de entrenamiento: {e}")
-        st.stop()
+        st.warning("⚠️ No se pudo usar estratificación. Se usará división aleatoria.")
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
 
     modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
     modelo.fit(X_train, y_train)
@@ -101,10 +103,26 @@ st.markdown("---")
 st.subheader("📸 Analizar nueva jugada")
 texto_jugada = st.text_area("Describí la jugada para que el modelo sugiera una decisión:", "Jugador comete falta dentro del área tras revisión del VAR")
 
+archivo_subido = st.file_uploader("Opcional: subí un video, imagen o archivo MP4 de la jugada", type=["jpg", "jpeg", "png", "mp4"])
+link_youtube = st.text_input("O pegá un link de YouTube con la jugada (opcional)")
+
 if st.button("🔍 Predecir decisión"):
-    X_nuevo = vectorizador.transform([texto_jugada])
-    prediccion = modelo.predict(X_nuevo)[0]
-    st.success(f"✅ Decisión sugerida por el modelo: **{prediccion}**")
+    if not texto_jugada.strip():
+        st.warning("Por favor, ingresá una descripción de la jugada.")
+    else:
+        X_nuevo = vectorizador.transform([texto_jugada])
+        prediccion = modelo.predict(X_nuevo)[0]
+        st.success(f"✅ Decisión sugerida por el modelo: **{prediccion}**")
+
+        if archivo_subido:
+            if archivo_subido.type.startswith("video"):
+                st.video(archivo_subido)
+            elif archivo_subido.type.startswith("image"):
+                imagen = Image.open(archivo_subido)
+                st.image(imagen, caption="Imagen de la jugada")
+
+        if link_youtube:
+            st.video(link_youtube)
 
 st.markdown("---")
 
