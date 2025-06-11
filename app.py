@@ -1,94 +1,46 @@
-# VARGENTO - Plataforma Inteligente de Análisis VAR
+# app.py
 
 import streamlit as st
 import pandas as pd
 from PIL import Image
 import io
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.model_selection import train_test_split
-from xgboost import XGBClassifier
-from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import LabelEncoder
+import pickle
 from fpdf import FPDF
 import base64
 import plotly.express as px
-from collections import Counter
 
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
 
-# Cargar modelo y datos
+# Cargar modelo y recursos
 @st.cache_resource
 def cargar_modelo():
-    try:
-        df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
-    except UnicodeDecodeError:
-        df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="latin1")
+    with open("modelo.pkl", "rb") as f:
+        modelo = pickle.load(f)
+    with open("vectorizador.pkl", "rb") as f:
+        vectorizador = pickle.load(f)
+    with open("label_encoder.pkl", "rb") as f:
+        le = pickle.load(f)
+    df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
+    return modelo, vectorizador, le, df
 
-    columnas = [col.lower().strip() for col in df.columns]
-    if "descripcion" in columnas:
-        col_name = df.columns[columnas.index("descripcion")]
-    elif "incident" in columnas:
-        col_name = df.columns[columnas.index("incident")]
-    else:
-        st.error("❌ No se encontró una columna válida con descripciones de jugadas.")
-        st.stop()
+modelo, vectorizador, le, df_data = cargar_modelo()
 
-    if "Decision" not in df.columns:
-        df["Decision"] = "Desconocido"
-
-    df = df.dropna(subset=["Decision", col_name])
-    df = df[df["Decision"].astype(str).str.strip() != ""]
-
-    conteo = df["Decision"].value_counts()
-    clases_validas = conteo[conteo >= 2].index.tolist()
-    df_filtrado = df[df["Decision"].isin(clases_validas)]
-
-    if df_filtrado.empty or len(clases_validas) < 2:
-        st.error("❌ Se requieren al menos dos clases con 2 ejemplos cada una.")
-        st.stop()
-
-    vectorizador = CountVectorizer()
-    X = vectorizador.fit_transform(df_filtrado[col_name].astype(str))
-    y = df_filtrado["Decision"]
-
-    try:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
-    except ValueError:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-    le = LabelEncoder()
-    y_train_enc = le.fit_transform(y_train)
-    y_test_enc = le.transform(y_test)
-
-    modelo = XGBClassifier(use_label_encoder=False, eval_metric='mlogloss')
-    modelo.fit(X_train, y_train_enc)
-    y_pred = modelo.predict(X_test)
-    acc = accuracy_score(y_test_enc, y_pred)
-
-    return modelo, vectorizador, acc, df_filtrado, col_name, le
-
-modelo, vectorizador, acc, df_data, col_name, le = cargar_modelo()
-
-# Encabezado en dos columnas
+# UI inicial
 col1, col2 = st.columns([2, 1])
 with col1:
     st.markdown("## ⚽ VARGENTO - Asistente VAR Inteligente")
-    st.write("Describe la jugada, subí evidencia si querés, y obtené la decisión sugerida basada en IA.")
-
+    st.write("Describí la jugada, subí evidencia, y recibí una decisión sugerida con IA.")
 with col2:
     st.image("https://media.tenor.com/xOb4uwv-VV8AAAAC/var-checking.gif", use_column_width=True)
-
-st.markdown(f"### 🎯 Precisión del modelo: **{acc * 100:.2f}%**")
 
 st.markdown("---")
 st.markdown("### 🎥 Análisis de jugada")
 
-# Entradas de usuario: jugada, archivo, video
+# Entrada de usuario
 col1, col2 = st.columns(2)
-
 with col1:
     texto_jugada = st.text_area("✍️ Describí la jugada", placeholder="Ej: Falta dentro del área tras un córner")
-    archivo_subido = st.file_uploader("📁 Subí imagen o video", type=["jpg", "jpeg", "png", "mp4"])
+    archivo_subido = st.file_uploader("📁 Subí imagen o video (opcional)", type=["jpg", "jpeg", "png", "mp4"])
     link_youtube = st.text_input("🔗 Link de YouTube (opcional):")
 
 with col2:
@@ -102,7 +54,6 @@ with col2:
             pred_label = le.inverse_transform([pred])[0]
             st.success(f"📢 Decisión sugerida: **{pred_label}**")
 
-            # Mostrar multimedia
             if archivo_subido:
                 if archivo_subido.type.startswith("video"):
                     st.video(archivo_subido)
@@ -113,7 +64,6 @@ with col2:
             if link_youtube:
                 st.video(link_youtube)
 
-            # Descargar PDF
             st.markdown("##### 📥 Exportar reporte")
             if st.button("📄 Descargar PDF"):
                 try:
@@ -130,11 +80,12 @@ with col2:
                 except Exception as e:
                     st.error(f"❌ Error al generar PDF: {e}")
 
-# Gráfico al final
+# Gráfico de decisiones
 st.markdown("---")
 st.subheader("📊 Distribución de decisiones en el dataset")
 fig = px.histogram(df_data, x="Decision", title="Decisiones registradas")
 st.plotly_chart(fig)
 
 st.markdown('<div style="text-align: center; color: gray;">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>', unsafe_allow_html=True)
+
 
