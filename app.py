@@ -1,4 +1,4 @@
-# app.py - VARGENTO optimizado
+# app.py - VARGENTO COMPLETO Y FUNCIONAL
 
 import streamlit as st
 import pandas as pd
@@ -11,7 +11,10 @@ import plotly.express as px
 
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
 
-# Cargar modelo y recursos (rápido)
+# -------------------------------
+# FUNCIONES DE CARGA
+# -------------------------------
+
 @st.cache_resource
 def cargar_modelo():
     with open("modelo.pkl", "rb") as f:
@@ -22,21 +25,22 @@ def cargar_modelo():
         le = pickle.load(f)
     return modelo, vectorizador, le
 
-# Cargar dataset aparte (opcional)
 @st.cache_data
 def cargar_dataset():
     return pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
 
-# Carga recursos
 modelo, vectorizador, le = cargar_modelo()
 df_data = cargar_dataset()
 
-# Encabezado
+# -------------------------------
+# INTERFAZ PRINCIPAL
+# -------------------------------
+
 col1, col2 = st.columns([2, 1])
 with col1:
     st.markdown("## ⚽ VARGENTO - Asistente VAR Inteligente")
     st.write("""
-        Describí la jugada, subí evidencia visual si querés, y recibí una sugerencia de decisión 
+        Describí la jugada, subí evidencia visual si querés, y recibí una sugerencia de decisión
         basada en jugadas históricas clasificadas por inteligencia artificial.
     """)
 with col2:
@@ -44,7 +48,10 @@ with col2:
 
 st.markdown("---")
 
-# Precisión del modelo (opcional)
+# -------------------------------
+# PRECISIÓN DEL MODELO
+# -------------------------------
+
 st.markdown("### 🧠 Evaluar modelo")
 if st.checkbox("📈 Calcular precisión"):
     try:
@@ -55,7 +62,10 @@ if st.checkbox("📈 Calcular precisión"):
     except Exception as e:
         st.error(f"No se pudo calcular precisión: {e}")
 
-# Análisis de jugada
+# -------------------------------
+# ANÁLISIS DE JUGADA
+# -------------------------------
+
 st.markdown("---")
 st.markdown("### 🎥 Analizar nueva jugada")
 
@@ -89,8 +99,7 @@ with col2:
                 if link_youtube:
                     st.video(link_youtube)
 
-                # Exportar PDF
-                st.markdown("##### 📥 Descargar reporte")
+                st.markdown("##### 📅 Descargar reporte")
                 if st.button("📄 Generar PDF"):
                     try:
                         pdf = FPDF()
@@ -109,19 +118,25 @@ with col2:
             except Exception as e:
                 st.error(f"❌ Error durante la predicción: {e}")
 
-# Distribución de decisiones
+# -------------------------------
+# GRÁFICO Y DATOS
+# -------------------------------
+
 st.markdown("---")
-st.markdown("### 📊 Distribución de decisiones en el dataset")
+st.markdown("### 📊 Distribución de decisiones")
 try:
     fig = px.histogram(df_data, x="Decision", title="Frecuencia de cada decisión registrada")
     st.plotly_chart(fig)
 except Exception as e:
     st.warning(f"No se pudo generar el gráfico: {e}")
 
-# Tabla del dataset
-with st.expander("🧾 Ver primeras filas del dataset"):
+with st.expander("📜 Ver primeras filas del dataset"):
     st.dataframe(df_data.head(20))
 
-# Footer
+# -------------------------------
+# FOOTER
+# -------------------------------
+
 st.markdown("---")
 st.markdown('<div style="text-align: center; color: gray;">Desarrollado por <b>LTELC</b> - Consultoría en Datos e IA ⚙️</div>', unsafe_allow_html=True)
+
