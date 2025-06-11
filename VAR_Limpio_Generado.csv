@@ -1,2 +1,8 @@
 descripcion,Decision
-Ejemplo de jugada,Penal
+Falta dentro del área revisada por VAR,Penal
+Gol anulado por fuera de juego,Gol anulado
+Entrada peligrosa con tarjeta roja,Roja
+"Mano no intencional, no penal",No penal
+Penal por falta clara,Penal
+Gol válido confirmado por VAR,Gol válido
+Offside milimétrico detectado,Offside
