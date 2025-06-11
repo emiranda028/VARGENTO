@@ -1,4 +1,4 @@
-# app.py - VARGENTO
+# app.py - VARGENTO optimizado
 
 import streamlit as st
 import pandas as pd
@@ -11,7 +11,7 @@ import plotly.express as px
 
 st.set_page_config(layout="wide", page_title="VARGENTO - Análisis VAR Inteligente", page_icon="⚽")
 
-# Función para cargar modelo, vectorizador y encoder
+# Cargar modelo y recursos (rápido)
 @st.cache_resource
 def cargar_modelo():
     with open("modelo.pkl", "rb") as f:
@@ -20,13 +20,18 @@ def cargar_modelo():
         vectorizador = pickle.load(f)
     with open("label_encoder.pkl", "rb") as f:
         le = pickle.load(f)
-    df = pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
-    return modelo, vectorizador, le, df
+    return modelo, vectorizador, le
 
-# Carga todo
-modelo, vectorizador, le, df_data = cargar_modelo()
+# Cargar dataset aparte (opcional)
+@st.cache_data
+def cargar_dataset():
+    return pd.read_csv("VAR_Limpio_Generado.csv", encoding="utf-8")
 
-# Encabezado en dos columnas
+# Carga recursos
+modelo, vectorizador, le = cargar_modelo()
+df_data = cargar_dataset()
+
+# Encabezado
 col1, col2 = st.columns([2, 1])
 with col1:
     st.markdown("## ⚽ VARGENTO - Asistente VAR Inteligente")
@@ -37,26 +42,27 @@ with col1:
 with col2:
     st.image("https://media.tenor.com/xOb4uwv-VV8AAAAC/var-checking.gif", use_column_width=True)
 
-# Mostrar precisión estimada
 st.markdown("---")
-st.markdown("### 🧠 Precisión del modelo (estimada)")
-try:
-    X_temp = vectorizador.transform(df_data["descripcion"].astype(str))
-    y_temp = df_data["Decision"]
-    y_enc = le.transform(y_temp)
-    acc = modelo.score(X_temp, y_enc)
-    st.markdown(f"📊 Precisión del modelo: **{acc * 100:.2f}%**")
-except Exception as e:
-    st.warning(f"No se pudo calcular precisión automáticamente. Detalle: {e}")
 
-# Entrada principal
+# Precisión del modelo (opcional)
+st.markdown("### 🧠 Evaluar modelo")
+if st.checkbox("📈 Calcular precisión"):
+    try:
+        X_temp = vectorizador.transform(df_data["descripcion"].astype(str))
+        y_temp = le.transform(df_data["Decision"])
+        acc = modelo.score(X_temp, y_temp)
+        st.success(f"Precisión estimada del modelo: **{acc * 100:.2f}%**")
+    except Exception as e:
+        st.error(f"No se pudo calcular precisión: {e}")
+
+# Análisis de jugada
 st.markdown("---")
-st.markdown("### 🎥 Análisis de jugada")
+st.markdown("### 🎥 Analizar nueva jugada")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    texto_jugada = st.text_area("✍️ Describí brevemente lo que ocurrió", placeholder="Ej: Centro desde la derecha, mano del defensor al bloquear el remate")
+    texto_jugada = st.text_area("✍️ Describí brevemente lo ocurrido", placeholder="Ej: Mano del defensor tras centro")
     archivo_subido = st.file_uploader("📁 Subí imagen o video (opcional)", type=["jpg", "jpeg", "png", "mp4"])
     link_youtube = st.text_input("🔗 Link de YouTube (opcional):")
 
@@ -65,7 +71,7 @@ with col2:
 
     if st.button("🔍 Predecir decisión"):
         if not texto_jugada.strip():
-            st.warning("⚠️ Por favor ingresá una descripción.")
+            st.warning("⚠️ Por favor, ingresá una descripción.")
         else:
             try:
                 X_nueva = vectorizador.transform([texto_jugada])
@@ -83,7 +89,7 @@ with col2:
                 if link_youtube:
                     st.video(link_youtube)
 
-                # Exportación a PDF
+                # Exportar PDF
                 st.markdown("##### 📥 Descargar reporte")
                 if st.button("📄 Generar PDF"):
                     try:
@@ -103,23 +109,19 @@ with col2:
             except Exception as e:
                 st.error(f"❌ Error durante la predicción: {e}")
 
-# Gráfico de clases
+# Distribución de decisiones
 st.markdown("---")
 st.markdown("### 📊 Distribución de decisiones en el dataset")
-
 try:
     fig = px.histogram(df_data, x="Decision", title="Frecuencia de cada decisión registrada")
     st.plotly_chart(fig)
 except Exception as e:
-    st.warning(f"Error al generar gráfico: {e}")
+    st.warning(f"No se pudo generar el gráfico: {e}")
 
-# Tabla de ejemplo (opcional)
+# Tabla del dataset
 with st.expander("🧾 Ver primeras filas del dataset"):
     st.dataframe(df_data.head(20))
 
 # Footer
 st.markdown("---")
 st.markdown('<div style="text-align: center; color: gray;">Desarrollado por <b>LTELC</b> - Consultoría en Datos e IA ⚙️</div>', unsafe_allow_html=True)
-
-
-
