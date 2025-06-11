@@ -136,4 +136,5 @@ st.subheader("📊 Distribución de decisiones en el dataset")
 fig = px.histogram(df_data, x="Decision", title="Decisiones registradas")
 st.plotly_chart(fig)
 
-st.markdown('<div style="text-align: center; color: gray;">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>', unsafe_allow_htm
+st.markdown('<div style="text-align: center; color: gray;">Desarrollado por LTELC - Consultoría en Datos e IA ⚙️</div>', unsafe_allow_html=True)
+
